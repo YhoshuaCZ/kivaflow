@@ -34,7 +34,7 @@ def main():
     rng = random.Random(config.SEMILLA)
     trafico.asignar_skus(nodos, popularidad, rng)
     uso = trafico.simular(nodos, pedidos, rng)
-    nivel = trafico.niveles(aristas, uso)
+    nivel = trafico.niveles([(a.origen, a.destino) for a in aristas], uso)
     zona = {n.id: n.zona for n in nodos}
 
     args.salida.mkdir(exist_ok=True)

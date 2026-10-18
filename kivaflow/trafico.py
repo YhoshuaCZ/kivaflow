@@ -57,13 +57,16 @@ def simular(nodos, pedidos, rng=None):
     return uso
 
 
-def niveles(aristas, uso):
-    """Baja/Media/Alta por terciles del tráfico medido."""
-    valores = sorted(uso.get(frozenset((a.origen, a.destino)), 0) for a in aristas)
+def niveles(pares, uso):
+    """Baja/Media/Alta por terciles del tráfico medido.
+
+    pares: [(origen, destino), ...] de cada pasillo; uso: Counter {frozenset({u, v}): cruces}.
+    """
+    valores = sorted(uso.get(frozenset(p), 0) for p in pares)
     t1 = valores[len(valores) // 3]
     t2 = valores[2 * len(valores) // 3]
 
     def nivel(x):
         return "Baja" if x <= t1 else "Media" if x <= t2 else "Alta"
 
-    return {(a.origen, a.destino): nivel(uso.get(frozenset((a.origen, a.destino)), 0)) for a in aristas}
+    return {tuple(p): nivel(uso.get(frozenset(p), 0)) for p in pares}

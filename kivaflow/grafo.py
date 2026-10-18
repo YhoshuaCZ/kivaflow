@@ -48,12 +48,17 @@ def lista_de_aristas(ady):
     return [(u, v, w) for u, vecinos in ady.items() for v, w in vecinos]
 
 
-def capacidades(aristas):
-    """{u: {v: capacidad}} para el flujo máximo (operarios por minuto, ambos sentidos)."""
+def capacidades(aristas, niveles=None):
+    """{u: {v: capacidad}} para el flujo máximo (operarios por minuto, ambos sentidos).
+
+    `niveles` ({(u, v): "Baja"|"Media"|"Alta"}) reemplaza la congestión del CSV,
+    por ejemplo con la que sale de una simulación.
+    """
     cap = {}
     for a in aristas:
-        c = config.CAPACIDAD_OPERARIOS_MIN[a["Frecuencia_Pedidos"]]
         u, v = a["Nodo_Origen"], a["Nodo_Destino"]
+        nivel = niveles[(u, v)] if niveles else a["Frecuencia_Pedidos"]
+        c = config.CAPACIDAD_OPERARIOS_MIN[nivel]
         cap.setdefault(u, {})[v] = c
         cap.setdefault(v, {})[u] = c
     return cap

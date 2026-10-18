@@ -36,27 +36,35 @@ def aleatorio(nodos, popularidad, k, rng):
     return rng.choice(muelles_de_despacho(nodos)), [rack_de[s] for s in sorted(elegidos)]
 
 
-def ruta_pedido(ady, aristas_dirigidas, inicio, racks, estrategia):
-    """Devuelve dict con camino completo (lista de nodos), orden de visita y stats."""
+def ruta_pedido(ady, aristas_dirigidas, inicio, racks, estrategia, registro=None, regresar=True):
+    """Devuelve dict con camino completo (lista de nodos), orden de visita y stats.
+
+    Si se pasa una lista en `registro`, por cada búsqueda se agrega
+    {"pasos": [...], "tramo": [...]} con los pasos que anotó el algoritmo (para la animación).
+    Con `regresar=False` termina en el último rack en vez de volver al inicio.
+    """
     pendientes = set(racks)
     actual, camino, orden = inicio, [inicio], []
     visitados = relajaciones = busquedas = 0
     t0 = time.perf_counter()
-    while True:
+    while pendientes or regresar:
         volver = not pendientes
         destinos = {inicio} if volver else pendientes
         busquedas += 1
+        pasos = [] if registro is not None else None
         if estrategia == "bfs":
-            tramo, vis = bfs(ady, actual, destinos)
+            tramo, vis = bfs(ady, actual, destinos, pasos)
             visitados += vis
         elif estrategia == "bellman_ford":
-            dist, padre, stats = bf.bellman_ford(ady.keys(), aristas_dirigidas, actual)
+            dist, padre, stats = bf.bellman_ford(ady.keys(), aristas_dirigidas, actual, pasos)
             siguiente = min(sorted(destinos), key=lambda d: dist[d])
             tramo = reconstruir(padre, siguiente)
             visitados += len(ady)
             relajaciones += stats["relajaciones"]
         else:
             raise ValueError(estrategia)
+        if registro is not None:
+            registro.append({"pasos": pasos, "tramo": tramo})
         actual = tramo[-1]
         camino += tramo[1:]
         if volver:
