@@ -12,8 +12,22 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 |---|---|
 | Dataset (layout + tráfico simulado) | ✅ reproducible, con tests |
 | Pedidos reales de Instacart | 🧪 script listo; falta correrlo con los datos de Kaggle |
-| BFS, Bellman-Ford, Edmonds-Karp | 🔜 |
+| BFS, Bellman-Ford, Edmonds-Karp | ✅ hechos a mano, comparados con NetworkX en los tests |
+| Experimentos | ✅ [resultados/resumen.md](resultados/resumen.md) |
 | GUI en Streamlit (con enlace público) | 🔜 |
+
+## Algoritmos
+
+| Archivo | Algoritmo | Para qué | Complejidad |
+|---|---|---|---|
+| [`kivaflow/bfs.py`](kivaflow/bfs.py) | Búsqueda en anchura | Línea base: ruta con **menos pasillos**, ignorando la congestión. Con varios destinos para en el más cercano. | O(V + E) |
+| [`kivaflow/bellman_ford.py`](kivaflow/bellman_ford.py) | Bellman-Ford (con salida anticipada y detección de ciclos negativos) | Ruta de **menor tiempo** según la congestión de cada pasillo y la hora (punta o valle) | O(V · E) |
+| [`kivaflow/edmonds_karp.py`](kivaflow/edmonds_karp.py) | Edmonds-Karp (Ford-Fulkerson + BFS) | **Flujo máximo** de operarios de Recepción a Despacho y **corte mínimo** (cuellos de botella) | O(V · E²) |
+| [`kivaflow/pedido.py`](kivaflow/pedido.py) | Vecino más cercano (voraz) | Orden en que se visitan los racks de un pedido (el óptimo sería el TSP, NP-difícil) | k + 1 búsquedas |
+
+**Lo que muestran los experimentos** ([detalle](resultados/resumen.md)): en hora punta, Bellman-Ford encuentra rutas de **20–29 % menos tiempo** que BFS con casi los mismos pasillos, porque esquiva los congestionados. BFS es unas 100 veces más rápido de calcular (para en el primer rack y no relaja aristas). El flujo máximo es **73 operarios/min** y el corte mínimo son los 45 pasillos de la columna 19, en la zona de Picking.
+
+![Ruta BFS vs. Bellman-Ford](resultados/ruta_ejemplo.png)
 
 ## El dataset
 
@@ -59,7 +73,8 @@ pip install -r requirements.txt
 
 python scripts/generar_dataset.py      # data/*.csv con demanda sintética
 python scripts/dibujar_grafo.py        # docs/grafo.png
-python -m pytest                       # comprueba tamaño, conectividad, pesos y reproducibilidad
+python -m pytest                       # dataset + cada algoritmo contra NetworkX y casos a mano
+python scripts/experimentos.py         # resultados/ (tabla, CSV y figuras), ~20 s
 ```
 
 ### Con pedidos reales de Instacart
