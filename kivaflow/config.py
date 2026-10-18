@@ -28,6 +28,17 @@ VELOCIDAD_M_S = 1.1
 # (terciles del tráfico simulado) y su distancia se multiplica por este factor.
 FACTOR_CONGESTION = {"Baja": 1.0, "Media": 1.25, "Alta": 1.6}
 
+# La congestión cambia con la hora. "punta" es la de FACTOR_CONGESTION (la que va en
+# aristas.csv); en "valle" los pasillos concurridos se frenan menos.
+PERFILES_HORA = {
+    "punta": FACTOR_CONGESTION,
+    "valle": {"Baja": 1.0, "Media": 1.1, "Alta": 1.25},
+}
+
+# Capacidad de cada pasillo para el flujo máximo: operarios por minuto que pueden
+# cruzarlo. Un pasillo muy transitado deja menos capacidad libre.
+CAPACIDAD_OPERARIOS_MIN = {"Baja": 3, "Media": 2, "Alta": 1}
+
 # Pedidos simulados para medir el tráfico.
 N_PEDIDOS = 2000
 MAX_PRODUCTOS_POR_PEDIDO = 10
