@@ -1,0 +1,1801 @@
+Nodo,Fila,Columna,X_m,Y_m,Zona,Tipo,SKU
+00-00,0,0,0.0,0.0,Recepción y Almacenamiento,rack,SKU1376
+00-01,0,1,1.2,0.0,Recepción y Almacenamiento,rack,SKU1759
+00-02,0,2,2.4,0.0,Recepción y Almacenamiento,rack,SKU0103
+00-03,0,3,3.6,0.0,Recepción y Almacenamiento,rack,SKU0181
+00-04,0,4,4.8,0.0,Recepción y Almacenamiento,rack,SKU0997
+00-05,0,5,6.0,0.0,Recepción y Almacenamiento,rack,SKU0805
+00-06,0,6,7.2,0.0,Recepción y Almacenamiento,rack,SKU0226
+00-07,0,7,8.4,0.0,Recepción y Almacenamiento,rack,SKU0682
+00-08,0,8,9.6,0.0,Recepción y Almacenamiento,rack,SKU0404
+00-09,0,9,10.8,0.0,Recepción y Almacenamiento,rack,SKU1068
+00-10,0,10,12.0,0.0,Recepción y Almacenamiento,rack,SKU0923
+00-11,0,11,13.2,0.0,Recepción y Almacenamiento,rack,SKU0357
+00-12,0,12,14.4,0.0,Recepción y Almacenamiento,rack,SKU0503
+00-13,0,13,15.6,0.0,Picking,rack,SKU0141
+00-14,0,14,16.8,0.0,Picking,rack,SKU1555
+00-15,0,15,18.0,0.0,Picking,rack,SKU1314
+00-16,0,16,19.2,0.0,Picking,rack,SKU0146
+00-17,0,17,20.4,0.0,Picking,rack,SKU1269
+00-18,0,18,21.6,0.0,Picking,rack,SKU1565
+00-19,0,19,22.8,0.0,Picking,rack,SKU1353
+00-20,0,20,24.0,0.0,Picking,rack,SKU1340
+00-21,0,21,25.2,0.0,Picking,rack,SKU1439
+00-22,0,22,26.4,0.0,Picking,rack,SKU0933
+00-23,0,23,27.6,0.0,Picking,rack,SKU1502
+00-24,0,24,28.8,0.0,Picking,rack,SKU0161
+00-25,0,25,30.0,0.0,Picking,rack,SKU0896
+00-26,0,26,31.2,0.0,Picking,rack,SKU0393
+00-27,0,27,32.4,0.0,Empaque y Despacho,rack,SKU0332
+00-28,0,28,33.6,0.0,Empaque y Despacho,rack,SKU1727
+00-29,0,29,34.8,0.0,Empaque y Despacho,rack,SKU0110
+00-30,0,30,36.0,0.0,Empaque y Despacho,rack,SKU1233
+00-31,0,31,37.2,0.0,Empaque y Despacho,rack,SKU0206
+00-32,0,32,38.4,0.0,Empaque y Despacho,rack,SKU0632
+00-33,0,33,39.6,0.0,Empaque y Despacho,rack,SKU1100
+00-34,0,34,40.8,0.0,Empaque y Despacho,rack,SKU0079
+00-35,0,35,42.0,0.0,Empaque y Despacho,rack,SKU1115
+00-36,0,36,43.2,0.0,Empaque y Despacho,rack,SKU1189
+00-37,0,37,44.4,0.0,Empaque y Despacho,rack,SKU0465
+00-38,0,38,45.6,0.0,Empaque y Despacho,rack,SKU0496
+00-39,0,39,46.8,0.0,Empaque y Despacho,rack,SKU1067
+01-00,1,0,0.0,1.2,Recepción y Almacenamiento,rack,SKU0740
+01-01,1,1,1.2,1.2,Recepción y Almacenamiento,rack,SKU1154
+01-02,1,2,2.4,1.2,Recepción y Almacenamiento,rack,SKU1405
+01-03,1,3,3.6,1.2,Recepción y Almacenamiento,rack,SKU1259
+01-04,1,4,4.8,1.2,Recepción y Almacenamiento,rack,SKU0446
+01-05,1,5,6.0,1.2,Recepción y Almacenamiento,rack,SKU1758
+01-06,1,6,7.2,1.2,Recepción y Almacenamiento,rack,SKU1541
+01-07,1,7,8.4,1.2,Recepción y Almacenamiento,rack,SKU1081
+01-08,1,8,9.6,1.2,Recepción y Almacenamiento,rack,SKU0628
+01-09,1,9,10.8,1.2,Recepción y Almacenamiento,rack,SKU1228
+01-10,1,10,12.0,1.2,Recepción y Almacenamiento,rack,SKU0701
+01-11,1,11,13.2,1.2,Recepción y Almacenamiento,rack,SKU1187
+01-12,1,12,14.4,1.2,Recepción y Almacenamiento,rack,SKU0254
+01-13,1,13,15.6,1.2,Picking,rack,SKU1736
+01-14,1,14,16.8,1.2,Picking,rack,SKU1264
+01-15,1,15,18.0,1.2,Picking,rack,SKU0823
+01-16,1,16,19.2,1.2,Picking,rack,SKU0419
+01-17,1,17,20.4,1.2,Picking,rack,SKU0930
+01-18,1,18,21.6,1.2,Picking,rack,SKU0791
+01-19,1,19,22.8,1.2,Picking,rack,SKU0075
+01-20,1,20,24.0,1.2,Picking,rack,SKU0505
+01-21,1,21,25.2,1.2,Picking,rack,SKU0096
+01-22,1,22,26.4,1.2,Picking,rack,SKU0182
+01-23,1,23,27.6,1.2,Picking,rack,SKU0893
+01-24,1,24,28.8,1.2,Picking,rack,SKU0397
+01-25,1,25,30.0,1.2,Picking,rack,SKU1166
+01-26,1,26,31.2,1.2,Picking,rack,SKU1543
+01-27,1,27,32.4,1.2,Empaque y Despacho,rack,SKU1130
+01-28,1,28,33.6,1.2,Empaque y Despacho,rack,SKU0755
+01-29,1,29,34.8,1.2,Empaque y Despacho,rack,SKU0691
+01-30,1,30,36.0,1.2,Empaque y Despacho,rack,SKU1389
+01-31,1,31,37.2,1.2,Empaque y Despacho,rack,SKU0588
+01-32,1,32,38.4,1.2,Empaque y Despacho,rack,SKU0085
+01-33,1,33,39.6,1.2,Empaque y Despacho,rack,SKU0137
+01-34,1,34,40.8,1.2,Empaque y Despacho,rack,SKU1379
+01-35,1,35,42.0,1.2,Empaque y Despacho,rack,SKU0778
+01-36,1,36,43.2,1.2,Empaque y Despacho,rack,SKU0484
+01-37,1,37,44.4,1.2,Empaque y Despacho,rack,SKU0749
+01-38,1,38,45.6,1.2,Empaque y Despacho,rack,SKU1636
+01-39,1,39,46.8,1.2,Empaque y Despacho,rack,SKU0067
+02-00,2,0,0.0,2.4,Recepción y Almacenamiento,estacion,
+02-01,2,1,1.2,2.4,Recepción y Almacenamiento,rack,SKU0398
+02-02,2,2,2.4,2.4,Recepción y Almacenamiento,rack,SKU0377
+02-03,2,3,3.6,2.4,Recepción y Almacenamiento,rack,SKU0367
+02-04,2,4,4.8,2.4,Recepción y Almacenamiento,rack,SKU0466
+02-05,2,5,6.0,2.4,Recepción y Almacenamiento,rack,SKU0514
+02-06,2,6,7.2,2.4,Recepción y Almacenamiento,rack,SKU0406
+02-07,2,7,8.4,2.4,Recepción y Almacenamiento,rack,SKU1350
+02-08,2,8,9.6,2.4,Recepción y Almacenamiento,rack,SKU0725
+02-09,2,9,10.8,2.4,Recepción y Almacenamiento,rack,SKU0004
+02-10,2,10,12.0,2.4,Recepción y Almacenamiento,rack,SKU1108
+02-11,2,11,13.2,2.4,Recepción y Almacenamiento,rack,SKU1280
+02-12,2,12,14.4,2.4,Recepción y Almacenamiento,rack,SKU0845
+02-13,2,13,15.6,2.4,Picking,rack,SKU1330
+02-14,2,14,16.8,2.4,Picking,rack,SKU0821
+02-15,2,15,18.0,2.4,Picking,rack,SKU0279
+02-16,2,16,19.2,2.4,Picking,rack,SKU0659
+02-17,2,17,20.4,2.4,Picking,rack,SKU0229
+02-18,2,18,21.6,2.4,Picking,rack,SKU0009
+02-19,2,19,22.8,2.4,Picking,rack,SKU1234
+02-20,2,20,24.0,2.4,Picking,rack,SKU1630
+02-21,2,21,25.2,2.4,Picking,rack,SKU1427
+02-22,2,22,26.4,2.4,Picking,rack,SKU1463
+02-23,2,23,27.6,2.4,Picking,rack,SKU0688
+02-24,2,24,28.8,2.4,Picking,rack,SKU1724
+02-25,2,25,30.0,2.4,Picking,rack,SKU0062
+02-26,2,26,31.2,2.4,Picking,rack,SKU1775
+02-27,2,27,32.4,2.4,Empaque y Despacho,rack,SKU0054
+02-28,2,28,33.6,2.4,Empaque y Despacho,rack,SKU1658
+02-29,2,29,34.8,2.4,Empaque y Despacho,rack,SKU0359
+02-30,2,30,36.0,2.4,Empaque y Despacho,rack,SKU1651
+02-31,2,31,37.2,2.4,Empaque y Despacho,rack,SKU1766
+02-32,2,32,38.4,2.4,Empaque y Despacho,rack,SKU1516
+02-33,2,33,39.6,2.4,Empaque y Despacho,rack,SKU0179
+02-34,2,34,40.8,2.4,Empaque y Despacho,rack,SKU0301
+02-35,2,35,42.0,2.4,Empaque y Despacho,rack,SKU0607
+02-36,2,36,43.2,2.4,Empaque y Despacho,rack,SKU0977
+02-37,2,37,44.4,2.4,Empaque y Despacho,rack,SKU1467
+02-38,2,38,45.6,2.4,Empaque y Despacho,rack,SKU0848
+02-39,2,39,46.8,2.4,Empaque y Despacho,estacion,
+03-00,3,0,0.0,3.6,Recepción y Almacenamiento,rack,SKU1361
+03-01,3,1,1.2,3.6,Recepción y Almacenamiento,rack,SKU1045
+03-02,3,2,2.4,3.6,Recepción y Almacenamiento,rack,SKU1486
+03-03,3,3,3.6,3.6,Recepción y Almacenamiento,rack,SKU0499
+03-04,3,4,4.8,3.6,Recepción y Almacenamiento,rack,SKU1689
+03-05,3,5,6.0,3.6,Recepción y Almacenamiento,rack,SKU1144
+03-06,3,6,7.2,3.6,Recepción y Almacenamiento,rack,SKU0858
+03-07,3,7,8.4,3.6,Recepción y Almacenamiento,rack,SKU0082
+03-08,3,8,9.6,3.6,Recepción y Almacenamiento,rack,SKU1213
+03-09,3,9,10.8,3.6,Recepción y Almacenamiento,rack,SKU1097
+03-10,3,10,12.0,3.6,Recepción y Almacenamiento,rack,SKU0630
+03-11,3,11,13.2,3.6,Recepción y Almacenamiento,rack,SKU0089
+03-12,3,12,14.4,3.6,Recepción y Almacenamiento,rack,SKU1254
+03-13,3,13,15.6,3.6,Picking,rack,SKU0912
+03-14,3,14,16.8,3.6,Picking,rack,SKU0891
+03-15,3,15,18.0,3.6,Picking,rack,SKU0743
+03-16,3,16,19.2,3.6,Picking,rack,SKU1618
+03-17,3,17,20.4,3.6,Picking,rack,SKU1018
+03-18,3,18,21.6,3.6,Picking,rack,SKU0046
+03-19,3,19,22.8,3.6,Picking,rack,SKU0139
+03-20,3,20,24.0,3.6,Picking,rack,SKU0340
+03-21,3,21,25.2,3.6,Picking,rack,SKU0700
+03-22,3,22,26.4,3.6,Picking,rack,SKU0420
+03-23,3,23,27.6,3.6,Picking,rack,SKU0145
+03-24,3,24,28.8,3.6,Picking,rack,SKU0383
+03-25,3,25,30.0,3.6,Picking,rack,SKU0742
+03-26,3,26,31.2,3.6,Picking,rack,SKU0065
+03-27,3,27,32.4,3.6,Empaque y Despacho,rack,SKU1755
+03-28,3,28,33.6,3.6,Empaque y Despacho,rack,SKU0760
+03-29,3,29,34.8,3.6,Empaque y Despacho,rack,SKU1764
+03-30,3,30,36.0,3.6,Empaque y Despacho,rack,SKU1772
+03-31,3,31,37.2,3.6,Empaque y Despacho,rack,SKU1242
+03-32,3,32,38.4,3.6,Empaque y Despacho,rack,SKU0748
+03-33,3,33,39.6,3.6,Empaque y Despacho,rack,SKU1186
+03-34,3,34,40.8,3.6,Empaque y Despacho,rack,SKU1106
+03-35,3,35,42.0,3.6,Empaque y Despacho,rack,SKU1074
+03-36,3,36,43.2,3.6,Empaque y Despacho,rack,SKU0453
+03-37,3,37,44.4,3.6,Empaque y Despacho,rack,SKU1007
+03-38,3,38,45.6,3.6,Empaque y Despacho,rack,SKU0915
+03-39,3,39,46.8,3.6,Empaque y Despacho,rack,SKU1009
+04-00,4,0,0.0,4.8,Recepción y Almacenamiento,rack,SKU0390
+04-01,4,1,1.2,4.8,Recepción y Almacenamiento,rack,SKU1395
+04-02,4,2,2.4,4.8,Recepción y Almacenamiento,rack,SKU0914
+04-03,4,3,3.6,4.8,Recepción y Almacenamiento,rack,SKU0066
+04-04,4,4,4.8,4.8,Recepción y Almacenamiento,rack,SKU0088
+04-05,4,5,6.0,4.8,Recepción y Almacenamiento,rack,SKU1331
+04-06,4,6,7.2,4.8,Recepción y Almacenamiento,rack,SKU1700
+04-07,4,7,8.4,4.8,Recepción y Almacenamiento,rack,SKU1679
+04-08,4,8,9.6,4.8,Recepción y Almacenamiento,rack,SKU0071
+04-09,4,9,10.8,4.8,Recepción y Almacenamiento,rack,SKU1088
+04-10,4,10,12.0,4.8,Recepción y Almacenamiento,rack,SKU1219
+04-11,4,11,13.2,4.8,Recepción y Almacenamiento,rack,SKU1085
+04-12,4,12,14.4,4.8,Recepción y Almacenamiento,rack,SKU0003
+04-13,4,13,15.6,4.8,Picking,rack,SKU1509
+04-14,4,14,16.8,4.8,Picking,rack,SKU0812
+04-15,4,15,18.0,4.8,Picking,rack,SKU0557
+04-16,4,16,19.2,4.8,Picking,rack,SKU0830
+04-17,4,17,20.4,4.8,Picking,rack,SKU1485
+04-18,4,18,21.6,4.8,Picking,rack,SKU1208
+04-19,4,19,22.8,4.8,Picking,rack,SKU0437
+04-20,4,20,24.0,4.8,Picking,rack,SKU0369
+04-21,4,21,25.2,4.8,Picking,rack,SKU0290
+04-22,4,22,26.4,4.8,Picking,rack,SKU1057
+04-23,4,23,27.6,4.8,Picking,rack,SKU0903
+04-24,4,24,28.8,4.8,Picking,rack,SKU0041
+04-25,4,25,30.0,4.8,Picking,rack,SKU0808
+04-26,4,26,31.2,4.8,Picking,rack,SKU1645
+04-27,4,27,32.4,4.8,Empaque y Despacho,rack,SKU0615
+04-28,4,28,33.6,4.8,Empaque y Despacho,rack,SKU0593
+04-29,4,29,34.8,4.8,Empaque y Despacho,rack,SKU0986
+04-30,4,30,36.0,4.8,Empaque y Despacho,rack,SKU1563
+04-31,4,31,37.2,4.8,Empaque y Despacho,rack,SKU0190
+04-32,4,32,38.4,4.8,Empaque y Despacho,rack,SKU1035
+04-33,4,33,39.6,4.8,Empaque y Despacho,rack,SKU1335
+04-34,4,34,40.8,4.8,Empaque y Despacho,rack,SKU1044
+04-35,4,35,42.0,4.8,Empaque y Despacho,rack,SKU0379
+04-36,4,36,43.2,4.8,Empaque y Despacho,rack,SKU0944
+04-37,4,37,44.4,4.8,Empaque y Despacho,rack,SKU0318
+04-38,4,38,45.6,4.8,Empaque y Despacho,rack,SKU1693
+04-39,4,39,46.8,4.8,Empaque y Despacho,rack,SKU0868
+05-00,5,0,0.0,6.0,Recepción y Almacenamiento,rack,SKU1293
+05-01,5,1,1.2,6.0,Recepción y Almacenamiento,rack,SKU0973
+05-02,5,2,2.4,6.0,Recepción y Almacenamiento,rack,SKU0370
+05-03,5,3,3.6,6.0,Recepción y Almacenamiento,rack,SKU1484
+05-04,5,4,4.8,6.0,Recepción y Almacenamiento,rack,SKU0267
+05-05,5,5,6.0,6.0,Recepción y Almacenamiento,rack,SKU0580
+05-06,5,6,7.2,6.0,Recepción y Almacenamiento,rack,SKU1077
+05-07,5,7,8.4,6.0,Recepción y Almacenamiento,rack,SKU1203
+05-08,5,8,9.6,6.0,Recepción y Almacenamiento,rack,SKU0013
+05-09,5,9,10.8,6.0,Recepción y Almacenamiento,rack,SKU1238
+05-10,5,10,12.0,6.0,Recepción y Almacenamiento,rack,SKU0427
+05-11,5,11,13.2,6.0,Recepción y Almacenamiento,rack,SKU1192
+05-12,5,12,14.4,6.0,Recepción y Almacenamiento,rack,SKU1433
+05-13,5,13,15.6,6.0,Picking,rack,SKU0790
+05-14,5,14,16.8,6.0,Picking,rack,SKU0998
+05-15,5,15,18.0,6.0,Picking,rack,SKU1628
+05-16,5,16,19.2,6.0,Picking,rack,SKU0348
+05-17,5,17,20.4,6.0,Picking,rack,SKU0080
+05-18,5,18,21.6,6.0,Picking,rack,SKU1493
+05-19,5,19,22.8,6.0,Picking,rack,SKU0014
+05-20,5,20,24.0,6.0,Picking,rack,SKU0899
+05-21,5,21,25.2,6.0,Picking,rack,SKU0428
+05-22,5,22,26.4,6.0,Picking,rack,SKU0761
+05-23,5,23,27.6,6.0,Picking,rack,SKU1602
+05-24,5,24,28.8,6.0,Picking,rack,SKU0802
+05-25,5,25,30.0,6.0,Picking,rack,SKU1557
+05-26,5,26,31.2,6.0,Picking,rack,SKU1479
+05-27,5,27,32.4,6.0,Empaque y Despacho,rack,SKU0542
+05-28,5,28,33.6,6.0,Empaque y Despacho,rack,SKU0663
+05-29,5,29,34.8,6.0,Empaque y Despacho,rack,SKU0529
+05-30,5,30,36.0,6.0,Empaque y Despacho,rack,SKU0497
+05-31,5,31,37.2,6.0,Empaque y Despacho,rack,SKU0293
+05-32,5,32,38.4,6.0,Empaque y Despacho,rack,SKU0583
+05-33,5,33,39.6,6.0,Empaque y Despacho,rack,SKU0240
+05-34,5,34,40.8,6.0,Empaque y Despacho,rack,SKU1278
+05-35,5,35,42.0,6.0,Empaque y Despacho,rack,SKU1110
+05-36,5,36,43.2,6.0,Empaque y Despacho,rack,SKU1521
+05-37,5,37,44.4,6.0,Empaque y Despacho,rack,SKU0920
+05-38,5,38,45.6,6.0,Empaque y Despacho,rack,SKU0846
+05-39,5,39,46.8,6.0,Empaque y Despacho,rack,SKU0582
+06-00,6,0,0.0,7.2,Recepción y Almacenamiento,rack,SKU1512
+06-01,6,1,1.2,7.2,Recepción y Almacenamiento,rack,SKU1634
+06-02,6,2,2.4,7.2,Recepción y Almacenamiento,rack,SKU1132
+06-03,6,3,3.6,7.2,Recepción y Almacenamiento,rack,SKU1012
+06-04,6,4,4.8,7.2,Recepción y Almacenamiento,rack,SKU1474
+06-05,6,5,6.0,7.2,Recepción y Almacenamiento,rack,SKU0203
+06-06,6,6,7.2,7.2,Recepción y Almacenamiento,rack,SKU1633
+06-07,6,7,8.4,7.2,Recepción y Almacenamiento,rack,SKU0728
+06-08,6,8,9.6,7.2,Recepción y Almacenamiento,rack,SKU0558
+06-09,6,9,10.8,7.2,Recepción y Almacenamiento,rack,SKU1489
+06-10,6,10,12.0,7.2,Recepción y Almacenamiento,rack,SKU0641
+06-11,6,11,13.2,7.2,Recepción y Almacenamiento,rack,SKU0339
+06-12,6,12,14.4,7.2,Recepción y Almacenamiento,rack,SKU1207
+06-13,6,13,15.6,7.2,Picking,rack,SKU0788
+06-14,6,14,16.8,7.2,Picking,rack,SKU1746
+06-15,6,15,18.0,7.2,Picking,rack,SKU1423
+06-16,6,16,19.2,7.2,Picking,rack,SKU0454
+06-17,6,17,20.4,7.2,Picking,rack,SKU1161
+06-18,6,18,21.6,7.2,Picking,rack,SKU1332
+06-19,6,19,22.8,7.2,Picking,rack,SKU1566
+06-20,6,20,24.0,7.2,Picking,rack,SKU0853
+06-21,6,21,25.2,7.2,Picking,rack,SKU0188
+06-22,6,22,26.4,7.2,Picking,rack,SKU0026
+06-23,6,23,27.6,7.2,Picking,rack,SKU0091
+06-24,6,24,28.8,7.2,Picking,rack,SKU0864
+06-25,6,25,30.0,7.2,Picking,rack,SKU0040
+06-26,6,26,31.2,7.2,Picking,rack,SKU0586
+06-27,6,27,32.4,7.2,Empaque y Despacho,rack,SKU1743
+06-28,6,28,33.6,7.2,Empaque y Despacho,rack,SKU1544
+06-29,6,29,34.8,7.2,Empaque y Despacho,rack,SKU1377
+06-30,6,30,36.0,7.2,Empaque y Despacho,rack,SKU1338
+06-31,6,31,37.2,7.2,Empaque y Despacho,rack,SKU0154
+06-32,6,32,38.4,7.2,Empaque y Despacho,rack,SKU0197
+06-33,6,33,39.6,7.2,Empaque y Despacho,rack,SKU1082
+06-34,6,34,40.8,7.2,Empaque y Despacho,rack,SKU1462
+06-35,6,35,42.0,7.2,Empaque y Despacho,rack,SKU0733
+06-36,6,36,43.2,7.2,Empaque y Despacho,rack,SKU0432
+06-37,6,37,44.4,7.2,Empaque y Despacho,rack,SKU0789
+06-38,6,38,45.6,7.2,Empaque y Despacho,rack,SKU1572
+06-39,6,39,46.8,7.2,Empaque y Despacho,rack,SKU1545
+07-00,7,0,0.0,8.4,Recepción y Almacenamiento,estacion,
+07-01,7,1,1.2,8.4,Recepción y Almacenamiento,rack,SKU0012
+07-02,7,2,2.4,8.4,Recepción y Almacenamiento,rack,SKU0793
+07-03,7,3,3.6,8.4,Recepción y Almacenamiento,rack,SKU0392
+07-04,7,4,4.8,8.4,Recepción y Almacenamiento,rack,SKU0409
+07-05,7,5,6.0,8.4,Recepción y Almacenamiento,rack,SKU0185
+07-06,7,6,7.2,8.4,Recepción y Almacenamiento,rack,SKU1780
+07-07,7,7,8.4,8.4,Recepción y Almacenamiento,rack,SKU1667
+07-08,7,8,9.6,8.4,Recepción y Almacenamiento,rack,SKU0487
+07-09,7,9,10.8,8.4,Recepción y Almacenamiento,rack,SKU0360
+07-10,7,10,12.0,8.4,Recepción y Almacenamiento,rack,SKU1396
+07-11,7,11,13.2,8.4,Recepción y Almacenamiento,rack,SKU0512
+07-12,7,12,14.4,8.4,Recepción y Almacenamiento,rack,SKU1119
+07-13,7,13,15.6,8.4,Picking,rack,SKU1197
+07-14,7,14,16.8,8.4,Picking,rack,SKU0522
+07-15,7,15,18.0,8.4,Picking,rack,SKU1686
+07-16,7,16,19.2,8.4,Picking,rack,SKU0167
+07-17,7,17,20.4,8.4,Picking,rack,SKU0232
+07-18,7,18,21.6,8.4,Picking,rack,SKU0221
+07-19,7,19,22.8,8.4,Picking,rack,SKU0957
+07-20,7,20,24.0,8.4,Picking,rack,SKU1107
+07-21,7,21,25.2,8.4,Picking,rack,SKU0606
+07-22,7,22,26.4,8.4,Picking,rack,SKU0237
+07-23,7,23,27.6,8.4,Picking,rack,SKU0727
+07-24,7,24,28.8,8.4,Picking,rack,SKU1426
+07-25,7,25,30.0,8.4,Picking,rack,SKU1274
+07-26,7,26,31.2,8.4,Picking,rack,SKU0980
+07-27,7,27,32.4,8.4,Empaque y Despacho,rack,SKU0579
+07-28,7,28,33.6,8.4,Empaque y Despacho,rack,SKU1292
+07-29,7,29,34.8,8.4,Empaque y Despacho,rack,SKU0400
+07-30,7,30,36.0,8.4,Empaque y Despacho,rack,SKU0102
+07-31,7,31,37.2,8.4,Empaque y Despacho,rack,SKU1599
+07-32,7,32,38.4,8.4,Empaque y Despacho,rack,SKU0127
+07-33,7,33,39.6,8.4,Empaque y Despacho,rack,SKU0057
+07-34,7,34,40.8,8.4,Empaque y Despacho,rack,SKU0917
+07-35,7,35,42.0,8.4,Empaque y Despacho,rack,SKU0342
+07-36,7,36,43.2,8.4,Empaque y Despacho,rack,SKU1670
+07-37,7,37,44.4,8.4,Empaque y Despacho,rack,SKU1579
+07-38,7,38,45.6,8.4,Empaque y Despacho,rack,SKU1471
+07-39,7,39,46.8,8.4,Empaque y Despacho,estacion,
+08-00,8,0,0.0,9.6,Recepción y Almacenamiento,rack,SKU0084
+08-01,8,1,1.2,9.6,Recepción y Almacenamiento,rack,SKU1070
+08-02,8,2,2.4,9.6,Recepción y Almacenamiento,rack,SKU1499
+08-03,8,3,3.6,9.6,Recepción y Almacenamiento,rack,SKU0107
+08-04,8,4,4.8,9.6,Recepción y Almacenamiento,rack,SKU0621
+08-05,8,5,6.0,9.6,Recepción y Almacenamiento,rack,SKU0847
+08-06,8,6,7.2,9.6,Recepción y Almacenamiento,rack,SKU1078
+08-07,8,7,8.4,9.6,Recepción y Almacenamiento,rack,SKU0461
+08-08,8,8,9.6,9.6,Recepción y Almacenamiento,rack,SKU1369
+08-09,8,9,10.8,9.6,Recepción y Almacenamiento,rack,SKU1774
+08-10,8,10,12.0,9.6,Recepción y Almacenamiento,rack,SKU0313
+08-11,8,11,13.2,9.6,Recepción y Almacenamiento,rack,SKU0285
+08-12,8,12,14.4,9.6,Recepción y Almacenamiento,rack,SKU0018
+08-13,8,13,15.6,9.6,Picking,rack,SKU1017
+08-14,8,14,16.8,9.6,Picking,rack,SKU0885
+08-15,8,15,18.0,9.6,Picking,rack,SKU0271
+08-16,8,16,19.2,9.6,Picking,rack,SKU0371
+08-17,8,17,20.4,9.6,Picking,rack,SKU0364
+08-18,8,18,21.6,9.6,Picking,rack,SKU0519
+08-19,8,19,22.8,9.6,Picking,rack,SKU1290
+08-20,8,20,24.0,9.6,Picking,rack,SKU0569
+08-21,8,21,25.2,9.6,Picking,rack,SKU1209
+08-22,8,22,26.4,9.6,Picking,rack,SKU0686
+08-23,8,23,27.6,9.6,Picking,rack,SKU1742
+08-24,8,24,28.8,9.6,Picking,rack,SKU0164
+08-25,8,25,30.0,9.6,Picking,rack,SKU0136
+08-26,8,26,31.2,9.6,Picking,rack,SKU1251
+08-27,8,27,32.4,9.6,Empaque y Despacho,rack,SKU0296
+08-28,8,28,33.6,9.6,Empaque y Despacho,rack,SKU1535
+08-29,8,29,34.8,9.6,Empaque y Despacho,rack,SKU1270
+08-30,8,30,36.0,9.6,Empaque y Despacho,rack,SKU1681
+08-31,8,31,37.2,9.6,Empaque y Despacho,rack,SKU0518
+08-32,8,32,38.4,9.6,Empaque y Despacho,rack,SKU1169
+08-33,8,33,39.6,9.6,Empaque y Despacho,rack,SKU0493
+08-34,8,34,40.8,9.6,Empaque y Despacho,rack,SKU1218
+08-35,8,35,42.0,9.6,Empaque y Despacho,rack,SKU1609
+08-36,8,36,43.2,9.6,Empaque y Despacho,rack,SKU1041
+08-37,8,37,44.4,9.6,Empaque y Despacho,rack,SKU0504
+08-38,8,38,45.6,9.6,Empaque y Despacho,rack,SKU0526
+08-39,8,39,46.8,9.6,Empaque y Despacho,rack,SKU1287
+09-00,9,0,0.0,10.8,Recepción y Almacenamiento,rack,SKU0779
+09-01,9,1,1.2,10.8,Recepción y Almacenamiento,rack,SKU0562
+09-02,9,2,2.4,10.8,Recepción y Almacenamiento,rack,SKU1538
+09-03,9,3,3.6,10.8,Recepción y Almacenamiento,rack,SKU1616
+09-04,9,4,4.8,10.8,Recepción y Almacenamiento,rack,SKU1448
+09-05,9,5,6.0,10.8,Recepción y Almacenamiento,rack,SKU0897
+09-06,9,6,7.2,10.8,Recepción y Almacenamiento,rack,SKU0128
+09-07,9,7,8.4,10.8,Recepción y Almacenamiento,rack,SKU1523
+09-08,9,8,9.6,10.8,Recepción y Almacenamiento,rack,SKU0435
+09-09,9,9,10.8,10.8,Recepción y Almacenamiento,rack,SKU1656
+09-10,9,10,12.0,10.8,Recepción y Almacenamiento,rack,SKU1653
+09-11,9,11,13.2,10.8,Recepción y Almacenamiento,rack,SKU0978
+09-12,9,12,14.4,10.8,Recepción y Almacenamiento,rack,SKU1559
+09-13,9,13,15.6,10.8,Picking,rack,SKU0832
+09-14,9,14,16.8,10.8,Picking,rack,SKU1606
+09-15,9,15,18.0,10.8,Picking,rack,SKU1771
+09-16,9,16,19.2,10.8,Picking,rack,SKU1728
+09-17,9,17,20.4,10.8,Picking,rack,SKU0537
+09-18,9,18,21.6,10.8,Picking,rack,SKU0475
+09-19,9,19,22.8,10.8,Picking,rack,SKU1443
+09-20,9,20,24.0,10.8,Picking,rack,SKU0230
+09-21,9,21,25.2,10.8,Picking,rack,SKU0572
+09-22,9,22,26.4,10.8,Picking,rack,SKU1357
+09-23,9,23,27.6,10.8,Picking,rack,SKU0946
+09-24,9,24,28.8,10.8,Picking,rack,SKU1744
+09-25,9,25,30.0,10.8,Picking,rack,SKU1380
+09-26,9,26,31.2,10.8,Picking,rack,SKU0238
+09-27,9,27,32.4,10.8,Empaque y Despacho,rack,SKU0352
+09-28,9,28,33.6,10.8,Empaque y Despacho,rack,SKU1312
+09-29,9,29,34.8,10.8,Empaque y Despacho,rack,SKU0047
+09-30,9,30,36.0,10.8,Empaque y Despacho,rack,SKU1613
+09-31,9,31,37.2,10.8,Empaque y Despacho,rack,SKU0386
+09-32,9,32,38.4,10.8,Empaque y Despacho,rack,SKU0876
+09-33,9,33,39.6,10.8,Empaque y Despacho,rack,SKU0282
+09-34,9,34,40.8,10.8,Empaque y Despacho,rack,SKU0407
+09-35,9,35,42.0,10.8,Empaque y Despacho,rack,SKU1206
+09-36,9,36,43.2,10.8,Empaque y Despacho,rack,SKU0834
+09-37,9,37,44.4,10.8,Empaque y Despacho,rack,SKU0879
+09-38,9,38,45.6,10.8,Empaque y Despacho,rack,SKU0122
+09-39,9,39,46.8,10.8,Empaque y Despacho,rack,SKU1441
+10-00,10,0,0.0,12.0,Recepción y Almacenamiento,rack,SKU1165
+10-01,10,1,1.2,12.0,Recepción y Almacenamiento,rack,SKU1715
+10-02,10,2,2.4,12.0,Recepción y Almacenamiento,rack,SKU0909
+10-03,10,3,3.6,12.0,Recepción y Almacenamiento,rack,SKU0829
+10-04,10,4,4.8,12.0,Recepción y Almacenamiento,rack,SKU0413
+10-05,10,5,6.0,12.0,Recepción y Almacenamiento,rack,SKU1455
+10-06,10,6,7.2,12.0,Recepción y Almacenamiento,rack,SKU1308
+10-07,10,7,8.4,12.0,Recepción y Almacenamiento,rack,SKU0462
+10-08,10,8,9.6,12.0,Recepción y Almacenamiento,rack,SKU0552
+10-09,10,9,10.8,12.0,Recepción y Almacenamiento,rack,SKU1378
+10-10,10,10,12.0,12.0,Recepción y Almacenamiento,rack,SKU0422
+10-11,10,11,13.2,12.0,Recepción y Almacenamiento,rack,SKU0679
+10-12,10,12,14.4,12.0,Recepción y Almacenamiento,rack,SKU0869
+10-13,10,13,15.6,12.0,Picking,rack,SKU0532
+10-14,10,14,16.8,12.0,Picking,rack,SKU0717
+10-15,10,15,18.0,12.0,Picking,rack,SKU0338
+10-16,10,16,19.2,12.0,Picking,rack,SKU1160
+10-17,10,17,20.4,12.0,Picking,rack,SKU1660
+10-18,10,18,21.6,12.0,Picking,rack,SKU1315
+10-19,10,19,22.8,12.0,Picking,rack,SKU0827
+10-20,10,20,24.0,12.0,Picking,rack,SKU1359
+10-21,10,21,25.2,12.0,Picking,rack,SKU1031
+10-22,10,22,26.4,12.0,Picking,rack,SKU0165
+10-23,10,23,27.6,12.0,Picking,rack,SKU0449
+10-24,10,24,28.8,12.0,Picking,rack,SKU0214
+10-25,10,25,30.0,12.0,Picking,rack,SKU1718
+10-26,10,26,31.2,12.0,Picking,rack,SKU0723
+10-27,10,27,32.4,12.0,Empaque y Despacho,rack,SKU1495
+10-28,10,28,33.6,12.0,Empaque y Despacho,rack,SKU1196
+10-29,10,29,34.8,12.0,Empaque y Despacho,rack,SKU0178
+10-30,10,30,36.0,12.0,Empaque y Despacho,rack,SKU0913
+10-31,10,31,37.2,12.0,Empaque y Despacho,rack,SKU0235
+10-32,10,32,38.4,12.0,Empaque y Despacho,rack,SKU0064
+10-33,10,33,39.6,12.0,Empaque y Despacho,rack,SKU0204
+10-34,10,34,40.8,12.0,Empaque y Despacho,rack,SKU0801
+10-35,10,35,42.0,12.0,Empaque y Despacho,rack,SKU0927
+10-36,10,36,43.2,12.0,Empaque y Despacho,rack,SKU1691
+10-37,10,37,44.4,12.0,Empaque y Despacho,rack,SKU0044
+10-38,10,38,45.6,12.0,Empaque y Despacho,rack,SKU1241
+10-39,10,39,46.8,12.0,Empaque y Despacho,rack,SKU1159
+11-00,11,0,0.0,13.2,Recepción y Almacenamiento,rack,SKU0961
+11-01,11,1,1.2,13.2,Recepción y Almacenamiento,rack,SKU0098
+11-02,11,2,2.4,13.2,Recepción y Almacenamiento,rack,SKU0263
+11-03,11,3,3.6,13.2,Recepción y Almacenamiento,rack,SKU0719
+11-04,11,4,4.8,13.2,Recepción y Almacenamiento,rack,SKU1062
+11-05,11,5,6.0,13.2,Recepción y Almacenamiento,rack,SKU1094
+11-06,11,6,7.2,13.2,Recepción y Almacenamiento,rack,SKU1393
+11-07,11,7,8.4,13.2,Recepción y Almacenamiento,rack,SKU0706
+11-08,11,8,9.6,13.2,Recepción y Almacenamiento,rack,SKU1146
+11-09,11,9,10.8,13.2,Recepción y Almacenamiento,rack,SKU1346
+11-10,11,10,12.0,13.2,Recepción y Almacenamiento,rack,SKU1519
+11-11,11,11,13.2,13.2,Recepción y Almacenamiento,rack,SKU0838
+11-12,11,12,14.4,13.2,Recepción y Almacenamiento,rack,SKU0121
+11-13,11,13,15.6,13.2,Picking,rack,SKU0653
+11-14,11,14,16.8,13.2,Picking,rack,SKU0015
+11-15,11,15,18.0,13.2,Picking,rack,SKU0447
+11-16,11,16,19.2,13.2,Picking,rack,SKU1098
+11-17,11,17,20.4,13.2,Picking,rack,SKU1487
+11-18,11,18,21.6,13.2,Picking,rack,SKU1333
+11-19,11,19,22.8,13.2,Picking,rack,SKU0637
+11-20,11,20,24.0,13.2,Picking,rack,SKU0979
+11-21,11,21,25.2,13.2,Picking,rack,SKU1603
+11-22,11,22,26.4,13.2,Picking,rack,SKU0287
+11-23,11,23,27.6,13.2,Picking,rack,SKU0907
+11-24,11,24,28.8,13.2,Picking,rack,SKU1716
+11-25,11,25,30.0,13.2,Picking,rack,SKU0438
+11-26,11,26,31.2,13.2,Picking,rack,SKU0187
+11-27,11,27,32.4,13.2,Empaque y Despacho,rack,SKU0784
+11-28,11,28,33.6,13.2,Empaque y Despacho,rack,SKU0571
+11-29,11,29,34.8,13.2,Empaque y Despacho,rack,SKU0199
+11-30,11,30,36.0,13.2,Empaque y Despacho,rack,SKU1191
+11-31,11,31,37.2,13.2,Empaque y Despacho,rack,SKU1604
+11-32,11,32,38.4,13.2,Empaque y Despacho,rack,SKU0216
+11-33,11,33,39.6,13.2,Empaque y Despacho,rack,SKU0007
+11-34,11,34,40.8,13.2,Empaque y Despacho,rack,SKU0113
+11-35,11,35,42.0,13.2,Empaque y Despacho,rack,SKU0524
+11-36,11,36,43.2,13.2,Empaque y Despacho,rack,SKU0200
+11-37,11,37,44.4,13.2,Empaque y Despacho,rack,SKU1089
+11-38,11,38,45.6,13.2,Empaque y Despacho,rack,SKU0737
+11-39,11,39,46.8,13.2,Empaque y Despacho,rack,SKU0626
+12-00,12,0,0.0,14.4,Recepción y Almacenamiento,estacion,
+12-01,12,1,1.2,14.4,Recepción y Almacenamiento,rack,SKU1694
+12-02,12,2,2.4,14.4,Recepción y Almacenamiento,rack,SKU1577
+12-03,12,3,3.6,14.4,Recepción y Almacenamiento,rack,SKU1237
+12-04,12,4,4.8,14.4,Recepción y Almacenamiento,rack,SKU0960
+12-05,12,5,6.0,14.4,Recepción y Almacenamiento,rack,SKU0341
+12-06,12,6,7.2,14.4,Recepción y Almacenamiento,rack,SKU0709
+12-07,12,7,8.4,14.4,Recepción y Almacenamiento,rack,SKU0147
+12-08,12,8,9.6,14.4,Recepción y Almacenamiento,rack,SKU1299
+12-09,12,9,10.8,14.4,Recepción y Almacenamiento,rack,SKU0485
+12-10,12,10,12.0,14.4,Recepción y Almacenamiento,rack,SKU1265
+12-11,12,11,13.2,14.4,Recepción y Almacenamiento,rack,SKU0425
+12-12,12,12,14.4,14.4,Recepción y Almacenamiento,rack,SKU1445
+12-13,12,13,15.6,14.4,Picking,rack,SKU1739
+12-14,12,14,16.8,14.4,Picking,rack,SKU0867
+12-15,12,15,18.0,14.4,Picking,rack,SKU0323
+12-16,12,16,19.2,14.4,Picking,rack,SKU1261
+12-17,12,17,20.4,14.4,Picking,rack,SKU0693
+12-18,12,18,21.6,14.4,Picking,rack,SKU0212
+12-19,12,19,22.8,14.4,Picking,rack,SKU1466
+12-20,12,20,24.0,14.4,Picking,rack,SKU0616
+12-21,12,21,25.2,14.4,Picking,rack,SKU1210
+12-22,12,22,26.4,14.4,Picking,rack,SKU1033
+12-23,12,23,27.6,14.4,Picking,rack,SKU0918
+12-24,12,24,28.8,14.4,Picking,rack,SKU0306
+12-25,12,25,30.0,14.4,Picking,rack,SKU1222
+12-26,12,26,31.2,14.4,Picking,rack,SKU1435
+12-27,12,27,32.4,14.4,Empaque y Despacho,rack,SKU0720
+12-28,12,28,33.6,14.4,Empaque y Despacho,rack,SKU1050
+12-29,12,29,34.8,14.4,Empaque y Despacho,rack,SKU0314
+12-30,12,30,36.0,14.4,Empaque y Despacho,rack,SKU0031
+12-31,12,31,37.2,14.4,Empaque y Despacho,rack,SKU0349
+12-32,12,32,38.4,14.4,Empaque y Despacho,rack,SKU0255
+12-33,12,33,39.6,14.4,Empaque y Despacho,rack,SKU0326
+12-34,12,34,40.8,14.4,Empaque y Despacho,rack,SKU1391
+12-35,12,35,42.0,14.4,Empaque y Despacho,rack,SKU1690
+12-36,12,36,43.2,14.4,Empaque y Despacho,rack,SKU0456
+12-37,12,37,44.4,14.4,Empaque y Despacho,rack,SKU1403
+12-38,12,38,45.6,14.4,Empaque y Despacho,rack,SKU0441
+12-39,12,39,46.8,14.4,Empaque y Despacho,estacion,
+13-00,13,0,0.0,15.6,Recepción y Almacenamiento,rack,SKU0703
+13-01,13,1,1.2,15.6,Recepción y Almacenamiento,rack,SKU0947
+13-02,13,2,2.4,15.6,Recepción y Almacenamiento,rack,SKU0874
+13-03,13,3,3.6,15.6,Recepción y Almacenamiento,rack,SKU1472
+13-04,13,4,4.8,15.6,Recepción y Almacenamiento,rack,SKU0310
+13-05,13,5,6.0,15.6,Recepción y Almacenamiento,rack,SKU0584
+13-06,13,6,7.2,15.6,Recepción y Almacenamiento,rack,SKU0592
+13-07,13,7,8.4,15.6,Recepción y Almacenamiento,rack,SKU0803
+13-08,13,8,9.6,15.6,Recepción y Almacenamiento,rack,SKU1507
+13-09,13,9,10.8,15.6,Recepción y Almacenamiento,rack,SKU0270
+13-10,13,10,12.0,15.6,Recepción y Almacenamiento,rack,SKU0388
+13-11,13,11,13.2,15.6,Recepción y Almacenamiento,rack,SKU0311
+13-12,13,12,14.4,15.6,Recepción y Almacenamiento,rack,SKU0213
+13-13,13,13,15.6,15.6,Picking,rack,SKU1352
+13-14,13,14,16.8,15.6,Picking,rack,SKU0344
+13-15,13,15,18.0,15.6,Picking,rack,SKU1184
+13-16,13,16,19.2,15.6,Picking,rack,SKU1729
+13-17,13,17,20.4,15.6,Picking,rack,SKU0236
+13-18,13,18,21.6,15.6,Picking,rack,SKU0104
+13-19,13,19,22.8,15.6,Picking,rack,SKU1175
+13-20,13,20,24.0,15.6,Picking,rack,SKU1036
+13-21,13,21,25.2,15.6,Picking,rack,SKU0900
+13-22,13,22,26.4,15.6,Picking,rack,SKU0414
+13-23,13,23,27.6,15.6,Picking,rack,SKU1276
+13-24,13,24,28.8,15.6,Picking,rack,SKU0219
+13-25,13,25,30.0,15.6,Picking,rack,SKU0671
+13-26,13,26,31.2,15.6,Picking,rack,SKU0857
+13-27,13,27,32.4,15.6,Empaque y Despacho,rack,SKU0105
+13-28,13,28,33.6,15.6,Empaque y Despacho,rack,SKU1556
+13-29,13,29,34.8,15.6,Empaque y Despacho,rack,SKU1620
+13-30,13,30,36.0,15.6,Empaque y Despacho,rack,SKU0810
+13-31,13,31,37.2,15.6,Empaque y Despacho,rack,SKU0481
+13-32,13,32,38.4,15.6,Empaque y Despacho,rack,SKU0421
+13-33,13,33,39.6,15.6,Empaque y Despacho,rack,SKU1570
+13-34,13,34,40.8,15.6,Empaque y Despacho,rack,SKU1508
+13-35,13,35,42.0,15.6,Empaque y Despacho,rack,SKU1761
+13-36,13,36,43.2,15.6,Empaque y Despacho,rack,SKU0942
+13-37,13,37,44.4,15.6,Empaque y Despacho,rack,SKU0752
+13-38,13,38,45.6,15.6,Empaque y Despacho,rack,SKU0281
+13-39,13,39,46.8,15.6,Empaque y Despacho,rack,SKU0395
+14-00,14,0,0.0,16.8,Recepción y Almacenamiento,rack,SKU1437
+14-01,14,1,1.2,16.8,Recepción y Almacenamiento,rack,SKU0660
+14-02,14,2,2.4,16.8,Recepción y Almacenamiento,rack,SKU1576
+14-03,14,3,3.6,16.8,Recepción y Almacenamiento,rack,SKU0233
+14-04,14,4,4.8,16.8,Recepción y Almacenamiento,rack,SKU1503
+14-05,14,5,6.0,16.8,Recepción y Almacenamiento,rack,SKU0125
+14-06,14,6,7.2,16.8,Recepción y Almacenamiento,rack,SKU0566
+14-07,14,7,8.4,16.8,Recepción y Almacenamiento,rack,SKU1756
+14-08,14,8,9.6,16.8,Recepción y Almacenamiento,rack,SKU0746
+14-09,14,9,10.8,16.8,Recepción y Almacenamiento,rack,SKU0155
+14-10,14,10,12.0,16.8,Recepción y Almacenamiento,rack,SKU1318
+14-11,14,11,13.2,16.8,Recepción y Almacenamiento,rack,SKU1289
+14-12,14,12,14.4,16.8,Recepción y Almacenamiento,rack,SKU0021
+14-13,14,13,15.6,16.8,Picking,rack,SKU1619
+14-14,14,14,16.8,16.8,Picking,rack,SKU0418
+14-15,14,15,18.0,16.8,Picking,rack,SKU0152
+14-16,14,16,19.2,16.8,Picking,rack,SKU0319
+14-17,14,17,20.4,16.8,Picking,rack,SKU0804
+14-18,14,18,21.6,16.8,Picking,rack,SKU1204
+14-19,14,19,22.8,16.8,Picking,rack,SKU1760
+14-20,14,20,24.0,16.8,Picking,rack,SKU1510
+14-21,14,21,25.2,16.8,Picking,rack,SKU1295
+14-22,14,22,26.4,16.8,Picking,rack,SKU0490
+14-23,14,23,27.6,16.8,Picking,rack,SKU1665
+14-24,14,24,28.8,16.8,Picking,rack,SKU1010
+14-25,14,25,30.0,16.8,Picking,rack,SKU0665
+14-26,14,26,31.2,16.8,Picking,rack,SKU0883
+14-27,14,27,32.4,16.8,Empaque y Despacho,rack,SKU0100
+14-28,14,28,33.6,16.8,Empaque y Despacho,rack,SKU0470
+14-29,14,29,34.8,16.8,Empaque y Despacho,rack,SKU0614
+14-30,14,30,36.0,16.8,Empaque y Despacho,rack,SKU1422
+14-31,14,31,37.2,16.8,Empaque y Despacho,rack,SKU1375
+14-32,14,32,38.4,16.8,Empaque y Despacho,rack,SKU1266
+14-33,14,33,39.6,16.8,Empaque y Despacho,rack,SKU0545
+14-34,14,34,40.8,16.8,Empaque y Despacho,rack,SKU1680
+14-35,14,35,42.0,16.8,Empaque y Despacho,rack,SKU0970
+14-36,14,36,43.2,16.8,Empaque y Despacho,rack,SKU1432
+14-37,14,37,44.4,16.8,Empaque y Despacho,rack,SKU0591
+14-38,14,38,45.6,16.8,Empaque y Despacho,rack,SKU0312
+14-39,14,39,46.8,16.8,Empaque y Despacho,rack,SKU1176
+15-00,15,0,0.0,18.0,Recepción y Almacenamiento,rack,SKU0831
+15-01,15,1,1.2,18.0,Recepción y Almacenamiento,rack,SKU0611
+15-02,15,2,2.4,18.0,Recepción y Almacenamiento,rack,SKU1781
+15-03,15,3,3.6,18.0,Recepción y Almacenamiento,rack,SKU1334
+15-04,15,4,4.8,18.0,Recepción y Almacenamiento,rack,SKU1354
+15-05,15,5,6.0,18.0,Recepción y Almacenamiento,rack,SKU1232
+15-06,15,6,7.2,18.0,Recepción y Almacenamiento,rack,SKU0825
+15-07,15,7,8.4,18.0,Recepción y Almacenamiento,rack,SKU1747
+15-08,15,8,9.6,18.0,Recepción y Almacenamiento,rack,SKU0347
+15-09,15,9,10.8,18.0,Recepción y Almacenamiento,rack,SKU1356
+15-10,15,10,12.0,18.0,Recepción y Almacenamiento,rack,SKU0758
+15-11,15,11,13.2,18.0,Recepción y Almacenamiento,rack,SKU0510
+15-12,15,12,14.4,18.0,Recepción y Almacenamiento,rack,SKU0639
+15-13,15,13,15.6,18.0,Picking,rack,SKU1702
+15-14,15,14,16.8,18.0,Picking,rack,SKU0002
+15-15,15,15,18.0,18.0,Picking,rack,SKU1688
+15-16,15,16,19.2,18.0,Picking,rack,SKU0692
+15-17,15,17,20.4,18.0,Picking,rack,SKU0564
+15-18,15,18,21.6,18.0,Picking,rack,SKU1623
+15-19,15,19,22.8,18.0,Picking,rack,SKU1248
+15-20,15,20,24.0,18.0,Picking,rack,SKU1406
+15-21,15,21,25.2,18.0,Picking,rack,SKU0153
+15-22,15,22,26.4,18.0,Picking,rack,SKU0486
+15-23,15,23,27.6,18.0,Picking,rack,SKU1752
+15-24,15,24,28.8,18.0,Picking,rack,SKU0658
+15-25,15,25,30.0,18.0,Picking,rack,SKU0581
+15-26,15,26,31.2,18.0,Picking,rack,SKU0134
+15-27,15,27,32.4,18.0,Empaque y Despacho,rack,SKU1306
+15-28,15,28,33.6,18.0,Empaque y Despacho,rack,SKU0353
+15-29,15,29,34.8,18.0,Empaque y Despacho,rack,SKU1220
+15-30,15,30,36.0,18.0,Empaque y Despacho,rack,SKU0786
+15-31,15,31,37.2,18.0,Empaque y Despacho,rack,SKU0765
+15-32,15,32,38.4,18.0,Empaque y Despacho,rack,SKU1125
+15-33,15,33,39.6,18.0,Empaque y Despacho,rack,SKU1536
+15-34,15,34,40.8,18.0,Empaque y Despacho,rack,SKU0762
+15-35,15,35,42.0,18.0,Empaque y Despacho,rack,SKU0346
+15-36,15,36,43.2,18.0,Empaque y Despacho,rack,SKU1517
+15-37,15,37,44.4,18.0,Empaque y Despacho,rack,SKU1148
+15-38,15,38,45.6,18.0,Empaque y Despacho,rack,SKU1678
+15-39,15,39,46.8,18.0,Empaque y Despacho,rack,SKU0169
+16-00,16,0,0.0,19.2,Recepción y Almacenamiento,rack,SKU1345
+16-01,16,1,1.2,19.2,Recepción y Almacenamiento,rack,SKU1239
+16-02,16,2,2.4,19.2,Recepción y Almacenamiento,rack,SKU0183
+16-03,16,3,3.6,19.2,Recepción y Almacenamiento,rack,SKU0881
+16-04,16,4,4.8,19.2,Recepción y Almacenamiento,rack,SKU1342
+16-05,16,5,6.0,19.2,Recepción y Almacenamiento,rack,SKU0570
+16-06,16,6,7.2,19.2,Recepción y Almacenamiento,rack,SKU1553
+16-07,16,7,8.4,19.2,Recepción y Almacenamiento,rack,SKU0954
+16-08,16,8,9.6,19.2,Recepción y Almacenamiento,rack,SKU0016
+16-09,16,9,10.8,19.2,Recepción y Almacenamiento,rack,SKU0033
+16-10,16,10,12.0,19.2,Recepción y Almacenamiento,rack,SKU0763
+16-11,16,11,13.2,19.2,Recepción y Almacenamiento,rack,SKU0090
+16-12,16,12,14.4,19.2,Recepción y Almacenamiento,rack,SKU0476
+16-13,16,13,15.6,19.2,Picking,rack,SKU1157
+16-14,16,14,16.8,19.2,Picking,rack,SKU1709
+16-15,16,15,18.0,19.2,Picking,rack,SKU0234
+16-16,16,16,19.2,19.2,Picking,rack,SKU0361
+16-17,16,17,20.4,19.2,Picking,rack,SKU1073
+16-18,16,18,21.6,19.2,Picking,rack,SKU0959
+16-19,16,19,22.8,19.2,Picking,rack,SKU1592
+16-20,16,20,24.0,19.2,Picking,rack,SKU1782
+16-21,16,21,25.2,19.2,Picking,rack,SKU0794
+16-22,16,22,26.4,19.2,Picking,rack,SKU1368
+16-23,16,23,27.6,19.2,Picking,rack,SKU1698
+16-24,16,24,28.8,19.2,Picking,rack,SKU1180
+16-25,16,25,30.0,19.2,Picking,rack,SKU1311
+16-26,16,26,31.2,19.2,Picking,rack,SKU1129
+16-27,16,27,32.4,19.2,Empaque y Despacho,rack,SKU0815
+16-28,16,28,33.6,19.2,Empaque y Despacho,rack,SKU0074
+16-29,16,29,34.8,19.2,Empaque y Despacho,rack,SKU0266
+16-30,16,30,36.0,19.2,Empaque y Despacho,rack,SKU0769
+16-31,16,31,37.2,19.2,Empaque y Despacho,rack,SKU1054
+16-32,16,32,38.4,19.2,Empaque y Despacho,rack,SKU0662
+16-33,16,33,39.6,19.2,Empaque y Despacho,rack,SKU1719
+16-34,16,34,40.8,19.2,Empaque y Despacho,rack,SKU1303
+16-35,16,35,42.0,19.2,Empaque y Despacho,rack,SKU1617
+16-36,16,36,43.2,19.2,Empaque y Despacho,rack,SKU0210
+16-37,16,37,44.4,19.2,Empaque y Despacho,rack,SKU0286
+16-38,16,38,45.6,19.2,Empaque y Despacho,rack,SKU1647
+16-39,16,39,46.8,19.2,Empaque y Despacho,rack,SKU1621
+17-00,17,0,0.0,20.4,Recepción y Almacenamiento,estacion,
+17-01,17,1,1.2,20.4,Recepción y Almacenamiento,rack,SKU1657
+17-02,17,2,2.4,20.4,Recepción y Almacenamiento,rack,SKU0888
+17-03,17,3,3.6,20.4,Recepción y Almacenamiento,rack,SKU0299
+17-04,17,4,4.8,20.4,Recepción y Almacenamiento,rack,SKU1364
+17-05,17,5,6.0,20.4,Recepción y Almacenamiento,rack,SKU1641
+17-06,17,6,7.2,20.4,Recepción y Almacenamiento,rack,SKU0681
+17-07,17,7,8.4,20.4,Recepción y Almacenamiento,rack,SKU1000
+17-08,17,8,9.6,20.4,Recepción y Almacenamiento,rack,SKU1235
+17-09,17,9,10.8,20.4,Recepción y Almacenamiento,rack,SKU0976
+17-10,17,10,12.0,20.4,Recepción y Almacenamiento,rack,SKU1387
+17-11,17,11,13.2,20.4,Recepción y Almacenamiento,rack,SKU1029
+17-12,17,12,14.4,20.4,Recepción y Almacenamiento,rack,SKU0479
+17-13,17,13,15.6,20.4,Picking,rack,SKU0365
+17-14,17,14,16.8,20.4,Picking,rack,SKU1096
+17-15,17,15,18.0,20.4,Picking,rack,SKU1236
+17-16,17,16,19.2,20.4,Picking,rack,SKU0563
+17-17,17,17,20.4,20.4,Picking,rack,SKU0459
+17-18,17,18,21.6,20.4,Picking,rack,SKU1682
+17-19,17,19,22.8,20.4,Picking,rack,SKU0576
+17-20,17,20,24.0,20.4,Picking,rack,SKU0647
+17-21,17,21,25.2,20.4,Picking,rack,SKU0741
+17-22,17,22,26.4,20.4,Picking,rack,SKU1253
+17-23,17,23,27.6,20.4,Picking,rack,SKU0172
+17-24,17,24,28.8,20.4,Picking,rack,SKU0783
+17-25,17,25,30.0,20.4,Picking,rack,SKU0087
+17-26,17,26,31.2,20.4,Picking,rack,SKU1478
+17-27,17,27,32.4,20.4,Empaque y Despacho,rack,SKU1252
+17-28,17,28,33.6,20.4,Empaque y Despacho,rack,SKU1188
+17-29,17,29,34.8,20.4,Empaque y Despacho,rack,SKU0174
+17-30,17,30,36.0,20.4,Empaque y Despacho,rack,SKU1567
+17-31,17,31,37.2,20.4,Empaque y Despacho,rack,SKU1777
+17-32,17,32,38.4,20.4,Empaque y Despacho,rack,SKU1624
+17-33,17,33,39.6,20.4,Empaque y Despacho,rack,SKU1629
+17-34,17,34,40.8,20.4,Empaque y Despacho,rack,SKU1757
+17-35,17,35,42.0,20.4,Empaque y Despacho,rack,SKU0411
+17-36,17,36,43.2,20.4,Empaque y Despacho,rack,SKU0426
+17-37,17,37,44.4,20.4,Empaque y Despacho,rack,SKU0109
+17-38,17,38,45.6,20.4,Empaque y Despacho,rack,SKU0114
+17-39,17,39,46.8,20.4,Empaque y Despacho,estacion,
+18-00,18,0,0.0,21.6,Recepción y Almacenamiento,rack,SKU0416
+18-01,18,1,1.2,21.6,Recepción y Almacenamiento,rack,SKU1677
+18-02,18,2,2.4,21.6,Recepción y Almacenamiento,rack,SKU0902
+18-03,18,3,3.6,21.6,Recepción y Almacenamiento,rack,SKU1483
+18-04,18,4,4.8,21.6,Recepción y Almacenamiento,rack,SKU1583
+18-05,18,5,6.0,21.6,Recepción y Almacenamiento,rack,SKU0924
+18-06,18,6,7.2,21.6,Recepción y Almacenamiento,rack,SKU0223
+18-07,18,7,8.4,21.6,Recepción y Almacenamiento,rack,SKU0378
+18-08,18,8,9.6,21.6,Recepción y Almacenamiento,rack,SKU1363
+18-09,18,9,10.8,21.6,Recepción y Almacenamiento,rack,SKU0126
+18-10,18,10,12.0,21.6,Recepción y Almacenamiento,rack,SKU0943
+18-11,18,11,13.2,21.6,Recepción y Almacenamiento,rack,SKU1595
+18-12,18,12,14.4,21.6,Recepción y Almacenamiento,rack,SKU1659
+18-13,18,13,15.6,21.6,Picking,rack,SKU0777
+18-14,18,14,16.8,21.6,Picking,rack,SKU1598
+18-15,18,15,18.0,21.6,Picking,rack,SKU0027
+18-16,18,16,19.2,21.6,Picking,rack,SKU1627
+18-17,18,17,20.4,21.6,Picking,rack,SKU1199
+18-18,18,18,21.6,21.6,Picking,rack,SKU0968
+18-19,18,19,22.8,21.6,Picking,rack,SKU1446
+18-20,18,20,24.0,21.6,Picking,rack,SKU0776
+18-21,18,21,25.2,21.6,Picking,rack,SKU0901
+18-22,18,22,26.4,21.6,Picking,rack,SKU0302
+18-23,18,23,27.6,21.6,Picking,rack,SKU0144
+18-24,18,24,28.8,21.6,Picking,rack,SKU1518
+18-25,18,25,30.0,21.6,Picking,rack,SKU0996
+18-26,18,26,31.2,21.6,Picking,rack,SKU0035
+18-27,18,27,32.4,21.6,Empaque y Despacho,rack,SKU0394
+18-28,18,28,33.6,21.6,Empaque y Despacho,rack,SKU0224
+18-29,18,29,34.8,21.6,Empaque y Despacho,rack,SKU0511
+18-30,18,30,36.0,21.6,Empaque y Despacho,rack,SKU0017
+18-31,18,31,37.2,21.6,Empaque y Despacho,rack,SKU1256
+18-32,18,32,38.4,21.6,Empaque y Despacho,rack,SKU0495
+18-33,18,33,39.6,21.6,Empaque y Despacho,rack,SKU0391
+18-34,18,34,40.8,21.6,Empaque y Despacho,rack,SKU0807
+18-35,18,35,42.0,21.6,Empaque y Despacho,rack,SKU0488
+18-36,18,36,43.2,21.6,Empaque y Despacho,rack,SKU1650
+18-37,18,37,44.4,21.6,Empaque y Despacho,rack,SKU0117
+18-38,18,38,45.6,21.6,Empaque y Despacho,rack,SKU0859
+18-39,18,39,46.8,21.6,Empaque y Despacho,rack,SKU1084
+19-00,19,0,0.0,22.8,Recepción y Almacenamiento,rack,SKU1600
+19-01,19,1,1.2,22.8,Recepción y Almacenamiento,rack,SKU0610
+19-02,19,2,2.4,22.8,Recepción y Almacenamiento,rack,SKU0256
+19-03,19,3,3.6,22.8,Recepción y Almacenamiento,rack,SKU1575
+19-04,19,4,4.8,22.8,Recepción y Almacenamiento,rack,SKU1246
+19-05,19,5,6.0,22.8,Recepción y Almacenamiento,rack,SKU1095
+19-06,19,6,7.2,22.8,Recepción y Almacenamiento,rack,SKU0321
+19-07,19,7,8.4,22.8,Recepción y Almacenamiento,rack,SKU1714
+19-08,19,8,9.6,22.8,Recepción y Almacenamiento,rack,SKU1429
+19-09,19,9,10.8,22.8,Recepción y Almacenamiento,rack,SKU1639
+19-10,19,10,12.0,22.8,Recepción y Almacenamiento,rack,SKU1770
+19-11,19,11,13.2,22.8,Recepción y Almacenamiento,rack,SKU0708
+19-12,19,12,14.4,22.8,Recepción y Almacenamiento,rack,SKU1301
+19-13,19,13,15.6,22.8,Picking,rack,SKU0772
+19-14,19,14,16.8,22.8,Picking,rack,SKU0330
+19-15,19,15,18.0,22.8,Picking,rack,SKU1099
+19-16,19,16,19.2,22.8,Picking,rack,SKU0929
+19-17,19,17,20.4,22.8,Picking,rack,SKU1347
+19-18,19,18,21.6,22.8,Picking,rack,SKU0792
+19-19,19,19,22.8,22.8,Picking,rack,SKU1178
+19-20,19,20,24.0,22.8,Picking,rack,SKU0343
+19-21,19,21,25.2,22.8,Picking,rack,SKU0751
+19-22,19,22,26.4,22.8,Picking,rack,SKU1114
+19-23,19,23,27.6,22.8,Picking,rack,SKU1401
+19-24,19,24,28.8,22.8,Picking,rack,SKU0617
+19-25,19,25,30.0,22.8,Picking,rack,SKU1549
+19-26,19,26,31.2,22.8,Picking,rack,SKU0073
+19-27,19,27,32.4,22.8,Empaque y Despacho,rack,SKU1662
+19-28,19,28,33.6,22.8,Empaque y Despacho,rack,SKU1316
+19-29,19,29,34.8,22.8,Empaque y Despacho,rack,SKU1648
+19-30,19,30,36.0,22.8,Empaque y Despacho,rack,SKU1664
+19-31,19,31,37.2,22.8,Empaque y Despacho,rack,SKU0548
+19-32,19,32,38.4,22.8,Empaque y Despacho,rack,SKU1668
+19-33,19,33,39.6,22.8,Empaque y Despacho,rack,SKU1520
+19-34,19,34,40.8,22.8,Empaque y Despacho,rack,SKU0999
+19-35,19,35,42.0,22.8,Empaque y Despacho,rack,SKU0108
+19-36,19,36,43.2,22.8,Empaque y Despacho,rack,SKU0028
+19-37,19,37,44.4,22.8,Empaque y Despacho,rack,SKU0138
+19-38,19,38,45.6,22.8,Empaque y Despacho,rack,SKU0327
+19-39,19,39,46.8,22.8,Empaque y Despacho,rack,SKU1039
+20-00,20,0,0.0,24.0,Recepción y Almacenamiento,rack,SKU0023
+20-01,20,1,1.2,24.0,Recepción y Almacenamiento,rack,SKU0967
+20-02,20,2,2.4,24.0,Recepción y Almacenamiento,rack,SKU1611
+20-03,20,3,3.6,24.0,Recepción y Almacenamiento,rack,SKU1249
+20-04,20,4,4.8,24.0,Recepción y Almacenamiento,rack,SKU1317
+20-05,20,5,6.0,24.0,Recepción y Almacenamiento,rack,SKU1753
+20-06,20,6,7.2,24.0,Recepción y Almacenamiento,rack,SKU1162
+20-07,20,7,8.4,24.0,Recepción y Almacenamiento,rack,SKU0396
+20-08,20,8,9.6,24.0,Recepción y Almacenamiento,rack,SKU0112
+20-09,20,9,10.8,24.0,Recepción y Almacenamiento,rack,SKU0578
+20-10,20,10,12.0,24.0,Recepción y Almacenamiento,rack,SKU0464
+20-11,20,11,13.2,24.0,Recepción y Almacenamiento,rack,SKU1310
+20-12,20,12,14.4,24.0,Recepción y Almacenamiento,rack,SKU0072
+20-13,20,13,15.6,24.0,Picking,rack,SKU0043
+20-14,20,14,16.8,24.0,Picking,rack,SKU1227
+20-15,20,15,18.0,24.0,Picking,rack,SKU0083
+20-16,20,16,19.2,24.0,Picking,rack,SKU0039
+20-17,20,17,20.4,24.0,Picking,rack,SKU0304
+20-18,20,18,21.6,24.0,Picking,rack,SKU1255
+20-19,20,19,22.8,24.0,Picking,rack,SKU1685
+20-20,20,20,24.0,24.0,Picking,rack,SKU1170
+20-21,20,21,25.2,24.0,Picking,rack,SKU0539
+20-22,20,22,26.4,24.0,Picking,rack,SKU1696
+20-23,20,23,27.6,24.0,Picking,rack,SKU1542
+20-24,20,24,28.8,24.0,Picking,rack,SKU1135
+20-25,20,25,30.0,24.0,Picking,rack,SKU0473
+20-26,20,26,31.2,24.0,Picking,rack,SKU0871
+20-27,20,27,32.4,24.0,Empaque y Despacho,rack,SKU1298
+20-28,20,28,33.6,24.0,Empaque y Despacho,rack,SKU0261
+20-29,20,29,34.8,24.0,Empaque y Despacho,rack,SKU0774
+20-30,20,30,36.0,24.0,Empaque y Despacho,rack,SKU0335
+20-31,20,31,37.2,24.0,Empaque y Despacho,rack,SKU0835
+20-32,20,32,38.4,24.0,Empaque y Despacho,rack,SKU0687
+20-33,20,33,39.6,24.0,Empaque y Despacho,rack,SKU0715
+20-34,20,34,40.8,24.0,Empaque y Despacho,rack,SKU0050
+20-35,20,35,42.0,24.0,Empaque y Despacho,rack,SKU0608
+20-36,20,36,43.2,24.0,Empaque y Despacho,rack,SKU1626
+20-37,20,37,44.4,24.0,Empaque y Despacho,rack,SKU0624
+20-38,20,38,45.6,24.0,Empaque y Despacho,rack,SKU1221
+20-39,20,39,46.8,24.0,Empaque y Despacho,rack,SKU0467
+21-00,21,0,0.0,25.2,Recepción y Almacenamiento,rack,SKU1212
+21-01,21,1,1.2,25.2,Recepción y Almacenamiento,rack,SKU0228
+21-02,21,2,2.4,25.2,Recepción y Almacenamiento,rack,SKU0574
+21-03,21,3,3.6,25.2,Recepción y Almacenamiento,rack,SKU0987
+21-04,21,4,4.8,25.2,Recepción y Almacenamiento,rack,SKU1320
+21-05,21,5,6.0,25.2,Recepción y Almacenamiento,rack,SKU1043
+21-06,21,6,7.2,25.2,Recepción y Almacenamiento,rack,SKU1174
+21-07,21,7,8.4,25.2,Recepción y Almacenamiento,rack,SKU0500
+21-08,21,8,9.6,25.2,Recepción y Almacenamiento,rack,SKU1723
+21-09,21,9,10.8,25.2,Recepción y Almacenamiento,rack,SKU0280
+21-10,21,10,12.0,25.2,Recepción y Almacenamiento,rack,SKU0472
+21-11,21,11,13.2,25.2,Recepción y Almacenamiento,rack,SKU0534
+21-12,21,12,14.4,25.2,Recepción y Almacenamiento,rack,SKU0489
+21-13,21,13,15.6,25.2,Picking,rack,SKU0010
+21-14,21,14,16.8,25.2,Picking,rack,SKU1779
+21-15,21,15,18.0,25.2,Picking,rack,SKU1449
+21-16,21,16,19.2,25.2,Picking,rack,SKU0875
+21-17,21,17,20.4,25.2,Picking,rack,SKU0295
+21-18,21,18,21.6,25.2,Picking,rack,SKU0276
+21-19,21,19,22.8,25.2,Picking,rack,SKU0974
+21-20,21,20,24.0,25.2,Picking,rack,SKU0650
+21-21,21,21,25.2,25.2,Picking,rack,SKU0664
+21-22,21,22,26.4,25.2,Picking,rack,SKU0149
+21-23,21,23,27.6,25.2,Picking,rack,SKU1047
+21-24,21,24,28.8,25.2,Picking,rack,SKU1398
+21-25,21,25,30.0,25.2,Picking,rack,SKU1459
+21-26,21,26,31.2,25.2,Picking,rack,SKU0994
+21-27,21,27,32.4,25.2,Empaque y Despacho,rack,SKU0906
+21-28,21,28,33.6,25.2,Empaque y Despacho,rack,SKU0953
+21-29,21,29,34.8,25.2,Empaque y Despacho,rack,SKU0209
+21-30,21,30,36.0,25.2,Empaque y Despacho,rack,SKU0177
+21-31,21,31,37.2,25.2,Empaque y Despacho,rack,SKU1397
+21-32,21,32,38.4,25.2,Empaque y Despacho,rack,SKU1198
+21-33,21,33,39.6,25.2,Empaque y Despacho,rack,SKU1477
+21-34,21,34,40.8,25.2,Empaque y Despacho,rack,SKU0952
+21-35,21,35,42.0,25.2,Empaque y Despacho,rack,SKU1564
+21-36,21,36,43.2,25.2,Empaque y Despacho,rack,SKU0932
+21-37,21,37,44.4,25.2,Empaque y Despacho,rack,SKU1469
+21-38,21,38,45.6,25.2,Empaque y Despacho,rack,SKU0081
+21-39,21,39,46.8,25.2,Empaque y Despacho,rack,SKU0916
+22-00,22,0,0.0,26.4,Recepción y Almacenamiento,estacion,
+22-01,22,1,1.2,26.4,Recepción y Almacenamiento,rack,SKU1366
+22-02,22,2,2.4,26.4,Recepción y Almacenamiento,rack,SKU1751
+22-03,22,3,3.6,26.4,Recepción y Almacenamiento,rack,SKU1013
+22-04,22,4,4.8,26.4,Recepción y Almacenamiento,rack,SKU1015
+22-05,22,5,6.0,26.4,Recepción y Almacenamiento,rack,SKU0094
+22-06,22,6,7.2,26.4,Recepción y Almacenamiento,rack,SKU0494
+22-07,22,7,8.4,26.4,Recepción y Almacenamiento,rack,SKU0992
+22-08,22,8,9.6,26.4,Recepción y Almacenamiento,rack,SKU1701
+22-09,22,9,10.8,26.4,Recepción y Almacenamiento,rack,SKU0452
+22-10,22,10,12.0,26.4,Recepción y Almacenamiento,rack,SKU1091
+22-11,22,11,13.2,26.4,Recepción y Almacenamiento,rack,SKU1524
+22-12,22,12,14.4,26.4,Recepción y Almacenamiento,rack,SKU1351
+22-13,22,13,15.6,26.4,Picking,rack,SKU1720
+22-14,22,14,16.8,26.4,Picking,rack,SKU1024
+22-15,22,15,18.0,26.4,Picking,rack,SKU1032
+22-16,22,16,19.2,26.4,Picking,rack,SKU1632
+22-17,22,17,20.4,26.4,Picking,rack,SKU0471
+22-18,22,18,21.6,26.4,Picking,rack,SKU0434
+22-19,22,19,22.8,26.4,Picking,rack,SKU0739
+22-20,22,20,24.0,26.4,Picking,rack,SKU0908
+22-21,22,21,25.2,26.4,Picking,rack,SKU0892
+22-22,22,22,26.4,26.4,Picking,rack,SKU1131
+22-23,22,23,27.6,26.4,Picking,rack,SKU0163
+22-24,22,24,28.8,26.4,Picking,rack,SKU0382
+22-25,22,25,30.0,26.4,Picking,rack,SKU1371
+22-26,22,26,31.2,26.4,Picking,rack,SKU0507
+22-27,22,27,32.4,26.4,Empaque y Despacho,rack,SKU0678
+22-28,22,28,33.6,26.4,Empaque y Despacho,rack,SKU1349
+22-29,22,29,34.8,26.4,Empaque y Despacho,rack,SKU1023
+22-30,22,30,36.0,26.4,Empaque y Despacho,rack,SKU0175
+22-31,22,31,37.2,26.4,Empaque y Despacho,rack,SKU1505
+22-32,22,32,38.4,26.4,Empaque y Despacho,rack,SKU1358
+22-33,22,33,39.6,26.4,Empaque y Despacho,rack,SKU0205
+22-34,22,34,40.8,26.4,Empaque y Despacho,rack,SKU1440
+22-35,22,35,42.0,26.4,Empaque y Despacho,rack,SKU1134
+22-36,22,36,43.2,26.4,Empaque y Despacho,rack,SKU0433
+22-37,22,37,44.4,26.4,Empaque y Despacho,rack,SKU1506
+22-38,22,38,45.6,26.4,Empaque y Despacho,rack,SKU0919
+22-39,22,39,46.8,26.4,Empaque y Despacho,estacion,
+23-00,23,0,0.0,27.6,Recepción y Almacenamiento,rack,SKU1631
+23-01,23,1,1.2,27.6,Recepción y Almacenamiento,rack,SKU1087
+23-02,23,2,2.4,27.6,Recepción y Almacenamiento,rack,SKU1560
+23-03,23,3,3.6,27.6,Recepción y Almacenamiento,rack,SKU0168
+23-04,23,4,4.8,27.6,Recepción y Almacenamiento,rack,SKU1420
+23-05,23,5,6.0,27.6,Recepción y Almacenamiento,rack,SKU0775
+23-06,23,6,7.2,27.6,Recepción y Almacenamiento,rack,SKU0337
+23-07,23,7,8.4,27.6,Recepción y Almacenamiento,rack,SKU0264
+23-08,23,8,9.6,27.6,Recepción y Almacenamiento,rack,SKU1263
+23-09,23,9,10.8,27.6,Recepción y Almacenamiento,rack,SKU0833
+23-10,23,10,12.0,27.6,Recepción y Almacenamiento,rack,SKU0716
+23-11,23,11,13.2,27.6,Recepción y Almacenamiento,rack,SKU1385
+23-12,23,12,14.4,27.6,Recepción y Almacenamiento,rack,SKU1713
+23-13,23,13,15.6,27.6,Picking,rack,SKU0601
+23-14,23,14,16.8,27.6,Picking,rack,SKU1158
+23-15,23,15,18.0,27.6,Picking,rack,SKU0097
+23-16,23,16,19.2,27.6,Picking,rack,SKU1025
+23-17,23,17,20.4,27.6,Picking,rack,SKU0008
+23-18,23,18,21.6,27.6,Picking,rack,SKU0483
+23-19,23,19,22.8,27.6,Picking,rack,SKU1488
+23-20,23,20,24.0,27.6,Picking,rack,SKU1473
+23-21,23,21,25.2,27.6,Picking,rack,SKU1704
+23-22,23,22,26.4,27.6,Picking,rack,SKU1773
+23-23,23,23,27.6,27.6,Picking,rack,SKU1229
+23-24,23,24,28.8,27.6,Picking,rack,SKU1533
+23-25,23,25,30.0,27.6,Picking,rack,SKU0159
+23-26,23,26,31.2,27.6,Picking,rack,SKU0417
+23-27,23,27,32.4,27.6,Empaque y Despacho,rack,SKU0766
+23-28,23,28,33.6,27.6,Empaque y Despacho,rack,SKU1529
+23-29,23,29,34.8,27.6,Empaque y Despacho,rack,SKU1734
+23-30,23,30,36.0,27.6,Empaque y Despacho,rack,SKU0095
+23-31,23,31,37.2,27.6,Empaque y Despacho,rack,SKU0556
+23-32,23,32,38.4,27.6,Empaque y Despacho,rack,SKU0910
+23-33,23,33,39.6,27.6,Empaque y Despacho,rack,SKU1060
+23-34,23,34,40.8,27.6,Empaque y Despacho,rack,SKU1016
+23-35,23,35,42.0,27.6,Empaque y Despacho,rack,SKU1754
+23-36,23,36,43.2,27.6,Empaque y Despacho,rack,SKU0308
+23-37,23,37,44.4,27.6,Empaque y Despacho,rack,SKU0030
+23-38,23,38,45.6,27.6,Empaque y Despacho,rack,SKU0560
+23-39,23,39,46.8,27.6,Empaque y Despacho,rack,SKU0935
+24-00,24,0,0.0,28.8,Recepción y Almacenamiento,rack,SKU0502
+24-01,24,1,1.2,28.8,Recepción y Almacenamiento,rack,SKU0638
+24-02,24,2,2.4,28.8,Recepción y Almacenamiento,rack,SKU0657
+24-03,24,3,3.6,28.8,Recepción y Almacenamiento,rack,SKU1522
+24-04,24,4,4.8,28.8,Recepción y Almacenamiento,rack,SKU0158
+24-05,24,5,6.0,28.8,Recepción y Almacenamiento,rack,SKU0697
+24-06,24,6,7.2,28.8,Recepción y Almacenamiento,rack,SKU1514
+24-07,24,7,8.4,28.8,Recepción y Almacenamiento,rack,SKU0770
+24-08,24,8,9.6,28.8,Recepción y Almacenamiento,rack,SKU0055
+24-09,24,9,10.8,28.8,Recepción y Almacenamiento,rack,SKU0966
+24-10,24,10,12.0,28.8,Recepción y Almacenamiento,rack,SKU0192
+24-11,24,11,13.2,28.8,Recepción y Almacenamiento,rack,SKU1079
+24-12,24,12,14.4,28.8,Recepción y Almacenamiento,rack,SKU1674
+24-13,24,13,15.6,28.8,Picking,rack,SKU1612
+24-14,24,14,16.8,28.8,Picking,rack,SKU0366
+24-15,24,15,18.0,28.8,Picking,rack,SKU0710
+24-16,24,16,19.2,28.8,Picking,rack,SKU0554
+24-17,24,17,20.4,28.8,Picking,rack,SKU0274
+24-18,24,18,21.6,28.8,Picking,rack,SKU1513
+24-19,24,19,22.8,28.8,Picking,rack,SKU1305
+24-20,24,20,24.0,28.8,Picking,rack,SKU1152
+24-21,24,21,25.2,28.8,Picking,rack,SKU1415
+24-22,24,22,26.4,28.8,Picking,rack,SKU1646
+24-23,24,23,27.6,28.8,Picking,rack,SKU0809
+24-24,24,24,28.8,28.8,Picking,rack,SKU0288
+24-25,24,25,30.0,28.8,Picking,rack,SKU0036
+24-26,24,26,31.2,28.8,Picking,rack,SKU1652
+24-27,24,27,32.4,28.8,Empaque y Despacho,rack,SKU0683
+24-28,24,28,33.6,28.8,Empaque y Despacho,rack,SKU1128
+24-29,24,29,34.8,28.8,Empaque y Despacho,rack,SKU0063
+24-30,24,30,36.0,28.8,Empaque y Despacho,rack,SKU0587
+24-31,24,31,37.2,28.8,Empaque y Despacho,rack,SKU0673
+24-32,24,32,38.4,28.8,Empaque y Despacho,rack,SKU1113
+24-33,24,33,39.6,28.8,Empaque y Despacho,rack,SKU1452
+24-34,24,34,40.8,28.8,Empaque y Despacho,rack,SKU1711
+24-35,24,35,42.0,28.8,Empaque y Despacho,rack,SKU0135
+24-36,24,36,43.2,28.8,Empaque y Despacho,rack,SKU0148
+24-37,24,37,44.4,28.8,Empaque y Despacho,rack,SKU0747
+24-38,24,38,45.6,28.8,Empaque y Despacho,rack,SKU1733
+24-39,24,39,46.8,28.8,Empaque y Despacho,rack,SKU1504
+25-00,25,0,0.0,30.0,Recepción y Almacenamiento,rack,SKU1384
+25-01,25,1,1.2,30.0,Recepción y Almacenamiento,rack,SKU1534
+25-02,25,2,2.4,30.0,Recepción y Almacenamiento,rack,SKU0156
+25-03,25,3,3.6,30.0,Recepción y Almacenamiento,rack,SKU1460
+25-04,25,4,4.8,30.0,Recepción y Almacenamiento,rack,SKU0553
+25-05,25,5,6.0,30.0,Recepción y Almacenamiento,rack,SKU0744
+25-06,25,6,7.2,30.0,Recepción y Almacenamiento,rack,SKU1661
+25-07,25,7,8.4,30.0,Recepción y Almacenamiento,rack,SKU1141
+25-08,25,8,9.6,30.0,Recepción y Almacenamiento,rack,SKU0402
+25-09,25,9,10.8,30.0,Recepción y Almacenamiento,rack,SKU0667
+25-10,25,10,12.0,30.0,Recepción y Almacenamiento,rack,SKU0373
+25-11,25,11,13.2,30.0,Recepción y Almacenamiento,rack,SKU0334
+25-12,25,12,14.4,30.0,Recepción y Almacenamiento,rack,SKU0878
+25-13,25,13,15.6,30.0,Picking,rack,SKU1697
+25-14,25,14,16.8,30.0,Picking,rack,SKU0695
+25-15,25,15,18.0,30.0,Picking,rack,SKU0573
+25-16,25,16,19.2,30.0,Picking,rack,SKU0140
+25-17,25,17,20.4,30.0,Picking,rack,SKU0501
+25-18,25,18,21.6,30.0,Picking,rack,SKU0734
+25-19,25,19,22.8,30.0,Picking,rack,SKU1365
+25-20,25,20,24.0,30.0,Picking,rack,SKU0795
+25-21,25,21,25.2,30.0,Picking,rack,SKU1558
+25-22,25,22,26.4,30.0,Picking,rack,SKU0882
+25-23,25,23,27.6,30.0,Picking,rack,SKU0811
+25-24,25,24,28.8,30.0,Picking,rack,SKU0217
+25-25,25,25,30.0,30.0,Picking,rack,SKU1400
+25-26,25,26,31.2,30.0,Picking,rack,SKU0130
+25-27,25,27,32.4,30.0,Empaque y Despacho,rack,SKU1428
+25-28,25,28,33.6,30.0,Empaque y Despacho,rack,SKU0877
+25-29,25,29,34.8,30.0,Empaque y Despacho,rack,SKU0521
+25-30,25,30,36.0,30.0,Empaque y Despacho,rack,SKU1026
+25-31,25,31,37.2,30.0,Empaque y Despacho,rack,SKU1240
+25-32,25,32,38.4,30.0,Empaque y Despacho,rack,SKU0247
+25-33,25,33,39.6,30.0,Empaque y Despacho,rack,SKU1083
+25-34,25,34,40.8,30.0,Empaque y Despacho,rack,SKU0060
+25-35,25,35,42.0,30.0,Empaque y Despacho,rack,SKU1434
+25-36,25,36,43.2,30.0,Empaque y Despacho,rack,SKU1194
+25-37,25,37,44.4,30.0,Empaque y Despacho,rack,SKU1480
+25-38,25,38,45.6,30.0,Empaque y Despacho,rack,SKU0528
+25-39,25,39,46.8,30.0,Empaque y Despacho,rack,SKU1573
+26-00,26,0,0.0,31.2,Recepción y Almacenamiento,rack,SKU0160
+26-01,26,1,1.2,31.2,Recepción y Almacenamiento,rack,SKU0372
+26-02,26,2,2.4,31.2,Recepción y Almacenamiento,rack,SKU1285
+26-03,26,3,3.6,31.2,Recepción y Almacenamiento,rack,SKU0696
+26-04,26,4,4.8,31.2,Recepción y Almacenamiento,rack,SKU0652
+26-05,26,5,6.0,31.2,Recepción y Almacenamiento,rack,SKU1002
+26-06,26,6,7.2,31.2,Recepción y Almacenamiento,rack,SKU1167
+26-07,26,7,8.4,31.2,Recepción y Almacenamiento,rack,SKU1712
+26-08,26,8,9.6,31.2,Recepción y Almacenamiento,rack,SKU0989
+26-09,26,9,10.8,31.2,Recepción y Almacenamiento,rack,SKU0612
+26-10,26,10,12.0,31.2,Recepción y Almacenamiento,rack,SKU0133
+26-11,26,11,13.2,31.2,Recepción y Almacenamiento,rack,SKU0842
+26-12,26,12,14.4,31.2,Recepción y Almacenamiento,rack,SKU0111
+26-13,26,13,15.6,31.2,Picking,rack,SKU1492
+26-14,26,14,16.8,31.2,Picking,rack,SKU0623
+26-15,26,15,18.0,31.2,Picking,rack,SKU0820
+26-16,26,16,19.2,31.2,Picking,rack,SKU1461
+26-17,26,17,20.4,31.2,Picking,rack,SKU0753
+26-18,26,18,21.6,31.2,Picking,rack,SKU1593
+26-19,26,19,22.8,31.2,Picking,rack,SKU0955
+26-20,26,20,24.0,31.2,Picking,rack,SKU0520
+26-21,26,21,25.2,31.2,Picking,rack,SKU0750
+26-22,26,22,26.4,31.2,Picking,rack,SKU0985
+26-23,26,23,27.6,31.2,Picking,rack,SKU1126
+26-24,26,24,28.8,31.2,Picking,rack,SKU1076
+26-25,26,25,30.0,31.2,Picking,rack,SKU1004
+26-26,26,26,31.2,31.2,Picking,rack,SKU0076
+26-27,26,27,32.4,31.2,Empaque y Despacho,rack,SKU0513
+26-28,26,28,33.6,31.2,Empaque y Despacho,rack,SKU0670
+26-29,26,29,34.8,31.2,Empaque y Despacho,rack,SKU1001
+26-30,26,30,36.0,31.2,Empaque y Despacho,rack,SKU1319
+26-31,26,31,37.2,31.2,Empaque y Despacho,rack,SKU0983
+26-32,26,32,38.4,31.2,Empaque y Despacho,rack,SKU1296
+26-33,26,33,39.6,31.2,Empaque y Despacho,rack,SKU0712
+26-34,26,34,40.8,31.2,Empaque y Despacho,rack,SKU1281
+26-35,26,35,42.0,31.2,Empaque y Despacho,rack,SKU0699
+26-36,26,36,43.2,31.2,Empaque y Despacho,rack,SKU0965
+26-37,26,37,44.4,31.2,Empaque y Despacho,rack,SKU1458
+26-38,26,38,45.6,31.2,Empaque y Despacho,rack,SKU1735
+26-39,26,39,46.8,31.2,Empaque y Despacho,rack,SKU1417
+27-00,27,0,0.0,32.4,Recepción y Almacenamiento,estacion,
+27-01,27,1,1.2,32.4,Recepción y Almacenamiento,rack,SKU1247
+27-02,27,2,2.4,32.4,Recepción y Almacenamiento,rack,SKU0860
+27-03,27,3,3.6,32.4,Recepción y Almacenamiento,rack,SKU0555
+27-04,27,4,4.8,32.4,Recepción y Almacenamiento,rack,SKU0058
+27-05,27,5,6.0,32.4,Recepción y Almacenamiento,rack,SKU0222
+27-06,27,6,7.2,32.4,Recepción y Almacenamiento,rack,SKU0273
+27-07,27,7,8.4,32.4,Recepción y Almacenamiento,rack,SKU1069
+27-08,27,8,9.6,32.4,Recepción y Almacenamiento,rack,SKU0855
+27-09,27,9,10.8,32.4,Recepción y Almacenamiento,rack,SKU1382
+27-10,27,10,12.0,32.4,Recepción y Almacenamiento,rack,SKU0634
+27-11,27,11,13.2,32.4,Recepción y Almacenamiento,rack,SKU1215
+27-12,27,12,14.4,32.4,Recepción y Almacenamiento,rack,SKU0423
+27-13,27,13,15.6,32.4,Picking,rack,SKU0950
+27-14,27,14,16.8,32.4,Picking,rack,SKU1339
+27-15,27,15,18.0,32.4,Picking,rack,SKU0676
+27-16,27,16,19.2,32.4,Picking,rack,SKU0320
+27-17,27,17,20.4,32.4,Picking,rack,SKU0196
+27-18,27,18,21.6,32.4,Picking,rack,SKU1294
+27-19,27,19,22.8,32.4,Picking,rack,SKU1271
+27-20,27,20,24.0,32.4,Picking,rack,SKU1732
+27-21,27,21,25.2,32.4,Picking,rack,SKU0757
+27-22,27,22,26.4,32.4,Picking,rack,SKU0568
+27-23,27,23,27.6,32.4,Picking,rack,SKU1410
+27-24,27,24,28.8,32.4,Picking,rack,SKU1725
+27-25,27,25,30.0,32.4,Picking,rack,SKU0429
+27-26,27,26,31.2,32.4,Picking,rack,SKU0037
+27-27,27,27,32.4,32.4,Empaque y Despacho,rack,SKU1594
+27-28,27,28,33.6,32.4,Empaque y Despacho,rack,SKU1654
+27-29,27,29,34.8,32.4,Empaque y Despacho,rack,SKU1182
+27-30,27,30,36.0,32.4,Empaque y Despacho,rack,SKU1155
+27-31,27,31,37.2,32.4,Empaque y Despacho,rack,SKU1262
+27-32,27,32,38.4,32.4,Empaque y Despacho,rack,SKU0025
+27-33,27,33,39.6,32.4,Empaque y Despacho,rack,SKU0694
+27-34,27,34,40.8,32.4,Empaque y Despacho,rack,SKU0990
+27-35,27,35,42.0,32.4,Empaque y Despacho,rack,SKU1703
+27-36,27,36,43.2,32.4,Empaque y Despacho,rack,SKU0850
+27-37,27,37,44.4,32.4,Empaque y Despacho,rack,SKU0685
+27-38,27,38,45.6,32.4,Empaque y Despacho,rack,SKU0268
+27-39,27,39,46.8,32.4,Empaque y Despacho,estacion,
+28-00,28,0,0.0,33.6,Recepción y Almacenamiento,rack,SKU0517
+28-01,28,1,1.2,33.6,Recepción y Almacenamiento,rack,SKU0547
+28-02,28,2,2.4,33.6,Recepción y Almacenamiento,rack,SKU0022
+28-03,28,3,3.6,33.6,Recepción y Almacenamiento,rack,SKU0355
+28-04,28,4,4.8,33.6,Recepción y Almacenamiento,rack,SKU1127
+28-05,28,5,6.0,33.6,Recepción y Almacenamiento,rack,SKU0123
+28-06,28,6,7.2,33.6,Recepción y Almacenamiento,rack,SKU1578
+28-07,28,7,8.4,33.6,Recepción y Almacenamiento,rack,SKU0722
+28-08,28,8,9.6,33.6,Recepción y Almacenamiento,rack,SKU1336
+28-09,28,9,10.8,33.6,Recepción y Almacenamiento,rack,SKU0430
+28-10,28,10,12.0,33.6,Recepción y Almacenamiento,rack,SKU1614
+28-11,28,11,13.2,33.6,Recepción y Almacenamiento,rack,SKU1257
+28-12,28,12,14.4,33.6,Recepción y Almacenamiento,rack,SKU1172
+28-13,28,13,15.6,33.6,Picking,rack,SKU0195
+28-14,28,14,16.8,33.6,Picking,rack,SKU0690
+28-15,28,15,18.0,33.6,Picking,rack,SKU0839
+28-16,28,16,19.2,33.6,Picking,rack,SKU0675
+28-17,28,17,20.4,33.6,Picking,rack,SKU0045
+28-18,28,18,21.6,33.6,Picking,rack,SKU0819
+28-19,28,19,22.8,33.6,Picking,rack,SKU0822
+28-20,28,20,24.0,33.6,Picking,rack,SKU1643
+28-21,28,21,25.2,33.6,Picking,rack,SKU0602
+28-22,28,22,26.4,33.6,Picking,rack,SKU1145
+28-23,28,23,27.6,33.6,Picking,rack,SKU0253
+28-24,28,24,28.8,33.6,Picking,rack,SKU0294
+28-25,28,25,30.0,33.6,Picking,rack,SKU1163
+28-26,28,26,31.2,33.6,Picking,rack,SKU0480
+28-27,28,27,32.4,33.6,Empaque y Despacho,rack,SKU1430
+28-28,28,28,33.6,33.6,Empaque y Despacho,rack,SKU1451
+28-29,28,29,34.8,33.6,Empaque y Despacho,rack,SKU0298
+28-30,28,30,36.0,33.6,Empaque y Despacho,rack,SKU1475
+28-31,28,31,37.2,33.6,Empaque y Despacho,rack,SKU1465
+28-32,28,32,38.4,33.6,Empaque y Despacho,rack,SKU1610
+28-33,28,33,39.6,33.6,Empaque y Despacho,rack,SKU0656
+28-34,28,34,40.8,33.6,Empaque y Despacho,rack,SKU0242
+28-35,28,35,42.0,33.6,Empaque y Despacho,rack,SKU0674
+28-36,28,36,43.2,33.6,Empaque y Despacho,rack,SKU0549
+28-37,28,37,44.4,33.6,Empaque y Despacho,rack,SKU0884
+28-38,28,38,45.6,33.6,Empaque y Despacho,rack,SKU0262
+28-39,28,39,46.8,33.6,Empaque y Despacho,rack,SKU0905
+29-00,29,0,0.0,34.8,Recepción y Almacenamiento,rack,SKU1581
+29-01,29,1,1.2,34.8,Recepción y Almacenamiento,rack,SKU0436
+29-02,29,2,2.4,34.8,Recepción y Almacenamiento,rack,SKU0782
+29-03,29,3,3.6,34.8,Recepción y Almacenamiento,rack,SKU0840
+29-04,29,4,4.8,34.8,Recepción y Almacenamiento,rack,SKU1388
+29-05,29,5,6.0,34.8,Recepción y Almacenamiento,rack,SKU0714
+29-06,29,6,7.2,34.8,Recepción y Almacenamiento,rack,SKU0451
+29-07,29,7,8.4,34.8,Recepción y Almacenamiento,rack,SKU0949
+29-08,29,8,9.6,34.8,Recepción y Almacenamiento,rack,SKU1550
+29-09,29,9,10.8,34.8,Recepción y Almacenamiento,rack,SKU0362
+29-10,29,10,12.0,34.8,Recepción y Almacenamiento,rack,SKU1622
+29-11,29,11,13.2,34.8,Recepción y Almacenamiento,rack,SKU0826
+29-12,29,12,14.4,34.8,Recepción y Almacenamiento,rack,SKU1011
+29-13,29,13,15.6,34.8,Picking,rack,SKU0661
+29-14,29,14,16.8,34.8,Picking,rack,SKU0680
+29-15,29,15,18.0,34.8,Picking,rack,SKU1283
+29-16,29,16,19.2,34.8,Picking,rack,SKU1037
+29-17,29,17,20.4,34.8,Picking,rack,SKU0886
+29-18,29,18,21.6,34.8,Picking,rack,SKU0666
+29-19,29,19,22.8,34.8,Picking,rack,SKU0345
+29-20,29,20,24.0,34.8,Picking,rack,SKU0463
+29-21,29,21,25.2,34.8,Picking,rack,SKU1300
+29-22,29,22,26.4,34.8,Picking,rack,SKU1438
+29-23,29,23,27.6,34.8,Picking,rack,SKU1014
+29-24,29,24,28.8,34.8,Picking,rack,SKU0180
+29-25,29,25,30.0,34.8,Picking,rack,SKU0142
+29-26,29,26,31.2,34.8,Picking,rack,SKU0170
+29-27,29,27,32.4,34.8,Empaque y Despacho,rack,SKU0707
+29-28,29,28,33.6,34.8,Empaque y Despacho,rack,SKU1386
+29-29,29,29,34.8,34.8,Empaque y Despacho,rack,SKU0735
+29-30,29,30,36.0,34.8,Empaque y Despacho,rack,SKU0506
+29-31,29,31,37.2,34.8,Empaque y Despacho,rack,SKU1063
+29-32,29,32,38.4,34.8,Empaque y Despacho,rack,SKU1138
+29-33,29,33,39.6,34.8,Empaque y Despacho,rack,SKU1765
+29-34,29,34,40.8,34.8,Empaque y Despacho,rack,SKU1022
+29-35,29,35,42.0,34.8,Empaque y Despacho,rack,SKU0972
+29-36,29,36,43.2,34.8,Empaque y Despacho,rack,SKU1740
+29-37,29,37,44.4,34.8,Empaque y Despacho,rack,SKU0241
+29-38,29,38,45.6,34.8,Empaque y Despacho,rack,SKU0618
+29-39,29,39,46.8,34.8,Empaque y Despacho,rack,SKU0538
+30-00,30,0,0.0,36.0,Recepción y Almacenamiento,rack,SKU0781
+30-01,30,1,1.2,36.0,Recepción y Almacenamiento,rack,SKU0150
+30-02,30,2,2.4,36.0,Recepción y Almacenamiento,rack,SKU0220
+30-03,30,3,3.6,36.0,Recepción y Almacenamiento,rack,SKU1527
+30-04,30,4,4.8,36.0,Recepción y Almacenamiento,rack,SKU0669
+30-05,30,5,6.0,36.0,Recepción y Almacenamiento,rack,SKU1414
+30-06,30,6,7.2,36.0,Recepción y Almacenamiento,rack,SKU0260
+30-07,30,7,8.4,36.0,Recepción y Almacenamiento,rack,SKU0509
+30-08,30,8,9.6,36.0,Recepción y Almacenamiento,rack,SKU1525
+30-09,30,9,10.8,36.0,Recepción y Almacenamiento,rack,SKU1090
+30-10,30,10,12.0,36.0,Recepción y Almacenamiento,rack,SKU0443
+30-11,30,11,13.2,36.0,Recepción y Almacenamiento,rack,SKU0620
+30-12,30,12,14.4,36.0,Recepción y Almacenamiento,rack,SKU0754
+30-13,30,13,15.6,36.0,Picking,rack,SKU1409
+30-14,30,14,16.8,36.0,Picking,rack,SKU1279
+30-15,30,15,18.0,36.0,Picking,rack,SKU0005
+30-16,30,16,19.2,36.0,Picking,rack,SKU1055
+30-17,30,17,20.4,36.0,Picking,rack,SKU1707
+30-18,30,18,21.6,36.0,Picking,rack,SKU1416
+30-19,30,19,22.8,36.0,Picking,rack,SKU0336
+30-20,30,20,24.0,36.0,Picking,rack,SKU0297
+30-21,30,21,25.2,36.0,Picking,rack,SKU1105
+30-22,30,22,26.4,36.0,Picking,rack,SKU1309
+30-23,30,23,27.6,36.0,Picking,rack,SKU1304
+30-24,30,24,28.8,36.0,Picking,rack,SKU0061
+30-25,30,25,30.0,36.0,Picking,rack,SKU1243
+30-26,30,26,31.2,36.0,Picking,rack,SKU1526
+30-27,30,27,32.4,36.0,Empaque y Despacho,rack,SKU1101
+30-28,30,28,33.6,36.0,Empaque y Despacho,rack,SKU0729
+30-29,30,29,34.8,36.0,Empaque y Despacho,rack,SKU0866
+30-30,30,30,36.0,36.0,Empaque y Despacho,rack,SKU0984
+30-31,30,31,37.2,36.0,Empaque y Despacho,rack,SKU0020
+30-32,30,32,38.4,36.0,Empaque y Despacho,rack,SKU1500
+30-33,30,33,39.6,36.0,Empaque y Despacho,rack,SKU0796
+30-34,30,34,40.8,36.0,Empaque y Despacho,rack,SKU0275
+30-35,30,35,42.0,36.0,Empaque y Despacho,rack,SKU1582
+30-36,30,36,43.2,36.0,Empaque y Despacho,rack,SKU0585
+30-37,30,37,44.4,36.0,Empaque y Despacho,rack,SKU1501
+30-38,30,38,45.6,36.0,Empaque y Despacho,rack,SKU0605
+30-39,30,39,46.8,36.0,Empaque y Despacho,rack,SKU0600
+31-00,31,0,0.0,37.2,Recepción y Almacenamiento,rack,SKU1348
+31-01,31,1,1.2,37.2,Recepción y Almacenamiento,rack,SKU0389
+31-02,31,2,2.4,37.2,Recepción y Almacenamiento,rack,SKU1214
+31-03,31,3,3.6,37.2,Recepción y Almacenamiento,rack,SKU0086
+31-04,31,4,4.8,37.2,Recepción y Almacenamiento,rack,SKU0636
+31-05,31,5,6.0,37.2,Recepción y Almacenamiento,rack,SKU0536
+31-06,31,6,7.2,37.2,Recepción y Almacenamiento,rack,SKU1768
+31-07,31,7,8.4,37.2,Recepción y Almacenamiento,rack,SKU0684
+31-08,31,8,9.6,37.2,Recepción y Almacenamiento,rack,SKU1546
+31-09,31,9,10.8,37.2,Recepción y Almacenamiento,rack,SKU0291
+31-10,31,10,12.0,37.2,Recepción y Almacenamiento,rack,SKU0176
+31-11,31,11,13.2,37.2,Recepción y Almacenamiento,rack,SKU0215
+31-12,31,12,14.4,37.2,Recepción y Almacenamiento,rack,SKU1288
+31-13,31,13,15.6,37.2,Picking,rack,SKU0324
+31-14,31,14,16.8,37.2,Picking,rack,SKU1058
+31-15,31,15,18.0,37.2,Picking,rack,SKU1104
+31-16,31,16,19.2,37.2,Picking,rack,SKU0780
+31-17,31,17,20.4,37.2,Picking,rack,SKU0806
+31-18,31,18,21.6,37.2,Picking,rack,SKU1589
+31-19,31,19,22.8,37.2,Picking,rack,SKU1722
+31-20,31,20,24.0,37.2,Picking,rack,SKU0629
+31-21,31,21,25.2,37.2,Picking,rack,SKU1193
+31-22,31,22,26.4,37.2,Picking,rack,SKU0445
+31-23,31,23,27.6,37.2,Picking,rack,SKU1093
+31-24,31,24,28.8,37.2,Picking,rack,SKU0038
+31-25,31,25,30.0,37.2,Picking,rack,SKU0207
+31-26,31,26,31.2,37.2,Picking,rack,SKU1490
+31-27,31,27,32.4,37.2,Empaque y Despacho,rack,SKU0543
+31-28,31,28,33.6,37.2,Empaque y Despacho,rack,SKU1587
+31-29,31,29,34.8,37.2,Empaque y Despacho,rack,SKU0764
+31-30,31,30,36.0,37.2,Empaque y Despacho,rack,SKU0613
+31-31,31,31,37.2,37.2,Empaque y Despacho,rack,SKU1562
+31-32,31,32,38.4,37.2,Empaque y Despacho,rack,SKU0354
+31-33,31,33,39.6,37.2,Empaque y Despacho,rack,SKU1344
+31-34,31,34,40.8,37.2,Empaque y Despacho,rack,SKU0837
+31-35,31,35,42.0,37.2,Empaque y Despacho,rack,SKU1683
+31-36,31,36,43.2,37.2,Empaque y Despacho,rack,SKU1383
+31-37,31,37,44.4,37.2,Empaque y Despacho,rack,SKU1498
+31-38,31,38,45.6,37.2,Empaque y Despacho,rack,SKU0993
+31-39,31,39,46.8,37.2,Empaque y Despacho,rack,SKU0315
+32-00,32,0,0.0,38.4,Recepción y Almacenamiento,estacion,
+32-01,32,1,1.2,38.4,Recepción y Almacenamiento,rack,SKU0841
+32-02,32,2,2.4,38.4,Recepción y Almacenamiento,rack,SKU0325
+32-03,32,3,3.6,38.4,Recepción y Almacenamiento,rack,SKU0385
+32-04,32,4,4.8,38.4,Recepción y Almacenamiento,rack,SKU0640
+32-05,32,5,6.0,38.4,Recepción y Almacenamiento,rack,SKU1597
+32-06,32,6,7.2,38.4,Recepción y Almacenamiento,rack,SKU0971
+32-07,32,7,8.4,38.4,Recepción y Almacenamiento,rack,SKU1124
+32-08,32,8,9.6,38.4,Recepción y Almacenamiento,rack,SKU1625
+32-09,32,9,10.8,38.4,Recepción y Almacenamiento,rack,SKU0941
+32-10,32,10,12.0,38.4,Recepción y Almacenamiento,rack,SKU0736
+32-11,32,11,13.2,38.4,Recepción y Almacenamiento,rack,SKU0768
+32-12,32,12,14.4,38.4,Recepción y Almacenamiento,rack,SKU0412
+32-13,32,13,15.6,38.4,Picking,rack,SKU0704
+32-14,32,14,16.8,38.4,Picking,rack,SKU0565
+32-15,32,15,18.0,38.4,Picking,rack,SKU1684
+32-16,32,16,19.2,38.4,Picking,rack,SKU0477
+32-17,32,17,20.4,38.4,Picking,rack,SKU1640
+32-18,32,18,21.6,38.4,Picking,rack,SKU1511
+32-19,32,19,22.8,38.4,Picking,rack,SKU0309
+32-20,32,20,24.0,38.4,Picking,rack,SKU1042
+32-21,32,21,25.2,38.4,Picking,rack,SKU0455
+32-22,32,22,26.4,38.4,Picking,rack,SKU0120
+32-23,32,23,27.6,38.4,Picking,rack,SKU0964
+32-24,32,24,28.8,38.4,Picking,rack,SKU0498
+32-25,32,25,30.0,38.4,Picking,rack,SKU1286
+32-26,32,26,31.2,38.4,Picking,rack,SKU1749
+32-27,32,27,32.4,38.4,Empaque y Despacho,rack,SKU0116
+32-28,32,28,33.6,38.4,Empaque y Despacho,rack,SKU0651
+32-29,32,29,34.8,38.4,Empaque y Despacho,rack,SKU1551
+32-30,32,30,36.0,38.4,Empaque y Despacho,rack,SKU1297
+32-31,32,31,37.2,38.4,Empaque y Despacho,rack,SKU1731
+32-32,32,32,38.4,38.4,Empaque y Despacho,rack,SKU0544
+32-33,32,33,39.6,38.4,Empaque y Despacho,rack,SKU1053
+32-34,32,34,40.8,38.4,Empaque y Despacho,rack,SKU1748
+32-35,32,35,42.0,38.4,Empaque y Despacho,rack,SKU1133
+32-36,32,36,43.2,38.4,Empaque y Despacho,rack,SKU0368
+32-37,32,37,44.4,38.4,Empaque y Despacho,rack,SKU1730
+32-38,32,38,45.6,38.4,Empaque y Despacho,rack,SKU1216
+32-39,32,39,46.8,38.4,Empaque y Despacho,estacion,
+33-00,33,0,0.0,39.6,Recepción y Almacenamiento,rack,SKU1672
+33-01,33,1,1.2,39.6,Recepción y Almacenamiento,rack,SKU0284
+33-02,33,2,2.4,39.6,Recepción y Almacenamiento,rack,SKU1407
+33-03,33,3,3.6,39.6,Recepción y Almacenamiento,rack,SKU1425
+33-04,33,4,4.8,39.6,Recepción y Almacenamiento,rack,SKU1561
+33-05,33,5,6.0,39.6,Recepción y Almacenamiento,rack,SKU1655
+33-06,33,6,7.2,39.6,Recepción y Almacenamiento,rack,SKU1322
+33-07,33,7,8.4,39.6,Recepción y Almacenamiento,rack,SKU1411
+33-08,33,8,9.6,39.6,Recepción y Almacenamiento,rack,SKU0034
+33-09,33,9,10.8,39.6,Recepción y Almacenamiento,rack,SKU1394
+33-10,33,10,12.0,39.6,Recepción y Almacenamiento,rack,SKU0468
+33-11,33,11,13.2,39.6,Recepción y Almacenamiento,rack,SKU0303
+33-12,33,12,14.4,39.6,Recepción y Almacenamiento,rack,SKU0523
+33-13,33,13,15.6,39.6,Picking,rack,SKU0813
+33-14,33,14,16.8,39.6,Picking,rack,SKU1137
+33-15,33,15,18.0,39.6,Picking,rack,SKU1109
+33-16,33,16,19.2,39.6,Picking,rack,SKU1337
+33-17,33,17,20.4,39.6,Picking,rack,SKU1112
+33-18,33,18,21.6,39.6,Picking,rack,SKU0376
+33-19,33,19,22.8,39.6,Picking,rack,SKU0257
+33-20,33,20,24.0,39.6,Picking,rack,SKU0450
+33-21,33,21,25.2,39.6,Picking,rack,SKU0863
+33-22,33,22,26.4,39.6,Picking,rack,SKU0491
+33-23,33,23,27.6,39.6,Picking,rack,SKU0773
+33-24,33,24,28.8,39.6,Picking,rack,SKU0787
+33-25,33,25,30.0,39.6,Picking,rack,SKU0851
+33-26,33,26,31.2,39.6,Picking,rack,SKU1367
+33-27,33,27,32.4,39.6,Empaque y Despacho,rack,SKU0259
+33-28,33,28,33.6,39.6,Empaque y Despacho,rack,SKU1185
+33-29,33,29,34.8,39.6,Empaque y Despacho,rack,SKU0870
+33-30,33,30,36.0,39.6,Empaque y Despacho,rack,SKU0059
+33-31,33,31,37.2,39.6,Empaque y Despacho,rack,SKU0619
+33-32,33,32,38.4,39.6,Empaque y Despacho,rack,SKU1327
+33-33,33,33,39.6,39.6,Empaque y Despacho,rack,SKU1223
+33-34,33,34,40.8,39.6,Empaque y Despacho,rack,SKU0726
+33-35,33,35,42.0,39.6,Empaque y Despacho,rack,SKU1642
+33-36,33,36,43.2,39.6,Empaque y Despacho,rack,SKU0258
+33-37,33,37,44.4,39.6,Empaque y Despacho,rack,SKU0077
+33-38,33,38,45.6,39.6,Empaque y Despacho,rack,SKU0243
+33-39,33,39,46.8,39.6,Empaque y Despacho,rack,SKU1745
+34-00,34,0,0.0,40.8,Recepción y Almacenamiento,rack,SKU1268
+34-01,34,1,1.2,40.8,Recepción y Almacenamiento,rack,SKU0333
+34-02,34,2,2.4,40.8,Recepción y Almacenamiento,rack,SKU0231
+34-03,34,3,3.6,40.8,Recepción y Almacenamiento,rack,SKU0115
+34-04,34,4,4.8,40.8,Recepción y Almacenamiento,rack,SKU1149
+34-05,34,5,6.0,40.8,Recepción y Almacenamiento,rack,SKU0405
+34-06,34,6,7.2,40.8,Recepción y Almacenamiento,rack,SKU0702
+34-07,34,7,8.4,40.8,Recepción y Almacenamiento,rack,SKU1111
+34-08,34,8,9.6,40.8,Recepción y Almacenamiento,rack,SKU1496
+34-09,34,9,10.8,40.8,Recepción y Almacenamiento,rack,SKU1710
+34-10,34,10,12.0,40.8,Recepción y Almacenamiento,rack,SKU0654
+34-11,34,11,13.2,40.8,Recepción y Almacenamiento,rack,SKU0854
+34-12,34,12,14.4,40.8,Recepción y Almacenamiento,rack,SKU0609
+34-13,34,13,15.6,40.8,Picking,rack,SKU0251
+34-14,34,14,16.8,40.8,Picking,rack,SKU0594
+34-15,34,15,18.0,40.8,Picking,rack,SKU1453
+34-16,34,16,19.2,40.8,Picking,rack,SKU0577
+34-17,34,17,20.4,40.8,Picking,rack,SKU0049
+34-18,34,18,21.6,40.8,Picking,rack,SKU0895
+34-19,34,19,22.8,40.8,Picking,rack,SKU0119
+34-20,34,20,24.0,40.8,Picking,rack,SKU1418
+34-21,34,21,25.2,40.8,Picking,rack,SKU0598
+34-22,34,22,26.4,40.8,Picking,rack,SKU0797
+34-23,34,23,27.6,40.8,Picking,rack,SKU1741
+34-24,34,24,28.8,40.8,Picking,rack,SKU1027
+34-25,34,25,30.0,40.8,Picking,rack,SKU0767
+34-26,34,26,31.2,40.8,Picking,rack,SKU0245
+34-27,34,27,32.4,40.8,Empaque y Despacho,rack,SKU0873
+34-28,34,28,33.6,40.8,Empaque y Despacho,rack,SKU0948
+34-29,34,29,34.8,40.8,Empaque y Despacho,rack,SKU1217
+34-30,34,30,36.0,40.8,Empaque y Despacho,rack,SKU0442
+34-31,34,31,37.2,40.8,Empaque y Despacho,rack,SKU1245
+34-32,34,32,38.4,40.8,Empaque y Despacho,rack,SKU0648
+34-33,34,33,39.6,40.8,Empaque y Despacho,rack,SKU0828
+34-34,34,34,40.8,40.8,Empaque y Despacho,rack,SKU0078
+34-35,34,35,42.0,40.8,Empaque y Despacho,rack,SKU1260
+34-36,34,36,43.2,40.8,Empaque y Despacho,rack,SKU1341
+34-37,34,37,44.4,40.8,Empaque y Despacho,rack,SKU1282
+34-38,34,38,45.6,40.8,Empaque y Despacho,rack,SKU1244
+34-39,34,39,46.8,40.8,Empaque y Despacho,rack,SKU0934
+35-00,35,0,0.0,42.0,Recepción y Almacenamiento,rack,SKU0646
+35-01,35,1,1.2,42.0,Recepción y Almacenamiento,rack,SKU0718
+35-02,35,2,2.4,42.0,Recepción y Almacenamiento,rack,SKU1181
+35-03,35,3,3.6,42.0,Recepción y Almacenamiento,rack,SKU1150
+35-04,35,4,4.8,42.0,Recepción y Almacenamiento,rack,SKU0193
+35-05,35,5,6.0,42.0,Recepción y Almacenamiento,rack,SKU0252
+35-06,35,6,7.2,42.0,Recepción y Almacenamiento,rack,SKU0635
+35-07,35,7,8.4,42.0,Recepción y Almacenamiento,rack,SKU0048
+35-08,35,8,9.6,42.0,Recepción y Almacenamiento,rack,SKU0482
+35-09,35,9,10.8,42.0,Recepción y Almacenamiento,rack,SKU1424
+35-10,35,10,12.0,42.0,Recepción y Almacenamiento,rack,SKU0118
+35-11,35,11,13.2,42.0,Recepción y Almacenamiento,rack,SKU0032
+35-12,35,12,14.4,42.0,Recepción y Almacenamiento,rack,SKU1482
+35-13,35,13,15.6,42.0,Picking,rack,SKU0527
+35-14,35,14,16.8,42.0,Picking,rack,SKU1554
+35-15,35,15,18.0,42.0,Picking,rack,SKU1548
+35-16,35,16,19.2,42.0,Picking,rack,SKU0129
+35-17,35,17,20.4,42.0,Picking,rack,SKU0525
+35-18,35,18,21.6,42.0,Picking,rack,SKU0535
+35-19,35,19,22.8,42.0,Picking,rack,SKU0331
+35-20,35,20,24.0,42.0,Picking,rack,SKU0645
+35-21,35,21,25.2,42.0,Picking,rack,SKU0597
+35-22,35,22,26.4,42.0,Picking,rack,SKU0131
+35-23,35,23,27.6,42.0,Picking,rack,SKU1568
+35-24,35,24,28.8,42.0,Picking,rack,SKU0567
+35-25,35,25,30.0,42.0,Picking,rack,SKU0643
+35-26,35,26,31.2,42.0,Picking,rack,SKU1705
+35-27,35,27,32.4,42.0,Empaque y Despacho,rack,SKU1421
+35-28,35,28,33.6,42.0,Empaque y Despacho,rack,SKU1291
+35-29,35,29,34.8,42.0,Empaque y Despacho,rack,SKU1454
+35-30,35,30,36.0,42.0,Empaque y Despacho,rack,SKU0380
+35-31,35,31,37.2,42.0,Empaque y Despacho,rack,SKU0730
+35-32,35,32,38.4,42.0,Empaque y Despacho,rack,SKU0124
+35-33,35,33,39.6,42.0,Empaque y Despacho,rack,SKU1402
+35-34,35,34,40.8,42.0,Empaque y Despacho,rack,SKU1547
+35-35,35,35,42.0,42.0,Empaque y Despacho,rack,SKU0351
+35-36,35,36,43.2,42.0,Empaque y Despacho,rack,SKU0894
+35-37,35,37,44.4,42.0,Empaque y Despacho,rack,SKU1607
+35-38,35,38,45.6,42.0,Empaque y Despacho,rack,SKU0541
+35-39,35,39,46.8,42.0,Empaque y Despacho,rack,SKU0208
+36-00,36,0,0.0,43.2,Recepción y Almacenamiento,rack,SKU0272
+36-01,36,1,1.2,43.2,Recepción y Almacenamiento,rack,SKU1671
+36-02,36,2,2.4,43.2,Recepción y Almacenamiento,rack,SKU1450
+36-03,36,3,3.6,43.2,Recepción y Almacenamiento,rack,SKU1586
+36-04,36,4,4.8,43.2,Recepción y Almacenamiento,rack,SKU1153
+36-05,36,5,6.0,43.2,Recepción y Almacenamiento,rack,SKU0604
+36-06,36,6,7.2,43.2,Recepción y Almacenamiento,rack,SKU1168
+36-07,36,7,8.4,43.2,Recepción y Almacenamiento,rack,SKU0440
+36-08,36,8,9.6,43.2,Recepción y Almacenamiento,rack,SKU1164
+36-09,36,9,10.8,43.2,Recepción y Almacenamiento,rack,SKU1139
+36-10,36,10,12.0,43.2,Recepción y Almacenamiento,rack,SKU0575
+36-11,36,11,13.2,43.2,Recepción y Almacenamiento,rack,SKU1590
+36-12,36,12,14.4,43.2,Recepción y Almacenamiento,rack,SKU0225
+36-13,36,13,15.6,43.2,Picking,rack,SKU0444
+36-14,36,14,16.8,43.2,Picking,rack,SKU1103
+36-15,36,15,18.0,43.2,Picking,rack,SKU1769
+36-16,36,16,19.2,43.2,Picking,rack,SKU1408
+36-17,36,17,20.4,43.2,Picking,rack,SKU1151
+36-18,36,18,21.6,43.2,Picking,rack,SKU1447
+36-19,36,19,22.8,43.2,Picking,rack,SKU0322
+36-20,36,20,24.0,43.2,Picking,rack,SKU0721
+36-21,36,21,25.2,43.2,Picking,rack,SKU0056
+36-22,36,22,26.4,43.2,Picking,rack,SKU0374
+36-23,36,23,27.6,43.2,Picking,rack,SKU1373
+36-24,36,24,28.8,43.2,Picking,rack,SKU1117
+36-25,36,25,30.0,43.2,Picking,rack,SKU0836
+36-26,36,26,31.2,43.2,Picking,rack,SKU0677
+36-27,36,27,32.4,43.2,Empaque y Despacho,rack,SKU1494
+36-28,36,28,33.6,43.2,Empaque y Despacho,rack,SKU0931
+36-29,36,29,34.8,43.2,Empaque y Despacho,rack,SKU0191
+36-30,36,30,36.0,43.2,Empaque y Despacho,rack,SKU1580
+36-31,36,31,37.2,43.2,Empaque y Despacho,rack,SKU0474
+36-32,36,32,38.4,43.2,Empaque y Despacho,rack,SKU0439
+36-33,36,33,39.6,43.2,Empaque y Despacho,rack,SKU0194
+36-34,36,34,40.8,43.2,Empaque y Despacho,rack,SKU0561
+36-35,36,35,42.0,43.2,Empaque y Despacho,rack,SKU1699
+36-36,36,36,43.2,43.2,Empaque y Despacho,rack,SKU1080
+36-37,36,37,44.4,43.2,Empaque y Despacho,rack,SKU0246
+36-38,36,38,45.6,43.2,Empaque y Despacho,rack,SKU0911
+36-39,36,39,46.8,43.2,Empaque y Despacho,rack,SKU1675
+37-00,37,0,0.0,44.4,Recepción y Almacenamiento,estacion,
+37-01,37,1,1.2,44.4,Recepción y Almacenamiento,rack,SKU1064
+37-02,37,2,2.4,44.4,Recepción y Almacenamiento,rack,SKU1532
+37-03,37,3,3.6,44.4,Recepción y Almacenamiento,rack,SKU0363
+37-04,37,4,4.8,44.4,Recepción y Almacenamiento,rack,SKU0958
+37-05,37,5,6.0,44.4,Recepción y Almacenamiento,rack,SKU1767
+37-06,37,6,7.2,44.4,Recepción y Almacenamiento,rack,SKU0852
+37-07,37,7,8.4,44.4,Recepción y Almacenamiento,rack,SKU1530
+37-08,37,8,9.6,44.4,Recepción y Almacenamiento,rack,SKU0951
+37-09,37,9,10.8,44.4,Recepción y Almacenamiento,rack,SKU0540
+37-10,37,10,12.0,44.4,Recepción y Almacenamiento,rack,SKU0358
+37-11,37,11,13.2,44.4,Recepción y Almacenamiento,rack,SKU0705
+37-12,37,12,14.4,44.4,Recepción y Almacenamiento,rack,SKU0384
+37-13,37,13,15.6,44.4,Picking,rack,SKU0625
+37-14,37,14,16.8,44.4,Picking,rack,SKU0785
+37-15,37,15,18.0,44.4,Picking,rack,SKU0162
+37-16,37,16,19.2,44.4,Picking,rack,SKU0849
+37-17,37,17,20.4,44.4,Picking,rack,SKU1092
+37-18,37,18,21.6,44.4,Picking,rack,SKU1615
+37-19,37,19,22.8,44.4,Picking,rack,SKU0559
+37-20,37,20,24.0,44.4,Picking,rack,SKU0799
+37-21,37,21,25.2,44.4,Picking,rack,SKU0381
+37-22,37,22,26.4,44.4,Picking,rack,SKU1355
+37-23,37,23,27.6,44.4,Picking,rack,SKU0329
+37-24,37,24,28.8,44.4,Picking,rack,SKU0283
+37-25,37,25,30.0,44.4,Picking,rack,SKU1059
+37-26,37,26,31.2,44.4,Picking,rack,SKU0448
+37-27,37,27,32.4,44.4,Empaque y Despacho,rack,SKU1086
+37-28,37,28,33.6,44.4,Empaque y Despacho,rack,SKU1323
+37-29,37,29,34.8,44.4,Empaque y Despacho,rack,SKU1687
+37-30,37,30,36.0,44.4,Empaque y Despacho,rack,SKU0042
+37-31,37,31,37.2,44.4,Empaque y Despacho,rack,SKU1515
+37-32,37,32,38.4,44.4,Empaque y Despacho,rack,SKU1457
+37-33,37,33,39.6,44.4,Empaque y Despacho,rack,SKU0991
+37-34,37,34,40.8,44.4,Empaque y Despacho,rack,SKU0387
+37-35,37,35,42.0,44.4,Empaque y Despacho,rack,SKU1313
+37-36,37,36,43.2,44.4,Empaque y Despacho,rack,SKU0926
+37-37,37,37,44.4,44.4,Empaque y Despacho,rack,SKU0099
+37-38,37,38,45.6,44.4,Empaque y Despacho,rack,SKU1116
+37-39,37,39,46.8,44.4,Empaque y Despacho,estacion,
+38-00,38,0,0.0,45.6,Recepción y Almacenamiento,rack,SKU1328
+38-01,38,1,1.2,45.6,Recepción y Almacenamiento,rack,SKU0093
+38-02,38,2,2.4,45.6,Recepción y Almacenamiento,rack,SKU0356
+38-03,38,3,3.6,45.6,Recepción y Almacenamiento,rack,SKU1778
+38-04,38,4,4.8,45.6,Recepción y Almacenamiento,rack,SKU0401
+38-05,38,5,6.0,45.6,Recepción y Almacenamiento,rack,SKU0070
+38-06,38,6,7.2,45.6,Recepción y Almacenamiento,rack,SKU0818
+38-07,38,7,8.4,45.6,Recepción y Almacenamiento,rack,SKU1121
+38-08,38,8,9.6,45.6,Recepción y Almacenamiento,rack,SKU0143
+38-09,38,9,10.8,45.6,Recepción y Almacenamiento,rack,SKU1717
+38-10,38,10,12.0,45.6,Recepción y Almacenamiento,rack,SKU1390
+38-11,38,11,13.2,45.6,Recepción y Almacenamiento,rack,SKU0478
+38-12,38,12,14.4,45.6,Recepción y Almacenamiento,rack,SKU1226
+38-13,38,13,15.6,45.6,Picking,rack,SKU0940
+38-14,38,14,16.8,45.6,Picking,rack,SKU0689
+38-15,38,15,18.0,45.6,Picking,rack,SKU1277
+38-16,38,16,19.2,45.6,Picking,rack,SKU0889
+38-17,38,17,20.4,45.6,Picking,rack,SKU0424
+38-18,38,18,21.6,45.6,Picking,rack,SKU1065
+38-19,38,19,22.8,45.6,Picking,rack,SKU1211
+38-20,38,20,24.0,45.6,Picking,rack,SKU0316
+38-21,38,21,25.2,45.6,Picking,rack,SKU0350
+38-22,38,22,26.4,45.6,Picking,rack,SKU1267
+38-23,38,23,27.6,45.6,Picking,rack,SKU1171
+38-24,38,24,28.8,45.6,Picking,rack,SKU1635
+38-25,38,25,30.0,45.6,Picking,rack,SKU1020
+38-26,38,26,31.2,45.6,Picking,rack,SKU0249
+38-27,38,27,32.4,45.6,Empaque y Despacho,rack,SKU0668
+38-28,38,28,33.6,45.6,Empaque y Despacho,rack,SKU0922
+38-29,38,29,34.8,45.6,Empaque y Despacho,rack,SKU0622
+38-30,38,30,36.0,45.6,Empaque y Despacho,rack,SKU1399
+38-31,38,31,37.2,45.6,Empaque y Despacho,rack,SKU0672
+38-32,38,32,38.4,45.6,Empaque y Despacho,rack,SKU0975
+38-33,38,33,39.6,45.6,Empaque y Despacho,rack,SKU1046
+38-34,38,34,40.8,45.6,Empaque y Despacho,rack,SKU1588
+38-35,38,35,42.0,45.6,Empaque y Despacho,rack,SKU0053
+38-36,38,36,43.2,45.6,Empaque y Despacho,rack,SKU0724
+38-37,38,37,44.4,45.6,Empaque y Despacho,rack,SKU1324
+38-38,38,38,45.6,45.6,Empaque y Despacho,rack,SKU0711
+38-39,38,39,46.8,45.6,Empaque y Despacho,rack,SKU0106
+39-00,39,0,0.0,46.8,Recepción y Almacenamiento,rack,SKU0151
+39-01,39,1,1.2,46.8,Recepción y Almacenamiento,rack,SKU0798
+39-02,39,2,2.4,46.8,Recepción y Almacenamiento,rack,SKU0218
+39-03,39,3,3.6,46.8,Recepción y Almacenamiento,rack,SKU1601
+39-04,39,4,4.8,46.8,Recepción y Almacenamiento,rack,SKU1737
+39-05,39,5,6.0,46.8,Recepción y Almacenamiento,rack,SKU0403
+39-06,39,6,7.2,46.8,Recepción y Almacenamiento,rack,SKU1066
+39-07,39,7,8.4,46.8,Recepción y Almacenamiento,rack,SKU0305
+39-08,39,8,9.6,46.8,Recepción y Almacenamiento,rack,SKU0800
+39-09,39,9,10.8,46.8,Recepción y Almacenamiento,rack,SKU0844
+39-10,39,10,12.0,46.8,Recepción y Almacenamiento,rack,SKU1040
+39-11,39,11,13.2,46.8,Recepción y Almacenamiento,rack,SKU0627
+39-12,39,12,14.4,46.8,Recepción y Almacenamiento,rack,SKU1201
+39-13,39,13,15.6,46.8,Picking,rack,SKU0278
+39-14,39,14,16.8,46.8,Picking,rack,SKU0328
+39-15,39,15,18.0,46.8,Picking,rack,SKU1585
+39-16,39,16,19.2,46.8,Picking,rack,SKU0856
+39-17,39,17,20.4,46.8,Picking,rack,SKU0173
+39-18,39,18,21.6,46.8,Picking,rack,SKU0596
+39-19,39,19,22.8,46.8,Picking,rack,SKU1034
+39-20,39,20,24.0,46.8,Picking,rack,SKU1637
+39-21,39,21,25.2,46.8,Picking,rack,SKU1225
+39-22,39,22,26.4,46.8,Picking,rack,SKU0269
+39-23,39,23,27.6,46.8,Picking,rack,SKU1205
+39-24,39,24,28.8,46.8,Picking,rack,SKU0969
+39-25,39,25,30.0,46.8,Picking,rack,SKU0457
+39-26,39,26,31.2,46.8,Picking,rack,SKU1666
+39-27,39,27,32.4,46.8,Empaque y Despacho,rack,SKU0277
+39-28,39,28,33.6,46.8,Empaque y Despacho,rack,SKU1476
+39-29,39,29,34.8,46.8,Empaque y Despacho,rack,SKU1413
+39-30,39,30,36.0,46.8,Empaque y Despacho,rack,SKU1008
+39-31,39,31,37.2,46.8,Empaque y Despacho,rack,SKU1177
+39-32,39,32,38.4,46.8,Empaque y Despacho,rack,SKU1195
+39-33,39,33,39.6,46.8,Empaque y Despacho,rack,SKU1362
+39-34,39,34,40.8,46.8,Empaque y Despacho,rack,SKU0642
+39-35,39,35,42.0,46.8,Empaque y Despacho,rack,SKU0011
+39-36,39,36,43.2,46.8,Empaque y Despacho,rack,SKU0317
+39-37,39,37,44.4,46.8,Empaque y Despacho,rack,SKU0732
+39-38,39,38,45.6,46.8,Empaque y Despacho,rack,SKU1302
+39-39,39,39,46.8,46.8,Empaque y Despacho,rack,SKU1552
+40-00,40,0,0.0,48.0,Recepción y Almacenamiento,rack,SKU1370
+40-01,40,1,1.2,48.0,Recepción y Almacenamiento,rack,SKU0550
+40-02,40,2,2.4,48.0,Recepción y Almacenamiento,rack,SKU1596
+40-03,40,3,3.6,48.0,Recepción y Almacenamiento,rack,SKU1540
+40-04,40,4,4.8,48.0,Recepción y Almacenamiento,rack,SKU0092
+40-05,40,5,6.0,48.0,Recepción y Almacenamiento,rack,SKU1272
+40-06,40,6,7.2,48.0,Recepción y Almacenamiento,rack,SKU0248
+40-07,40,7,8.4,48.0,Recepción y Almacenamiento,rack,SKU0508
+40-08,40,8,9.6,48.0,Recepción y Almacenamiento,rack,SKU0408
+40-09,40,9,10.8,48.0,Recepción y Almacenamiento,rack,SKU1250
+40-10,40,10,12.0,48.0,Recepción y Almacenamiento,rack,SKU0171
+40-11,40,11,13.2,48.0,Recepción y Almacenamiento,rack,SKU1120
+40-12,40,12,14.4,48.0,Recepción y Almacenamiento,rack,SKU1190
+40-13,40,13,15.6,48.0,Picking,rack,SKU0925
+40-14,40,14,16.8,48.0,Picking,rack,SKU0001
+40-15,40,15,18.0,48.0,Picking,rack,SKU0189
+40-16,40,16,19.2,48.0,Picking,rack,SKU0029
+40-17,40,17,20.4,48.0,Picking,rack,SKU1750
+40-18,40,18,21.6,48.0,Picking,rack,SKU0300
+40-19,40,19,22.8,48.0,Picking,rack,SKU0843
+40-20,40,20,24.0,48.0,Picking,rack,SKU1531
+40-21,40,21,25.2,48.0,Picking,rack,SKU0399
+40-22,40,22,26.4,48.0,Picking,rack,SKU0198
+40-23,40,23,27.6,48.0,Picking,rack,SKU0759
+40-24,40,24,28.8,48.0,Picking,rack,SKU1708
+40-25,40,25,30.0,48.0,Picking,rack,SKU0546
+40-26,40,26,31.2,48.0,Picking,rack,SKU1329
+40-27,40,27,32.4,48.0,Empaque y Despacho,rack,SKU0132
+40-28,40,28,33.6,48.0,Empaque y Despacho,rack,SKU1695
+40-29,40,29,34.8,48.0,Empaque y Despacho,rack,SKU1491
+40-30,40,30,36.0,48.0,Empaque y Despacho,rack,SKU1706
+40-31,40,31,37.2,48.0,Empaque y Despacho,rack,SKU0375
+40-32,40,32,38.4,48.0,Empaque y Despacho,rack,SKU0928
+40-33,40,33,39.6,48.0,Empaque y Despacho,rack,SKU0531
+40-34,40,34,40.8,48.0,Empaque y Despacho,rack,SKU1056
+40-35,40,35,42.0,48.0,Empaque y Despacho,rack,SKU1608
+40-36,40,36,43.2,48.0,Empaque y Despacho,rack,SKU1721
+40-37,40,37,44.4,48.0,Empaque y Despacho,rack,SKU1412
+40-38,40,38,45.6,48.0,Empaque y Despacho,rack,SKU0898
+40-39,40,39,46.8,48.0,Empaque y Despacho,rack,SKU0202
+41-00,41,0,0.0,49.2,Recepción y Almacenamiento,rack,SKU0938
+41-01,41,1,1.2,49.2,Recepción y Almacenamiento,rack,SKU0649
+41-02,41,2,2.4,49.2,Recepción y Almacenamiento,rack,SKU0595
+41-03,41,3,3.6,49.2,Recepción y Almacenamiento,rack,SKU0069
+41-04,41,4,4.8,49.2,Recepción y Almacenamiento,rack,SKU1360
+41-05,41,5,6.0,49.2,Recepción y Almacenamiento,rack,SKU1143
+41-06,41,6,7.2,49.2,Recepción y Almacenamiento,rack,SKU0890
+41-07,41,7,8.4,49.2,Recepción y Almacenamiento,rack,SKU1019
+41-08,41,8,9.6,49.2,Recepción y Almacenamiento,rack,SKU1571
+41-09,41,9,10.8,49.2,Recepción y Almacenamiento,rack,SKU1048
+41-10,41,10,12.0,49.2,Recepción y Almacenamiento,rack,SKU0956
+41-11,41,11,13.2,49.2,Recepción y Almacenamiento,rack,SKU0995
+41-12,41,12,14.4,49.2,Recepción y Almacenamiento,rack,SKU1419
+41-13,41,13,15.6,49.2,Picking,rack,SKU0533
+41-14,41,14,16.8,49.2,Picking,rack,SKU0410
+41-15,41,15,18.0,49.2,Picking,rack,SKU0738
+41-16,41,16,19.2,49.2,Picking,rack,SKU1003
+41-17,41,17,20.4,49.2,Picking,rack,SKU1071
+41-18,41,18,21.6,49.2,Picking,rack,SKU0939
+41-19,41,19,22.8,49.2,Picking,rack,SKU1224
+41-20,41,20,24.0,49.2,Picking,rack,SKU1343
+41-21,41,21,25.2,49.2,Picking,rack,SKU0307
+41-22,41,22,26.4,49.2,Picking,rack,SKU0068
+41-23,41,23,27.6,49.2,Picking,rack,SKU0019
+41-24,41,24,28.8,49.2,Picking,rack,SKU0551
+41-25,41,25,30.0,49.2,Picking,rack,SKU0603
+41-26,41,26,31.2,49.2,Picking,rack,SKU0415
+41-27,41,27,32.4,49.2,Empaque y Despacho,rack,SKU0887
+41-28,41,28,33.6,49.2,Empaque y Despacho,rack,SKU1663
+41-29,41,29,34.8,49.2,Empaque y Despacho,rack,SKU1692
+41-30,41,30,36.0,49.2,Empaque y Despacho,rack,SKU0981
+41-31,41,31,37.2,49.2,Empaque y Despacho,rack,SKU1431
+41-32,41,32,38.4,49.2,Empaque y Despacho,rack,SKU1028
+41-33,41,33,39.6,49.2,Empaque y Despacho,rack,SKU1325
+41-34,41,34,40.8,49.2,Empaque y Despacho,rack,SKU1638
+41-35,41,35,42.0,49.2,Empaque y Despacho,rack,SKU1123
+41-36,41,36,43.2,49.2,Empaque y Despacho,rack,SKU0631
+41-37,41,37,44.4,49.2,Empaque y Despacho,rack,SKU1372
+41-38,41,38,45.6,49.2,Empaque y Despacho,rack,SKU0824
+41-39,41,39,46.8,49.2,Empaque y Despacho,rack,SKU1147
+42-00,42,0,0.0,50.4,Recepción y Almacenamiento,estacion,
+42-01,42,1,1.2,50.4,Recepción y Almacenamiento,rack,SKU0515
+42-02,42,2,2.4,50.4,Recepción y Almacenamiento,rack,SKU1118
+42-03,42,3,3.6,50.4,Recepción y Almacenamiento,rack,SKU1464
+42-04,42,4,4.8,50.4,Recepción y Almacenamiento,rack,SKU0962
+42-05,42,5,6.0,50.4,Recepción y Almacenamiento,rack,SKU1381
+42-06,42,6,7.2,50.4,Recepción y Almacenamiento,rack,SKU0936
+42-07,42,7,8.4,50.4,Recepción y Almacenamiento,rack,SKU1436
+42-08,42,8,9.6,50.4,Recepción y Almacenamiento,rack,SKU1284
+42-09,42,9,10.8,50.4,Recepción y Almacenamiento,rack,SKU0250
+42-10,42,10,12.0,50.4,Recepción y Almacenamiento,rack,SKU0469
+42-11,42,11,13.2,50.4,Recepción y Almacenamiento,rack,SKU0988
+42-12,42,12,14.4,50.4,Recepción y Almacenamiento,rack,SKU0292
+42-13,42,13,15.6,50.4,Picking,rack,SKU0963
+42-14,42,14,16.8,50.4,Picking,rack,SKU0880
+42-15,42,15,18.0,50.4,Picking,rack,SKU1275
+42-16,42,16,19.2,50.4,Picking,rack,SKU1470
+42-17,42,17,20.4,50.4,Picking,rack,SKU1776
+42-18,42,18,21.6,50.4,Picking,rack,SKU1374
+42-19,42,19,22.8,50.4,Picking,rack,SKU1072
+42-20,42,20,24.0,50.4,Picking,rack,SKU1444
+42-21,42,21,25.2,50.4,Picking,rack,SKU0101
+42-22,42,22,26.4,50.4,Picking,rack,SKU1676
+42-23,42,23,27.6,50.4,Picking,rack,SKU0265
+42-24,42,24,28.8,50.4,Picking,rack,SKU1569
+42-25,42,25,30.0,50.4,Picking,rack,SKU0460
+42-26,42,26,31.2,50.4,Picking,rack,SKU1179
+42-27,42,27,32.4,50.4,Empaque y Despacho,rack,SKU0052
+42-28,42,28,33.6,50.4,Empaque y Despacho,rack,SKU1738
+42-29,42,29,34.8,50.4,Empaque y Despacho,rack,SKU1061
+42-30,42,30,36.0,50.4,Empaque y Despacho,rack,SKU1051
+42-31,42,31,37.2,50.4,Empaque y Despacho,rack,SKU0982
+42-32,42,32,38.4,50.4,Empaque y Despacho,rack,SKU1156
+42-33,42,33,39.6,50.4,Empaque y Despacho,rack,SKU0861
+42-34,42,34,40.8,50.4,Empaque y Despacho,rack,SKU0530
+42-35,42,35,42.0,50.4,Empaque y Despacho,rack,SKU1075
+42-36,42,36,43.2,50.4,Empaque y Despacho,rack,SKU0816
+42-37,42,37,44.4,50.4,Empaque y Despacho,rack,SKU1763
+42-38,42,38,45.6,50.4,Empaque y Despacho,rack,SKU1230
+42-39,42,39,46.8,50.4,Empaque y Despacho,estacion,
+43-00,43,0,0.0,51.6,Recepción y Almacenamiento,rack,SKU1537
+43-01,43,1,1.2,51.6,Recepción y Almacenamiento,rack,SKU1644
+43-02,43,2,2.4,51.6,Recepción y Almacenamiento,rack,SKU1038
+43-03,43,3,3.6,51.6,Recepción y Almacenamiento,rack,SKU0872
+43-04,43,4,4.8,51.6,Recepción y Almacenamiento,rack,SKU0239
+43-05,43,5,6.0,51.6,Recepción y Almacenamiento,rack,SKU1021
+43-06,43,6,7.2,51.6,Recepción y Almacenamiento,rack,SKU1136
+43-07,43,7,8.4,51.6,Recepción y Almacenamiento,rack,SKU1200
+43-08,43,8,9.6,51.6,Recepción y Almacenamiento,rack,SKU0817
+43-09,43,9,10.8,51.6,Recepción y Almacenamiento,rack,SKU0186
+43-10,43,10,12.0,51.6,Recepción y Almacenamiento,rack,SKU0865
+43-11,43,11,13.2,51.6,Recepción y Almacenamiento,rack,SKU0945
+43-12,43,12,14.4,51.6,Recepción y Almacenamiento,rack,SKU0745
+43-13,43,13,15.6,51.6,Picking,rack,SKU0756
+43-14,43,14,16.8,51.6,Picking,rack,SKU1456
+43-15,43,15,18.0,51.6,Picking,rack,SKU0051
+43-16,43,16,19.2,51.6,Picking,rack,SKU0633
+43-17,43,17,20.4,51.6,Picking,rack,SKU1183
+43-18,43,18,21.6,51.6,Picking,rack,SKU1468
+43-19,43,19,22.8,51.6,Picking,rack,SKU1442
+43-20,43,20,24.0,51.6,Picking,rack,SKU1321
+43-21,43,21,25.2,51.6,Picking,rack,SKU0289
+43-22,43,22,26.4,51.6,Picking,rack,SKU0937
+43-23,43,23,27.6,51.6,Picking,rack,SKU0590
+43-24,43,24,28.8,51.6,Picking,rack,SKU0599
+43-25,43,25,30.0,51.6,Picking,rack,SKU1102
+43-26,43,26,31.2,51.6,Picking,rack,SKU1142
+43-27,43,27,32.4,51.6,Empaque y Despacho,rack,SKU0184
+43-28,43,28,33.6,51.6,Empaque y Despacho,rack,SKU0698
+43-29,43,29,34.8,51.6,Empaque y Despacho,rack,SKU1481
+43-30,43,30,36.0,51.6,Empaque y Despacho,rack,SKU0157
+43-31,43,31,37.2,51.6,Empaque y Despacho,rack,SKU1307
+43-32,43,32,38.4,51.6,Empaque y Despacho,rack,SKU1052
+43-33,43,33,39.6,51.6,Empaque y Despacho,rack,SKU1528
+43-34,43,34,40.8,51.6,Empaque y Despacho,rack,SKU0771
+43-35,43,35,42.0,51.6,Empaque y Despacho,rack,SKU1649
+43-36,43,36,43.2,51.6,Empaque y Despacho,rack,SKU0731
+43-37,43,37,44.4,51.6,Empaque y Despacho,rack,SKU0713
+43-38,43,38,45.6,51.6,Empaque y Despacho,rack,SKU0516
+43-39,43,39,46.8,51.6,Empaque y Despacho,rack,SKU0814
+44-00,44,0,0.0,52.8,Recepción y Almacenamiento,rack,SKU0431
+44-01,44,1,1.2,52.8,Recepción y Almacenamiento,rack,SKU0644
+44-02,44,2,2.4,52.8,Recepción y Almacenamiento,rack,SKU1392
+44-03,44,3,3.6,52.8,Recepción y Almacenamiento,rack,SKU1005
+44-04,44,4,4.8,52.8,Recepción y Almacenamiento,rack,SKU1404
+44-05,44,5,6.0,52.8,Recepción y Almacenamiento,rack,SKU1669
+44-06,44,6,7.2,52.8,Recepción y Almacenamiento,rack,SKU0024
+44-07,44,7,8.4,52.8,Recepción y Almacenamiento,rack,SKU0921
+44-08,44,8,9.6,52.8,Recepción y Almacenamiento,rack,SKU0201
+44-09,44,9,10.8,52.8,Recepción y Almacenamiento,rack,SKU1673
+44-10,44,10,12.0,52.8,Recepción y Almacenamiento,rack,SKU0589
+44-11,44,11,13.2,52.8,Recepción y Almacenamiento,rack,SKU0227
+44-12,44,12,14.4,52.8,Recepción y Almacenamiento,rack,SKU0166
+44-13,44,13,15.6,52.8,Picking,rack,SKU1258
+44-14,44,14,16.8,52.8,Picking,rack,SKU0006
+44-15,44,15,18.0,52.8,Picking,rack,SKU0492
+44-16,44,16,19.2,52.8,Picking,rack,SKU0904
+44-17,44,17,20.4,52.8,Picking,rack,SKU1202
+44-18,44,18,21.6,52.8,Picking,rack,SKU1584
+44-19,44,19,22.8,52.8,Picking,rack,SKU1539
+44-20,44,20,24.0,52.8,Picking,rack,SKU1006
+44-21,44,21,25.2,52.8,Picking,rack,SKU1574
+44-22,44,22,26.4,52.8,Picking,rack,SKU1591
+44-23,44,23,27.6,52.8,Picking,rack,SKU1497
+44-24,44,24,28.8,52.8,Picking,rack,SKU1726
+44-25,44,25,30.0,52.8,Picking,rack,SKU1122
+44-26,44,26,31.2,52.8,Picking,rack,SKU1173
+44-27,44,27,32.4,52.8,Empaque y Despacho,rack,SKU1605
+44-28,44,28,33.6,52.8,Empaque y Despacho,rack,SKU0862
+44-29,44,29,34.8,52.8,Empaque y Despacho,rack,SKU1140
+44-30,44,30,36.0,52.8,Empaque y Despacho,rack,SKU1273
+44-31,44,31,37.2,52.8,Empaque y Despacho,rack,SKU1231
+44-32,44,32,38.4,52.8,Empaque y Despacho,rack,SKU0458
+44-33,44,33,39.6,52.8,Empaque y Despacho,rack,SKU0211
+44-34,44,34,40.8,52.8,Empaque y Despacho,rack,SKU1762
+44-35,44,35,42.0,52.8,Empaque y Despacho,rack,SKU1326
+44-36,44,36,43.2,52.8,Empaque y Despacho,rack,SKU1049
+44-37,44,37,44.4,52.8,Empaque y Despacho,rack,SKU1030
+44-38,44,38,45.6,52.8,Empaque y Despacho,rack,SKU0655
+44-39,44,39,46.8,52.8,Empaque y Despacho,rack,SKU0244
