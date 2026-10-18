@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.pytest_cache/
+# Datos crudos de Instacart: no se publican (reglas de Kaggle)
+instacart/
+*.zip
