@@ -74,7 +74,7 @@ with t_almacen:
     c[1].metric("Aristas (pasillos)", len(aristas))
     c[2].metric("Racks / muelles", f"{sum(n['Tipo'] == 'rack' for n in nodos.values())} / "
                                    f"{sum(n['Tipo'] == 'estacion' for n in nodos.values())}")
-    c[3].metric("Demanda", "Instacart (real)" if fuente == "instacart" else "Sintética (Zipf)")
+    c[3].metric("Demanda", "Instacart" if fuente == "instacart" else "Sintética", help="Instacart = pedidos reales de Kaggle; sintética = popularidad Zipf.")
     st.markdown(
         f"Cuadrícula de {config.FILAS} × {config.COLUMNAS} con {config.CELDA_M} m entre ubicaciones, "
         "en tres zonas por columnas. La congestión de cada pasillo se **midió** simulando "
