@@ -17,13 +17,14 @@
         "kivaflow/__init__.py", "kivaflow/config.py", "kivaflow/layout.py", "kivaflow/demanda.py",
         "kivaflow/trafico.py", "kivaflow/grafo.py", "kivaflow/bfs.py", "kivaflow/bellman_ford.py",
         "kivaflow/edmonds_karp.py", "kivaflow/pedido.py", "kivaflow/visual.py",
+        "kivaflow/simulacion.py", "kivaflow/interactivo.py",
         "data/nodos.csv", "data/aristas.csv", "data/skus.csv",
         "resultados/resumen.md", "resultados/ruta_ejemplo.png", "resultados/cuellos_de_botella.png",
       ];
 
       mount(
         {
-          requirements: ["networkx", "matplotlib"],
+          requirements: ["networkx", "matplotlib", "plotly==6.9.0"],
           entrypoint: "app.py",
           files: Object.fromEntries(archivos.map((ruta) => [ruta, { url: `./${ruta}` }])),
           streamlitConfig: { "client.toolbarMode": "viewer" },
