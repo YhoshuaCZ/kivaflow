@@ -39,13 +39,13 @@ def main():
 
     args.salida.mkdir(exist_ok=True)
     with open(args.salida / "nodos.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["Nodo", "Fila", "Columna", "X_m", "Y_m", "Zona", "Tipo", "SKU"])
         for n in nodos:
             w.writerow([n.id, n.fila, n.col, n.x_m, n.y_m, n.zona, n.tipo, n.sku])
 
     with open(args.salida / "aristas.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["Nodo_Origen", "Nodo_Destino", "Pasillo", "Distancia_m", "Cruces_Simulados",
                     "Frecuencia_Pedidos", "Distancia_Ajustada_m", "Tiempo_Estimado_s", "Zona_Origen", "Zona_Destino"])
         for a in aristas:
@@ -56,7 +56,7 @@ def main():
 
     # Solo conteos agregados: los datos crudos de Instacart no se vuelven a publicar.
     with open(args.salida / "skus.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["SKU", "Veces_Pedido", "Fuente"])
         for sku, veces in popularidad:
             w.writerow([sku, veces, fuente])
