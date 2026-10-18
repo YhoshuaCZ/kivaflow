@@ -6,7 +6,16 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 
 ## ▶️ Abrir la app
 
-**https://yhoshuacz.github.io/kivaflow/**: se abre en el navegador, sin instalar nada. La primera carga tarda unos 20 s porque descarga Python al navegador ([stlite](https://github.com/whitphx/stlite)); no hay servidor.
+**https://yhoshuacz.github.io/kivaflow/**: se abre en el navegador, sin instalar nada. La primera carga tarda unos 20–30 s porque descarga Python al navegador ([stlite](https://github.com/whitphx/stlite)); no hay servidor.
+
+| Pestaña | Qué haces | Qué demuestra |
+|---|---|---|
+| 🧭 Rutas | Clic en el mapa para marcar el inicio y los destinos (o *Al azar*); eliges BFS y/o Bellman-Ford | Rutas superpuestas y una tabla con tiempo de caminata, cálculo (ms), nodos visitados, relajaciones, memoria y O(). **Video** de cómo busca cada uno: BFS por anillos, Bellman-Ford por rondas |
+| 🎬 Simulación de un turno | Eliges cuántos operarios, productos por pedido, hora y zonas | **Video** de los operarios moviéndose y los pasillos "calentándose" → congestión del turno → **video** de Edmonds-Karp camino por camino hasta el corte mínimo |
+| 🏬 Almacén | Mirar y pasar el mouse | Dataset: 1800 nodos, 3 zonas, congestión medida |
+| 📊 Resultados | Mirar | Experimento de 360 pedidos |
+
+Los videos tienen ▶ x0.5 / x1 / x2 / x4, ⏸ y una barra para adelantar o retroceder. Se arman con los pasos que anotan los propios algoritmos (parámetro `pasos=`), y los tests comprueban que esos pasos son fieles.
 
 O en tu PC, como un `.py` normal (después de `pip install -r requirements.txt`):
 
