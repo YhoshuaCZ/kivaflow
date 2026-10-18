@@ -4,6 +4,16 @@ Rutas de *picking* y cuellos de botella en un almacén inteligente tipo Amazon, 
 
 Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana de Ciencias Aplicadas, 2026-2.
 
+## ▶️ Abrir la app
+
+**https://yhoshuacz.github.io/kivaflow/**: se abre en el navegador, sin instalar nada. La primera carga tarda unos 20 s porque descarga Python al navegador ([stlite](https://github.com/whitphx/stlite)); no hay servidor.
+
+O en tu PC, como un `.py` normal (después de `pip install -r requirements.txt`):
+
+```bash
+python app.py            # abre la misma app en http://localhost:8501
+```
+
 ![Grafo del almacén por zonas y congestión](docs/grafo.png)
 
 ## Estado
@@ -14,7 +24,7 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 | Pedidos reales de Instacart | 🧪 script listo; falta correrlo con los datos de Kaggle |
 | BFS, Bellman-Ford, Edmonds-Karp | ✅ hechos a mano, comparados con NetworkX en los tests |
 | Experimentos | ✅ [resultados/resumen.md](resultados/resumen.md) |
-| GUI en Streamlit (con enlace público) | 🔜 |
+| GUI en Streamlit (con enlace público) | ✅ [app.py](app.py) · https://yhoshuacz.github.io/kivaflow/ |
 
 ## Algoritmos
 
