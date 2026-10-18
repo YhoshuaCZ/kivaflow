@@ -4,3 +4,4 @@ __pycache__/
 # Datos crudos de Instacart: no se publican (reglas de Kaggle)
 instacart/
 *.zip
+.claude/

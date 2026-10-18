@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>KivaFlow</title>
+    <!-- Streamlit dentro del navegador (stlite): el mismo app.py, sin servidor. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@1.9.2/build/stlite.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@1.9.2/build/stlite.js";
+
+      const archivos = [
+        "app.py",
+        "kivaflow/__init__.py", "kivaflow/config.py", "kivaflow/layout.py", "kivaflow/demanda.py",
+        "kivaflow/trafico.py", "kivaflow/grafo.py", "kivaflow/bfs.py", "kivaflow/bellman_ford.py",
+        "kivaflow/edmonds_karp.py", "kivaflow/pedido.py", "kivaflow/visual.py",
+        "data/nodos.csv", "data/aristas.csv", "data/skus.csv",
+        "resultados/resumen.md", "resultados/ruta_ejemplo.png", "resultados/cuellos_de_botella.png",
+      ];
+
+      mount(
+        {
+          requirements: ["networkx", "matplotlib"],
+          entrypoint: "app.py",
+          files: Object.fromEntries(archivos.map((ruta) => [ruta, { url: `./${ruta}` }])),
+          streamlitConfig: { "client.toolbarMode": "viewer" },
+        },
+        document.getElementById("root"),
+      );
+    </script>
+  </body>
+</html>
