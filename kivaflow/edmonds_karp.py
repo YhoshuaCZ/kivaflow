@@ -34,10 +34,12 @@ def _camino_aumento(residual, s, t):
     return None
 
 
-def flujo_maximo(capacidad, s, t):
+def flujo_maximo(capacidad, s, t, pasos=None):
     """capacidad: {u: {v: c}}. Devuelve (valor, flujo, stats).
 
-    flujo[u][v] > 0 es lo que pasa de u a v. stats = {"caminos_aumento"}.
+    flujo[u][v] > 0 es lo que pasa de u a v. stats = {"caminos_aumento", "lado_fuente"}.
+    Si se pasa una lista en `pasos`, se anota (camino, delta) por cada camino de
+    aumento (para la animación). No cambia el resultado.
     """
     residual = {u: dict(vec) for u, vec in capacidad.items()}
     for u, vec in capacidad.items():
@@ -55,6 +57,12 @@ def flujo_maximo(capacidad, s, t):
             u = padre[v]
             delta = min(delta, residual[u][v])
             v = u
+        if pasos is not None:
+            camino, x = [], t
+            while x is not None:
+                camino.append(x)
+                x = padre[x]
+            pasos.append((camino[::-1], delta))
         # actualizar red residual
         v = t
         while padre[v] is not None:
@@ -91,7 +99,7 @@ def corte_minimo(capacidad, lado_fuente):
     return [(u, v, c) for u in lado_fuente for v, c in capacidad.get(u, {}).items() if v not in lado_fuente]
 
 
-def entre_zonas(capacidad, nodos, zona_origen, zona_destino):
+def entre_zonas(capacidad, nodos, zona_origen, zona_destino, pasos=None):
     """Flujo máximo desde toda una zona hasta otra.
 
     Se agrega una superfuente unida a cada nodo de `zona_origen` y un supersumidero
@@ -104,6 +112,6 @@ def entre_zonas(capacidad, nodos, zona_origen, zona_destino):
     for n, d in nodos.items():
         if d["Zona"] == zona_destino:
             cap.setdefault(n, {})[SUMIDERO] = infinito
-    valor, flujo, stats = flujo_maximo(cap, FUENTE, SUMIDERO)
+    valor, flujo, stats = flujo_maximo(cap, FUENTE, SUMIDERO, pasos)
     cuellos = [(u, v, c) for u, v, c in corte_minimo(cap, stats["lado_fuente"]) if FUENTE not in (u, v) and SUMIDERO not in (u, v)]
     return valor, flujo, cuellos, stats

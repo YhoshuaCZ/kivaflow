@@ -10,24 +10,30 @@ mira una vez por extremo) y O(V) memoria (cola + padres).
 from collections import deque
 
 
-def bfs(ady, origen, destino):
+def bfs(ady, origen, destino, pasos=None):
     """Devuelve (camino, nodos_visitados). camino = [] si no hay ruta.
 
     `destino` puede ser un nodo o un conjunto de nodos: en ese caso se detiene en el
     primero que saca de la cola, que es el más cercano en número de pasillos.
+    Si se pasa una lista en `pasos`, se anota (nodo, nivel) cada vez que un nodo sale
+    de la cola: es lo que dibuja la animación de la app. No cambia el resultado.
     """
     destinos = destino if isinstance(destino, (set, frozenset)) else {destino}
     padre = {origen: None}
+    nivel = {origen: 0}          # nivel = pasillos desde el origen
     cola = deque([origen])
     visitados = 0
     while cola:
         u = cola.popleft()
         visitados += 1
+        if pasos is not None:
+            pasos.append((u, nivel[u]))
         if u in destinos:
             return reconstruir(padre, u), visitados
         for v, _ in ady.get(u, ()):
             if v not in padre:
                 padre[v] = u
+                nivel[v] = nivel[u] + 1
                 cola.append(v)
     return [], visitados
 

@@ -19,11 +19,13 @@ class CicloNegativo(Exception):
     pass
 
 
-def bellman_ford(nodos, aristas, origen):
+def bellman_ford(nodos, aristas, origen, pasos=None):
     """aristas: [(u, v, w), ...] dirigidas.
 
     Devuelve (dist, padre, stats) con stats = {"rondas", "relajaciones"}.
     Lanza CicloNegativo si alguno es alcanzable desde el origen.
+    Si se pasa una lista en `pasos`, al final de cada ronda se anota qué nodos
+    mejoraron su distancia en esa ronda (para la animación). No cambia el resultado.
     """
     dist = {n: inf for n in nodos}
     padre = {n: None for n in nodos}
@@ -32,6 +34,7 @@ def bellman_ford(nodos, aristas, origen):
     for _ in range(len(dist) - 1):
         rondas += 1
         cambio = False
+        mejorados = [] if pasos is not None else None
         for u, v, w in aristas:
             du = dist[u]
             if du + w < dist[v]:
@@ -39,6 +42,10 @@ def bellman_ford(nodos, aristas, origen):
                 padre[v] = u
                 relajaciones += 1
                 cambio = True
+                if mejorados is not None:
+                    mejorados.append(v)
+        if pasos is not None:
+            pasos.append(list(dict.fromkeys(mejorados)))
         if not cambio:
             break
     else:
