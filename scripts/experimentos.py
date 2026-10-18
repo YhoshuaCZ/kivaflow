@@ -191,7 +191,7 @@ def main():
         "![Cuellos de botella](cuellos_de_botella.png)",
         "",
     ]
-    (SALIDA / "resumen.md").write_text("\n".join(lineas), encoding="utf-8")
+    (SALIDA / "resumen.md").write_text("\n".join(lineas), encoding="utf-8", newline="\n")
     print(f"Escrito {SALIDA / 'resumen.md'}")
 
 
