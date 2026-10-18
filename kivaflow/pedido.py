@@ -18,6 +18,24 @@ from . import config
 from .bfs import bfs, reconstruir
 
 
+def muelles_de_despacho(nodos):
+    return sorted(n for n, d in nodos.items() if d["Tipo"] == "estacion" and int(d["Columna"]) == config.COLUMNAS - 1)
+
+
+def aleatorio(nodos, popularidad, k, rng):
+    """Un pedido de k productos distintos elegidos según su popularidad.
+
+    Devuelve (muelle, racks): el muelle de despacho de donde sale y los racks a visitar.
+    """
+    rack_de = {d["SKU"]: n for n, d in nodos.items() if d["SKU"]}
+    skus = sorted(rack_de)
+    pesos = [popularidad.get(s, 0) + 1 for s in skus]
+    elegidos = set()
+    while len(elegidos) < k:
+        elegidos.add(rng.choices(skus, weights=pesos)[0])
+    return rng.choice(muelles_de_despacho(nodos)), [rack_de[s] for s in sorted(elegidos)]
+
+
 def ruta_pedido(ady, aristas_dirigidas, inicio, racks, estrategia):
     """Devuelve dict con camino completo (lista de nodos), orden de visita y stats."""
     pendientes = set(racks)

@@ -17,6 +17,13 @@ def leer_aristas(ruta=DATA / "aristas.csv"):
         return list(csv.DictReader(f))
 
 
+def leer_popularidad(ruta=DATA / "skus.csv"):
+    """{sku: veces_pedido} y la fuente de la demanda ("sintetica" o "instacart")."""
+    with open(ruta, newline="", encoding="utf-8") as f:
+        filas = list(csv.DictReader(f))
+    return {r["SKU"]: int(r["Veces_Pedido"]) for r in filas}, (filas[0]["Fuente"] if filas else "")
+
+
 def peso(arista, perfil="punta"):
     """Distancia ajustada por congestión según la hora (en metros)."""
     return float(arista["Distancia_m"]) * config.PERFILES_HORA[perfil][arista["Frecuencia_Pedidos"]]
