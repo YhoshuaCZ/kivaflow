@@ -14,7 +14,10 @@
       import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@1.9.2/build/stlite.js";
 
       // Cambiar VERSION en cada publicación: evita que el navegador mezcle archivos viejos (caché).
-      const VERSION = "2026-10-19.3";
+      const VERSION = "2026-10-19.4";
+      // Raíz del sitio (GitHub Pages lo sirve en /kivaflow/). Las URLs son absolutas para que
+      // también funcione al entrar directo a /kivaflow/explorar (lo atiende 404.html).
+      const RAIZ = location.pathname.startsWith("/kivaflow/") ? "/kivaflow/" : "/";
       const archivos = [
         "app.py",
         "kivaflow/__init__.py", "kivaflow/config.py", "kivaflow/layout.py", "kivaflow/demanda.py",
@@ -29,7 +32,7 @@
         {
           requirements: ["networkx", "matplotlib", "plotly==6.9.0"],
           entrypoint: "app.py",
-          files: Object.fromEntries(archivos.map((ruta) => [ruta, { url: `./${ruta}?v=${VERSION}` }])),
+          files: Object.fromEntries(archivos.map((ruta) => [ruta, { url: `${location.origin}${RAIZ}${ruta}?v=${VERSION}` }])),
           streamlitConfig: {
             "client.toolbarMode": "viewer",
             "theme.base": "light",
