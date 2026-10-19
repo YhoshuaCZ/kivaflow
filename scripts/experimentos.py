@@ -12,7 +12,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ))
-from kivaflow import config, edmonds_karp as ek, grafo, pedido, visual  # noqa: E402
+from kivaflow import config, edmonds_karp as ek, grafo, paleta, pedido, visual  # noqa: E402
 
 TAMANOS = (1, 5, 10)
 PERFILES = ("valle", "punta")
@@ -72,7 +72,8 @@ def figura_ruta(nodos, aristas, muelle, racks, salida):
     dirigidas = grafo.lista_de_aristas(ady)
     por_par = {frozenset((a["Nodo_Origen"], a["Nodo_Destino"])): a for a in aristas}
     caminos = {}
-    for e, nombre, color, ancho in (("bfs", "BFS", "#2b6cb0", 4), ("bellman_ford", "Bellman-Ford", "#2f855a", 2)):
+    for e, nombre, color, ancho in (("bfs", "BFS", paleta.ALGORITMO["bfs"], 4),
+                                   ("bellman_ford", "Bellman-Ford", paleta.ALGORITMO["bellman_ford"], 2)):
         camino = pedido.ruta_pedido(ady, dirigidas, muelle, racks, e)["camino"]
         m = pedido.medir(camino, por_par, "punta")
         caminos[f"{nombre}: {m['pasillos']} pasillos, {m['tiempo_s']} s"] = (camino, color, ancho)
