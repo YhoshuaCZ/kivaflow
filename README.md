@@ -4,18 +4,21 @@ Rutas de *picking* y cuellos de botella en un almacén inteligente tipo Amazon, 
 
 Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana de Ciencias Aplicadas, 2026-2.
 
-## ▶️ Abrir la app
+## Abrir la app
 
 **https://yhoshuacz.github.io/kivaflow/**: se abre en el navegador, sin instalar nada. La primera carga tarda unos 20–30 s porque descarga Python al navegador ([stlite](https://github.com/whitphx/stlite)); no hay servidor.
 
-| Pestaña | Qué haces | Qué demuestra |
+| Vista | Qué haces | Qué demuestra |
 |---|---|---|
-| 🧭 Rutas | Clic en el mapa para marcar el inicio y los destinos (o *Al azar*); eliges BFS y/o Bellman-Ford | Rutas superpuestas y una tabla con tiempo de caminata, cálculo (ms), nodos visitados, relajaciones, memoria y O(). **Video** de cómo busca cada uno: BFS por anillos, Bellman-Ford por rondas |
-| 🎬 Simulación de un turno | Eliges cuántos operarios, productos por pedido, hora y zonas | **Video** de los operarios moviéndose y los pasillos "calentándose" → congestión del turno → **video** de Edmonds-Karp camino por camino hasta el corte mínimo |
-| 🏬 Almacén | Mirar y pasar el mouse | Dataset: 1800 nodos, 3 zonas, congestión medida |
-| 📊 Resultados | Mirar | Experimento de 360 pedidos |
+| Inicio | Play en «El operario que recalcula» | Un robot se avería a mitad de camino y Bellman-Ford recalcula desde donde está el operario |
+| Explorar | Eliges BFS, Bellman-Ford o Edmonds-Karp | El algoritmo paso a paso con su **pseudocódigo iluminado** (línea activa y contadores) y una frase que narra cada paso |
+| Comparar | Clic en el mapa para el inicio y los destinos (o *Al azar*) | BFS y Bellman-Ford **sincronizados por trabajo** (aristas revisadas): caminata, pasillos, cálculo, memoria, O() y una conclusión con los números |
+| Simulación | Operarios, productos, hora y zonas | Los operarios se mueven, los pasillos se congestionan y Edmonds-Karp encuentra el corte mínimo con esa congestión |
+| Resultados | Mirar | Experimento de 360 pedidos |
+| Verificación | Mirar o *Verificar ahora* | Los tres algoritmos contra NetworkX (ver abajo) |
+| Acerca | Mirar | Algoritmos, datos, reglas del modelo y uso de IA |
 
-Los videos tienen ▶ x0.5 / x1 / x2 / x4, ⏸ y una barra para adelantar o retroceder. Se arman con los pasos que anotan los propios algoritmos (parámetro `pasos=`), y los tests comprueban que esos pasos son fieles.
+Los videos tienen ⟲, ▶ 0.5× / 1× / 2× / 4×, pausa y una barra para adelantar o retroceder. Se arman con los pasos que anotan los propios algoritmos (parámetro `pasos=`), y los tests comprueban que esos pasos son fieles.
 
 O en tu PC, como un `.py` normal (después de `pip install -r requirements.txt`):
 
@@ -34,6 +37,16 @@ python app.py            # abre la misma app en http://localhost:8501
 | BFS, Bellman-Ford, Edmonds-Karp | ✅ hechos a mano, comparados con NetworkX en los tests |
 | Experimentos | ✅ [resultados/resumen.md](resultados/resumen.md) |
 | GUI en Streamlit (con enlace público) | ✅ [app.py](app.py) · https://yhoshuacz.github.io/kivaflow/ |
+
+## Verificación
+
+[`scripts/verificar.py`](scripts/verificar.py) compara los tres algoritmos con **NetworkX** en consultas al azar y guarda [`resultados/verificacion.json`](resultados/verificacion.json):
+
+| Algoritmo | Iguales a NetworkX | Error máximo | Criterio |
+|---|---|---|---|
+| BFS | 500 / 500 | 0.0e+00 | misma longitud (pasillos) que networkx.shortest_path_length y ruta legal |
+| Bellman-Ford | 500 / 500 | 0.0e+00 | misma distancia que networkx.bellman_ford_path_length (punta y valle) |
+| Edmonds-Karp | 6 / 6 | 0.0e+00 | mismo valor que networkx.maximum_flow_value y corte = flujo, entre cada par ordenado de zonas |
 
 ## Algoritmos
 

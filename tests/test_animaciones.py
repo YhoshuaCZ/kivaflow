@@ -66,3 +66,18 @@ def test_animaciones_se_arman():
     assert "listo" in fig.frames[-1].layout.title.text
     ops = simulacion.turno(NODOS, ADY, DIRIGIDAS, POP, 5, 2, "bfs", semilla=1)
     assert len(interactivo.animacion_turno(NODOS, ARISTAS, ops).frames) <= 61
+
+
+def test_404_igual_a_index():
+    # GitHub Pages sirve 404.html en rutas como /kivaflow/explorar: debe ser la misma app.
+    from pathlib import Path
+    raiz = Path(__file__).resolve().parent.parent
+    assert (raiz / "404.html").read_bytes() == (raiz / "index.html").read_bytes()
+
+
+def test_index_monta_todos_los_modulos():
+    import re
+    from pathlib import Path
+    raiz = Path(__file__).resolve().parent.parent
+    montados = set(re.findall(r'"(kivaflow/\w+\.py)"', (raiz / "index.html").read_text(encoding="utf-8")))
+    assert montados == {f"kivaflow/{p.name}" for p in (raiz / "kivaflow").glob("*.py")}
