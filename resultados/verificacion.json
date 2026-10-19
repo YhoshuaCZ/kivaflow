@@ -1,0 +1,28 @@
+{
+  "algoritmos": {
+    "bfs": {
+      "consultas": 500,
+      "aciertos": 500,
+      "error_max": 0.0,
+      "criterio": "misma longitud (pasillos) que networkx.shortest_path_length y ruta legal"
+    },
+    "bellman_ford": {
+      "consultas": 500,
+      "aciertos": 500,
+      "error_max": 0.0,
+      "criterio": "misma distancia que networkx.bellman_ford_path_length (punta y valle)"
+    },
+    "edmonds_karp": {
+      "consultas": 6,
+      "aciertos": 6,
+      "error_max": 0.0,
+      "criterio": "mismo valor que networkx.maximum_flow_value y corte = flujo, entre cada par ordenado de zonas"
+    }
+  },
+  "segundos": 11.5,
+  "fecha": "2026-10-19",
+  "python": "3.14.7",
+  "networkx": "3.7",
+  "sistema": "Windows-11-10.0.26300-SP0",
+  "semilla": 2026
+}
