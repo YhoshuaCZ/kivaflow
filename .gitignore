@@ -5,3 +5,4 @@ __pycache__/
 instacart/
 *.zip
 .claude/
+.prueba/
