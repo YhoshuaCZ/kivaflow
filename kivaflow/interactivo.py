@@ -93,7 +93,7 @@ def _estilo(fig, titulo="", alto=ALTO):
         height=alto, margin=dict(l=8, r=8, t=64, b=8), dragmode="pan",
         paper_bgcolor=paleta.TARJETA, plot_bgcolor=paleta.TARJETA,
         font=dict(family=paleta.SANS, color=paleta.TINTA, size=12),
-        title=dict(text=titulo, font=dict(family=paleta.SERIF, size=17, color=paleta.TINTA), x=0.01, y=0.97),
+        title=dict(text=titulo, font=dict(family=paleta.SANS, size=15, color=paleta.TINTA, weight=600), x=0.01, y=0.97),
         legend=dict(orientation="h", y=-0.02, font=dict(size=11, color=paleta.SUAVE)),
         hoverlabel=dict(bgcolor=paleta.TARJETA, bordercolor=paleta.BORDE, font=dict(family=paleta.SANS)),
     )
@@ -105,7 +105,7 @@ def _estilo(fig, titulo="", alto=ALTO):
 def _trazas_base(nodos, aristas, niveles=None, fuerte=False, opacidad=0.35, mostrar_leyenda=True):
     """3 trazas de pasillos (Baja, Media, Alta) + 1 traza de nodos."""
     pos = _pos(nodos)
-    colores = paleta.CONGESTION if fuerte else {"Baja": "#EFEBE3", "Media": "#E8CF9C", "Alta": "#D9A496"}
+    colores = paleta.CONGESTION if fuerte else paleta.CONGESTION_SUAVE
     trazas = []
     for nivel in ("Baja", "Media", "Alta"):
         pares = [(a["Nodo_Origen"], a["Nodo_Destino"]) for a in aristas
@@ -132,11 +132,12 @@ def _marcadores(pos, inicio, destinos, leyenda=True):
         x, y = _xy(pos, destinos)
         trazas.append(go.Scatter(x=x, y=y, mode="markers", name="Destinos", hoverinfo="skip", showlegend=leyenda,
                                  marker=dict(size=13, color=paleta.TARJETA,
-                                             line=dict(color=paleta.TINTA, width=2.5))))
+                                             line=dict(color=paleta.DESTINO, width=3))))
     if inicio:
         trazas.append(go.Scatter(x=[pos[inicio][0]], y=[pos[inicio][1]], mode="markers", name="Inicio",
                                  hoverinfo="skip", showlegend=leyenda,
-                                 marker=dict(size=14, color=paleta.TINTA, symbol="circle")))
+                                 marker=dict(size=14, color=paleta.INICIO, symbol="circle",
+                                             line=dict(color=paleta.TARJETA, width=2))))
     return trazas
 
 
@@ -313,7 +314,11 @@ def _lienzo_con_codigo(titulo):
     fig.update_yaxes(scaleanchor="x", row=1, col=1)
     for a in fig.layout.annotations:
         if a.text == "Pseudocódigo":
-            a.update(font=dict(family=paleta.SERIF, size=14, color=paleta.SUAVE), x=0.62, xanchor="left")
+            a.update(text="PSEUDOCÓDIGO", font=dict(family=paleta.MONO, size=11, color=paleta.SUAVE),
+                     x=0.62, xanchor="left")
+    # caja del código, como el panel de VisuAlgo: más oscura que el lienzo
+    fig.add_shape(type="rect", xref="x2 domain", yref="y2 domain", x0=0, x1=1, y0=0, y1=1, layer="below",
+                  fillcolor=paleta.PAPEL, line=dict(color=paleta.BORDE, width=1))
     return fig
 
 
@@ -409,7 +414,7 @@ def comparar(nodos, aristas, estados_por_alg, inicio, destinos, cuadros=100):
             fig.add_trace(t, row=1, col=c)
         fig.update_yaxes(scaleanchor=f"x{'' if c == 1 else c}", row=1, col=c)
     for a in fig.layout.annotations:
-        a.update(font=dict(family=paleta.SERIF, size=15, color=paleta.TINTA))
+        a.update(font=dict(family=paleta.SANS, size=14, color=paleta.TINTA, weight=600))
 
     total = max(estados_por_alg[a][-1]["trabajo"] for a in algs)
     frames, nombres = [], []
@@ -427,7 +432,7 @@ def comparar(nodos, aristas, estados_por_alg, inicio, destinos, cuadros=100):
             indices += [animadas[alg], animadas[alg] + 1, animadas[alg] + 2]
             estado = "terminado" if k == len(est) - 1 else "buscando"
             titulos.append(f"{NOMBRE[alg]} · {estado} · {_miles(e['trabajo'])} aristas revisadas")
-        anots = [dict(text=t, font=dict(family=paleta.SERIF, size=15, color=paleta.TINTA)) for t in titulos]
+        anots = [dict(text=t, font=dict(family=paleta.SANS, size=14, color=paleta.TINTA, weight=600)) for t in titulos]
         frames.append(go.Frame(name=str(f), traces=indices, data=datos,
                                layout=dict(annotations=[{**fig.layout.annotations[i].to_plotly_json(), **anots[i]}
                                                         for i in range(len(algs))])))

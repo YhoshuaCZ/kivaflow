@@ -9,10 +9,12 @@ from . import paleta  # noqa: E402
 
 COLOR_ZONA = paleta.ZONA
 COLOR_NIVEL_FUERTE = paleta.CONGESTION
-COLOR_NIVEL_SUAVE = {"Baja": "#EFEBE3", "Media": "#E8CF9C", "Alta": "#D9A496"}
-plt.rcParams.update({"font.family": "serif", "axes.edgecolor": paleta.BORDE, "axes.labelcolor": paleta.SUAVE,
+COLOR_NIVEL_SUAVE = paleta.CONGESTION_SUAVE
+plt.rcParams.update({"font.family": "sans-serif", "axes.edgecolor": paleta.BORDE, "axes.labelcolor": paleta.SUAVE,
                      "xtick.color": paleta.SUAVE, "ytick.color": paleta.SUAVE, "figure.facecolor": paleta.PAPEL,
-                     "axes.facecolor": paleta.TARJETA, "axes.titlesize": 13, "axes.titlecolor": paleta.TINTA})
+                     "axes.facecolor": paleta.TARJETA, "axes.titlesize": 13, "axes.titlecolor": paleta.TINTA,
+                     "axes.titleweight": "bold", "text.color": paleta.TINTA, "legend.facecolor": paleta.TARJETA,
+                     "legend.edgecolor": paleta.BORDE, "savefig.facecolor": paleta.PAPEL})
 
 
 def posiciones(nodos):
@@ -46,7 +48,7 @@ def almacen(nodos, aristas, tamano=(12, 13)):
         xs = [pos[k] for k, n in nodos.items() if n["Zona"] == zona and n["Tipo"] == "rack"]
         ax.scatter(*zip(*xs), s=4, c=color, label=f"Rack · {zona}")
     est = [pos[k] for k, n in nodos.items() if n["Tipo"] == "estacion"]
-    ax.scatter(*zip(*est), s=60, c=paleta.TINTA, marker="s", label="Estación (muelle)")
+    ax.scatter(*zip(*est), s=60, c=paleta.INICIO, marker="s", label="Estación (muelle)")
     return _cerrar(fig, ax, f"Almacén: {len(nodos)} nodos, {len(aristas)} aristas")
 
 
@@ -58,8 +60,8 @@ def rutas(nodos, aristas, caminos, racks, muelle, titulo, tamano=(10, 11)):
     for etiqueta, (camino, color, ancho) in caminos.items():
         xs, ys = zip(*(pos[n] for n in camino))
         ax.plot(xs, ys, color=color, lw=ancho, alpha=0.85, label=etiqueta)
-    ax.scatter(*zip(*(pos[r] for r in racks)), s=120, c=paleta.ALGORITMO["edmonds_karp"], zorder=5, label="Racks del pedido")
-    ax.scatter(*pos[muelle], s=180, c=paleta.TINTA, marker="s", zorder=5, label="Muelle de inicio")
+    ax.scatter(*zip(*(pos[r] for r in racks)), s=120, c=paleta.DESTINO, zorder=5, label="Racks del pedido")
+    ax.scatter(*pos[muelle], s=180, c=paleta.INICIO, marker="s", zorder=5, label="Muelle de inicio")
     return _cerrar(fig, ax, titulo)
 
 
@@ -67,7 +69,7 @@ def corte(nodos, aristas, cuellos, lado_fuente, titulo, tamano=(10, 11)):
     pos = posiciones(nodos)
     fig, ax = plt.subplots(figsize=tamano)
     ax.add_collection(LineCollection([(pos[a["Nodo_Origen"]], pos[a["Nodo_Destino"]]) for a in aristas],
-                                     colors="#EFEBE3", linewidths=1))
+                                     colors=paleta.CONGESTION_SUAVE["Baja"], linewidths=1))
     ax.add_collection(LineCollection([(pos[u], pos[v]) for u, v, _ in cuellos], colors=paleta.ALGORITMO["edmonds_karp"], linewidths=3,
                                      label=f"Corte mínimo: {len(cuellos)} pasillos saturados"))
     lado = [pos[n] for n in lado_fuente if n in pos]
