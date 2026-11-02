@@ -14,7 +14,8 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 | Pedidos reales de Instacart | 🧪 script listo; falta correrlo con los datos de Kaggle |
 | MST: Kruskal (con UFDS) y Prim | ✅ a mano, comparados con NetworkX · demo: `python scripts/demo_mst.py` |
 | BFS, Bellman-Ford, Ford-Fulkerson y Edmonds-Karp, Floyd-Warshall, MST por fuerza bruta, mochila 0/1 | ✅ a mano, con tests · demo: `python scripts/demo.py todo` |
-| GUI en Streamlit (con enlace público) | 🔜 |
+| Aplicativo en matplotlib: pedido con clics, tiempo, memoria y operaciones · análisis de escalabilidad | ✅  ·  |
+| GUI web con enlace público | 🔜 hito 3 |
 
 ## Ramas
 
@@ -23,6 +24,55 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 | `hito2` | Avance paso a paso desde el TB1: dataset, MST (Kruskal y Prim) BFS, Bellman-Ford, Edmonds-Karp y los demás algoritmos de la unidad 2, con demo en matplotlib. Va con el informe del hito 2 |
 | `tb2` | Todo lo avanzado para el trabajo final: BFS, Bellman-Ford, Edmonds-Karp, simulación y la app web |
 | `main` | Igual que `tb2` por ahora; de aquí sale la app publicada |
+
+## Cómo ejecutar el avance del hito 2
+
+```bash
+git clone https://github.com/YhoshuaCZ/kivaflow.git && cd kivaflow
+git switch hito2
+python -m venv .venv
+.venv/Scripts/activate          # Windows; en Linux/Mac: source .venv/bin/activate
+pip install -r requirements.txt
+
+python scripts/app.py           # el aplicativo (ventana)
+python scripts/analisis.py      # cómo crecen tiempo y memoria con el tamaño del almacén
+python -m pytest                # 31 pruebas
+```
+
+### El aplicativo (`scripts/app.py`)
+
+![Aplicativo: ruta de un pedido con BFS y Bellman-Ford](docs/app.png)
+
+1. **Arma un pedido con clics en el mapa.** Elige el modo «Origen» (de dónde sale el operario) o «Agregar producto» y haz clic en una ubicación. «Pedido al azar» elige productos según su popularidad. Un pedido tiene varios productos porque así son los pedidos reales: el operario sale una vez y recoge todo. El orden de visita es **voraz** (siempre va al producto pendiente más cercano), porque el orden óptimo es el problema del viajante, que es NP-difícil.
+2. **«Ruta del pedido»** calcula el recorrido con el algoritmo elegido. **«Comparar BFS y B-F»** dibuja los dos sobre el mismo pedido. Con «Terminar en Despacho», el recorrido acaba en el muelle de Despacho más cercano.
+3. **«Flujo máximo»** (Edmonds-Karp y Ford-Fulkerson con DFS) y **«Red de servicio (MST)»** (Kruskal y Prim) analizan el almacén completo.
+
+Cada ejecución muestra, por algoritmo:
+
+| Medida | Qué es | Cómo se mide |
+|---|---|---|
+| **Tiempo** (velocidad) | Cuánto tarda | `time.perf_counter`, el mejor de 3 corridas |
+| **Memoria** (espacio) | Pico de memoria que reservó mientras corría | `tracemalloc`, en una corrida aparte para no ensuciar el tiempo |
+| **Operaciones** | Nodos visitados, arcos revisados, relajaciones, caminos de aumento… | Contadores dentro de cada algoritmo; no dependen de la computadora |
+| **Complejidad teórica** | La O grande | Se compara con lo medido en `analisis.py` |
+| **Calidad del resultado** | Pasillos, metros, segundos del operario, pasillos congestionados, flujo, costo del árbol | Sobre el recorrido o el resultado |
+
+Todo se agrega a `resultados/mediciones.csv` (no se sube al repo). Sin ventana: `python scripts/app.py --consola --origen 02-00 --productos 40-14,10-20,30-30`.
+
+### Análisis de eficiencia (`scripts/analisis.py`)
+
+Corre cada algoritmo en sectores del almacén de 100 a 1800 ubicaciones y ajusta en escala log-log cuánto crece el tiempo. En esta cuadrícula E ≈ 2V:
+
+| Algoritmo | Teórica | Se espera | Se midió | Por qué |
+|---|---|---|---|---|
+| BFS | O(V + E) | V¹ | V^1,06 | Lineal, como se espera |
+| Bellman-Ford | O(V · E) | V² | V^1,26 | Para antes: desde una esquina converge en 2–5 rondas, no en V − 1 |
+| Kruskal + UFDS | O(E log E) | ≈ V^1,1 | V^1,09 | El log casi no se nota |
+| Prim (heap) | O(E log V) | ≈ V^1,1 | V^1,18 | Ídem; usa más memoria por el heap |
+| Edmonds-Karp | O(V · E²) | V³ (peor caso) | V^1,50 | Hace ≈ √V caminos de aumento, cada uno con un BFS de O(V) |
+| Floyd-Warshall | O(V³) | V³ | V^2,90 | Coincide; por eso solo se corre hasta 225 ubicaciones |
+
+![Escalabilidad](resultados/escalabilidad.png)
 
 ## Demo del MST (red de servicio)
 
