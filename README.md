@@ -13,14 +13,14 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 | Dataset (layout + tráfico simulado) | ✅ reproducible, con tests |
 | Pedidos reales de Instacart | 🧪 script listo; falta correrlo con los datos de Kaggle |
 | MST: Kruskal (con UFDS) y Prim | ✅ a mano, comparados con NetworkX · demo: `python scripts/demo_mst.py` |
-| MST por fuerza bruta, Ford-Fulkerson, Bellman-Ford, Floyd-Warshall, mochila 0/1 | ✅ a mano, con tests · demo: `python scripts/demo.py todo` |
+| BFS, Bellman-Ford, Ford-Fulkerson y Edmonds-Karp, Floyd-Warshall, MST por fuerza bruta, mochila 0/1 | ✅ a mano, con tests · demo: `python scripts/demo.py todo` |
 | GUI en Streamlit (con enlace público) | 🔜 |
 
 ## Ramas
 
 | Rama | Qué tiene |
 |---|---|
-| `hito2` | Avance paso a paso desde el TB1: dataset, MST (Kruskal y Prim) y los algoritmos de la unidad 2 (flujo, Bellman-Ford, Floyd-Warshall, mochila), con demo en matplotlib. Va con el informe del hito 2 |
+| `hito2` | Avance paso a paso desde el TB1: dataset, MST (Kruskal y Prim) BFS, Bellman-Ford, Edmonds-Karp y los demás algoritmos de la unidad 2, con demo en matplotlib. Va con el informe del hito 2 |
 | `tb2` | Todo lo avanzado para el trabajo final: BFS, Bellman-Ford, Edmonds-Karp, simulación y la app web |
 | `main` | Igual que `tb2` por ahora; de aquí sale la app publicada |
 
@@ -49,8 +49,8 @@ python scripts/demo.py flujo --mostrar   # una sola, y además abre la ventana
 |---|---|---|---|---|
 | `mst` | 10 | Kruskal (UFDS) y Prim (heap) | Red de servicio con la menor distancia ajustada | 1799 pasillos, 2448,78 m |
 | `fuerza-bruta` | 10, ej. 1 | MST probando todos los subconjuntos | Valida Kruskal en un sector de 3 × 4 | 12 376 subconjuntos, mismo costo 13,20 |
-| `flujo` | 11 | Ford-Fulkerson (DFS) y corte mínimo | Cuántos operarios/min pasan de Recepción a Despacho y qué pasillos lo limitan | 73 operarios/min; el corte son 45 pasillos dentro de Picking |
-| `ruta` | 13 | Bellman-Ford | Ruta que evita la congestión frente a la más corta | Los mismos 52 pasillos (62,4 m), pero 1 de congestión alta en vez de 48: 65 s frente a 89 s |
+| `flujo` | 11 | Ford-Fulkerson (DFS) y Edmonds-Karp (BFS), con corte mínimo | Cuántos operarios/min pasan de Recepción a Despacho y qué pasillos lo limitan | 73 operarios/min con los dos (72 caminos con DFS, 53 con BFS); el corte son 45 pasillos dentro de Picking |
+| `ruta` | 13 | BFS (línea base) y Bellman-Ford | Ruta que evita la congestión frente a la de menos pasillos | Los mismos 52 pasillos (62,4 m), pero 1 de congestión alta en vez de 48: 65 s frente a 89 s |
 | `floyd` | 13 | Floyd-Warshall | Distancias entre todas las ubicaciones de un sector de 10 × 10 de Picking | Matriz 100 × 100; coincide con Bellman-Ford |
 | `mochila` | 12 | Mochila 0/1 (DP) | Qué productos lleva un robot de 20 kg en el primer viaje | Urgencia 40 con 6 de 10 productos |
 

@@ -28,8 +28,8 @@ sys.path.insert(0, str(RAIZ / "scripts"))
 import matplotlib  # noqa: E402
 
 from kivaflow import config, grafo  # noqa: E402
-from kivaflow.caminos import bellman_ford, camino, camino_fw, floyd_warshall  # noqa: E402
-from kivaflow.flujo import ford_fulkerson, red  # noqa: E402
+from kivaflow.caminos import bellman_ford, bfs, camino, camino_fw, floyd_warshall  # noqa: E402
+from kivaflow.flujo import edmonds_karp, ford_fulkerson, red  # noqa: E402
 from kivaflow.mapa import COLOR_NIVEL, fondo, lineas, posiciones, recorrido  # noqa: E402
 from kivaflow.mochila import mochila_01  # noqa: E402
 from kivaflow.mst import fuerza_bruta, kruskal, prim  # noqa: E402
@@ -132,16 +132,19 @@ def demo_fuerza_bruta(d, mostrar):
 
 # ---------------------------------------------------------------------------- flujo
 def demo_flujo(d, mostrar):
-    titulo("Flujo máximo con Ford-Fulkerson: Recepción -> Despacho (hoja 11, ejercicio 2)")
+    titulo("Flujo máximo: Ford-Fulkerson (DFS) y Edmonds-Karp (BFS), Recepción -> Despacho (hoja 11)")
     cap_nivel = config.CAPACIDAD_OPERARIOS_MIN
     print("Capacidad de cada pasillo (operarios/min, en cada sentido): "
           + ", ".join(f"{n} = {c}" for n, c in cap_nivel.items()))
     print("Fuente: toda la zona de Recepción; sumidero: toda la zona de Despacho (superfuente y supersumidero).")
     cap = red(d.filas, cap_nivel, d.zona("Rec"), d.zona("Emp"))
-    t0 = time.perf_counter()
-    f = ford_fulkerson(cap)
-    ms = (time.perf_counter() - t0) * 1000
-    print(f"\n{'Iter.':>5}  {'Cuello':>6}  {'Flujo acumulado':>15}  Camino aumentante (DFS)")
+    res = {}
+    for nombre, algoritmo in (("Ford-Fulkerson (DFS)", ford_fulkerson), ("Edmonds-Karp (BFS)", edmonds_karp)):
+        t0 = time.perf_counter()
+        res[nombre] = (algoritmo(cap), (time.perf_counter() - t0) * 1000)
+    f, _ = res["Edmonds-Karp (BFS)"]
+    print("\nEdmonds-Karp, iteración por iteración (BFS toma siempre el camino con menos arcos):")
+    print(f"{'Iter.':>5}  {'Cuello':>6}  {'Flujo acumulado':>15}  Camino aumentante")
     acumulado = 0
     for i, (c, cuello) in enumerate(f.caminos, 1):
         acumulado += cuello
@@ -150,8 +153,13 @@ def demo_flujo(d, mostrar):
             print(f"{i:>5}  {cuello:>6}  {acumulado:>15}  {interior[0]} -> ... -> {interior[-1]} ({len(interior)} ubicaciones)")
         elif i == 9:
             print(f"{'...':>5}")
-    print(f"\nFlujo máximo: {f.valor} operarios/min, con {len(f.caminos)} caminos aumentantes en {ms:.0f} ms.")
-    print(f"Veces que un camino usó un arco inverso (cancelar flujo previo): {f.usos_inversos}.")
+    print(f"\n{'Variante':<22}{'Flujo':>6}{'Caminos':>9}{'Largo medio':>13}{'Arcos inversos':>16}{'ms':>7}")
+    for nombre, (r, ms) in res.items():
+        largo = sum(len(c) - 3 for c, _ in r.caminos) / len(r.caminos)
+        print(f"{nombre:<22}{r.valor:>6}{len(r.caminos):>9}{largo:>13.1f}{r.usos_inversos:>16}{ms:>7.0f}")
+    print("Las dos llegan al mismo flujo máximo: el método es el mismo y solo cambia cómo se busca el camino.")
+    print("Con BFS el número de iteraciones queda acotado por O(V · E), sin depender de las capacidades.")
+    print(f"\nFlujo máximo: {f.valor} operarios/min.")
     cols = Counter((d.nodos[u]["Columna"], d.nodos[v]["Columna"]) for u, v, _ in f.corte)
     print(f"Corte mínimo: {len(f.corte)} pasillos, capacidad total {sum(c for *_, c in f.corte)} "
           f"(= flujo máximo, teorema flujo máximo / corte mínimo).")
@@ -166,44 +174,53 @@ def demo_flujo(d, mostrar):
         recorrido(ax, d.pos, c[1:-1], color="#38a169", ancho=1.2)
     lineas(ax, d.pos, f.corte, color="#e53e3e", ancho=3.5, z=5)
     ax.plot([], [], color="#e53e3e", linewidth=3.5, label="Pasillos del corte mínimo")
-    ax.plot([], [], color="#38a169", linewidth=1.2, label="Primeros 5 caminos aumentantes")
+    ax.plot([], [], color="#38a169", linewidth=1.2, label="Primeros 5 caminos aumentantes (Edmonds-Karp)")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.01), fontsize=9)
     guardar(fig, "flujo_maximo.png", mostrar)
 
 
 # ----------------------------------------------------------------------------- ruta
 def demo_ruta(d, mostrar):
-    titulo("Ruta de un operario con Bellman-Ford (hoja 13, ejercicios 1 y 3)")
+    titulo("Ruta de un operario: BFS (línea base) vs. Bellman-Ford con congestión (hoja 13)")
     origen = "02-00"  # primer muelle de Recepción
     destino = next(k for k, n in d.nodos.items() if n["SKU"] == "SKU0001")  # el producto más pedido
     print(f"Origen: muelle {origen}. Destino: rack {destino} (SKU0001, el producto más pedido).")
-    rutas = {}
-    for peso, nombre in (("Distancia_m", "solo distancia"), ("Distancia_Ajustada_m", "con congestión")):
-        t0 = time.perf_counter()
-        b = bellman_ford(list(d.nodos), d.arcos(peso), origen)
-        ms = (time.perf_counter() - t0) * 1000
-        c = camino(b.padre, destino)
+
+    def describir(c):
         niveles = Counter(d.nivel[(u, v)] for u, v in zip(c, c[1:]))
-        metros = 1.2 * (len(c) - 1)
         ajustado = sum(1.2 * config.FACTOR_CONGESTION[d.nivel[(u, v)]] for u, v in zip(c, c[1:]))
-        rutas[nombre] = c
-        print(f"\nPeso «{peso}» ({nombre}):")
-        print(f"  Rondas de relajación: {b.rondas} de V - 1 = {len(d.nodos) - 1} posibles (se detiene cuando una ronda no mejora nada)")
-        print(f"  Relajaciones: {b.relajaciones} · ¿ciclo negativo?: {'sí' if b.ciclo_negativo else 'no'} · {ms:.0f} ms")
-        print(f"  Ruta: {len(c) - 1} pasillos = {metros:.1f} m reales, {ajustado:.2f} m ajustados, "
+        print(f"  Ruta: {len(c) - 1} pasillos = {1.2 * (len(c) - 1):.1f} m reales, {ajustado:.2f} m ajustados, "
               f"{ajustado / config.VELOCIDAD_M_S:.0f} s a {config.VELOCIDAD_M_S} m/s con congestión")
         print("  Pasillos por congestión: " + ", ".join(f"{n} {niveles[n]}" for n in ("Baja", "Media", "Alta")))
+
+    rutas = {}
+    t0 = time.perf_counter()
+    dist, padre = bfs(list(d.nodos), d.arcos("Distancia_m"), origen)
+    ms = (time.perf_counter() - t0) * 1000
+    rutas["bfs"] = camino(padre, destino)
+    print(f"\nBFS (cada pasillo vale 1; no ve la congestión) · O(V + E) · {ms:.0f} ms:")
+    print(f"  Ubicaciones alcanzadas: {len(dist)} de {len(d.nodos)}")
+    describir(rutas["bfs"])
+
+    t0 = time.perf_counter()
+    b = bellman_ford(list(d.nodos), d.arcos("Distancia_Ajustada_m"), origen)
+    ms = (time.perf_counter() - t0) * 1000
+    rutas["bf"] = camino(b.padre, destino)
+    print(f"\nBellman-Ford con «Distancia_Ajustada_m» · O(V · E) · {ms:.0f} ms:")
+    print(f"  Rondas de relajación: {b.rondas} de V - 1 = {len(d.nodos) - 1} posibles (se detiene cuando una ronda no mejora nada)")
+    print(f"  Relajaciones: {b.relajaciones} · ¿ciclo negativo?: {'sí' if b.ciclo_negativo else 'no'}")
+    describir(rutas["bf"])
 
     print("\nCiclo negativo (ejercicio 3): con pesos positivos no puede haber. Prueba con un ciclo de 3 nodos:")
     prueba = bellman_ford(["A", "B", "C"], [("A", "B", 1), ("B", "C", -2), ("C", "A", -1)], "A")
     print(f"  A->B 1, B->C -2, C->A -1 (suma -2): ¿ciclo negativo? {'sí' if prueba.ciclo_negativo else 'no'}")
 
     fig, ax = plt.subplots(figsize=(9, 10))
-    fondo(ax, d.nodos, d.pos, "Bellman-Ford: ruta más corta vs. ruta que evita la congestión", grilla=d.aristas())
+    fondo(ax, d.nodos, d.pos, "BFS (menos pasillos) vs. Bellman-Ford (evita la congestión)", grilla=d.aristas())
     altas = [(u, v) for (u, v), n in d.nivel.items() if n == "Alta" and u < v]
     lineas(ax, d.pos, altas, color="#f6c1c1", ancho=1.2)
-    recorrido(ax, d.pos, rutas["solo distancia"], "#718096", etiqueta="Solo distancia (menos pasillos)")
-    recorrido(ax, d.pos, rutas["con congestión"], "#2b6cb0", etiqueta="Con congestión (distancia ajustada)")
+    recorrido(ax, d.pos, rutas["bfs"], "#718096", etiqueta="BFS: menos pasillos")
+    recorrido(ax, d.pos, rutas["bf"], "#2b6cb0", etiqueta="Bellman-Ford: distancia ajustada por congestión")
     ax.plot([], [], color="#f6c1c1", linewidth=1.2, label="Pasillos de congestión alta")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.01), fontsize=9)
     guardar(fig, "ruta_bellman_ford.png", mostrar)
