@@ -12,6 +12,7 @@ O(V · E) ≈ O(V²) y O(V³) se queda en O(V³).
 Uso:
     python scripts/analisis.py            # tabla en consola + resultados/escalabilidad.{csv,png}
     python scripts/analisis.py --rapido   # menos tamaños (para probar)
+    python scripts/analisis.py --sin-ventana   # solo guarda los archivos, no abre la gráfica
 """
 import argparse
 import csv
@@ -22,11 +23,6 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ))
 sys.path.insert(0, str(RAIZ / "scripts"))
-
-import matplotlib  # noqa: E402
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
 
 from kivaflow import config  # noqa: E402
 from kivaflow.caminos import bellman_ford, bfs, floyd_warshall  # noqa: E402
@@ -91,8 +87,13 @@ def pendiente(xs, ys):
 def main():
     from demo import Datos
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--rapido", action="store_true")
+    p.add_argument("--rapido", action="store_true", help="menos tamaños (para probar)")
+    p.add_argument("--sin-ventana", action="store_true", help="solo guardar los archivos, sin abrir la gráfica")
     args = p.parse_args()
+    import matplotlib
+    if args.sin_ventana:
+        matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
     tamanos = [(10, 10), (15, 15), (25, 25), (45, 40)] if args.rapido else \
         [(10, 10), (12, 12), (15, 15), (20, 20), (25, 25), (30, 30), (35, 35), (40, 40), (45, 40)]
     d = Datos()
@@ -137,6 +138,9 @@ def main():
     print("  y cada BFS cuesta O(V + E): √V · V = V^1.5, que es lo que se mide.")
     print("- Kruskal y Prim: el log V casi no se nota con tamaños tan pequeños; se ven casi lineales.")
     print("\nArchivos: resultados/escalabilidad.csv y resultados/escalabilidad.png")
+    if not args.sin_ventana:
+        print("Abriendo la gráfica (ciérrala para terminar)…")
+        plt.show()
 
 
 if __name__ == "__main__":
