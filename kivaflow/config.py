@@ -32,3 +32,7 @@ FACTOR_CONGESTION = {"Baja": 1.0, "Media": 1.25, "Alta": 1.6}
 N_PEDIDOS = 2000
 MAX_PRODUCTOS_POR_PEDIDO = 10
 ZIPF_S = 1.0  # popularidad sintética: el producto de rango r se pide ~ 1 / r^s
+
+# Capacidad de cada pasillo para el flujo máximo: operarios por minuto que pueden
+# cruzarlo. Un pasillo muy transitado deja menos capacidad libre.
+CAPACIDAD_OPERARIOS_MIN = {"Baja": 3, "Media": 2, "Alta": 1}
