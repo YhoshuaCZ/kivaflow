@@ -20,7 +20,7 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 
 | Rama | Qué tiene |
 |---|---|
-| `pc3` | Avance paso a paso desde el TB1: dataset, MST (Kruskal y Prim) y los algoritmos de la unidad 2 (flujo, Bellman-Ford, Floyd-Warshall, mochila), con demo en matplotlib. Va con el informe del hito 2 |
+| `hito2` | Avance paso a paso desde el TB1: dataset, MST (Kruskal y Prim) y los algoritmos de la unidad 2 (flujo, Bellman-Ford, Floyd-Warshall, mochila), con demo en matplotlib. Va con el informe del hito 2 |
 | `tb2` | Todo lo avanzado para el trabajo final: BFS, Bellman-Ford, Edmonds-Karp, simulación y la app web |
 | `main` | Igual que `tb2` por ahora; de aquí sale la app publicada |
 
@@ -36,9 +36,9 @@ El MST usa `Distancia_Ajustada_m` (con `Distancia_m` todos los pasillos miden 1,
 
 ![Cómo crece el árbol con Kruskal y con Prim](resultados/mst_etapas.png)
 
-## Demo de los algoritmos de la unidad 2 (PC3)
+## Demo de los algoritmos de la unidad 2 (hito 2)
 
-El curso no publica un enunciado de «PC3». La demo sigue las hojas de ejercicios del profe de las semanas 9 a 12 y aplica cada algoritmo al mapa de 3 zonas. Todo está programado a mano con la librería estándar; matplotlib solo dibuja y NetworkX solo se usa en los tests para comparar.
+La demo sigue las hojas de ejercicios del profe de las semanas 9 a 12 y aplica cada algoritmo al mapa de 3 zonas. Todo está programado a mano con la librería estándar; matplotlib solo dibuja y NetworkX solo se usa en los tests para comparar.
 
 ```bash
 python scripts/demo.py todo              # todas las demos: detalle en consola + PNG en resultados/
