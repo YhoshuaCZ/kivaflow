@@ -1,4 +1,6 @@
-"""Programación dinámica en grafos (hoja 13): Bellman-Ford y Floyd-Warshall, a mano."""
+"""Caminos mínimos, a mano: BFS (línea base, cuenta pasillos) y la programación
+dinámica en grafos de la hoja 13 (Bellman-Ford y Floyd-Warshall)."""
+from collections import deque
 from dataclasses import dataclass
 
 INF = float("inf")
@@ -33,6 +35,26 @@ def bellman_ford(nodos, arcos, origen):
             break
     negativo = any(dist[u] + w < dist[v] for u, v, w in arcos)
     return BellmanFord(dist, padre, rondas, relajaciones, negativo)
+
+
+def bfs(nodos, arcos, origen):
+    """Menor número de pasillos desde `origen` (todos los pasos valen 1). O(V + E).
+
+    Devuelve (dist, padre). Es la línea base: no ve la congestión.
+    """
+    ady = {n: [] for n in nodos}
+    for u, v, *_ in arcos:
+        ady[u].append(v)
+    dist, padre = {origen: 0}, {n: None for n in nodos}
+    cola = deque([origen])
+    while cola:
+        u = cola.popleft()
+        for v in ady[u]:
+            if v not in dist:
+                dist[v] = dist[u] + 1
+                padre[v] = u
+                cola.append(v)
+    return dist, padre
 
 
 def camino(padre, destino):
