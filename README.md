@@ -12,8 +12,29 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 |---|---|
 | Dataset (layout + tráfico simulado) | ✅ reproducible, con tests |
 | Pedidos reales de Instacart | 🧪 script listo; falta correrlo con los datos de Kaggle |
+| MST: Kruskal (con UFDS) y Prim | ✅ a mano, comparados con NetworkX · demo: `python scripts/demo_mst.py` |
 | BFS, Bellman-Ford, Edmonds-Karp | 🔜 |
 | GUI en Streamlit (con enlace público) | 🔜 |
+
+## Ramas
+
+| Rama | Qué tiene |
+|---|---|
+| `pc3` | Avance paso a paso desde el TB1: dataset + MST (Kruskal y Prim) con demo en matplotlib. Va con el informe del hito 2 |
+| `tb2` | Todo lo avanzado para el trabajo final: BFS, Bellman-Ford, Edmonds-Karp, simulación y la app web |
+| `main` | Igual que `tb2` por ahora; de aquí sale la app publicada |
+
+## Demo del MST (red de servicio)
+
+```bash
+python scripts/demo_mst.py             # detalle en consola + resultados/mst_etapas.png y mst_red_servicio.png
+python scripts/demo_mst.py --ejemplo   # Kruskal paso a paso en 5 nodos, con los grupos del UFDS
+python scripts/demo_mst.py --animar    # ventana con Kruskal y Prim creciendo lado a lado
+```
+
+El MST usa `Distancia_Ajustada_m` (con `Distancia_m` todos los pasillos miden 1,2 m y cualquier árbol costaría igual). Resultado: 1799 pasillos y 2448,78 m ajustados con los dos algoritmos; solo 174 pasillos de congestión alta, de los 1168 del almacén.
+
+![Cómo crece el árbol con Kruskal y con Prim](resultados/mst_etapas.png)
 
 ## El dataset
 
