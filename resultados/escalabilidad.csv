@@ -1,0 +1,49 @@
+Algoritmo,Sector,V,E,Tiempo_ms,Memoria_pico_KB,Operaciones
+BFS,10x10,100,180,0.09,16.6,100 nodos visitados
+Bellman-Ford,10x10,100,180,0.131,7.9,"2 rondas, 720 arcos revisados"
+Kruskal + UFDS,10x10,100,180,0.152,10.0,166 aristas revisadas
+Prim (heap),10x10,100,180,0.148,19.0,166 entradas del heap
+Edmonds-Karp,10x10,100,180,0.616,56.2,"10 caminos, flujo 22"
+Floyd-Warshall,10x10,100,180,23.993,396.6,1000000 pasos (V³)
+BFS,12x12,144,264,0.131,20.4,144 nodos visitados
+Bellman-Ford,12x12,144,264,0.201,7.9,"2 rondas, 1056 arcos revisados"
+Kruskal + UFDS,12x12,144,264,0.236,11.2,242 aristas revisadas
+Prim (heap),12x12,144,264,0.225,22.8,242 entradas del heap
+Edmonds-Karp,12x12,144,264,1.056,73.6,"13 caminos, flujo 27"
+Floyd-Warshall,12x12,144,264,66.05,816.8,2985984 pasos (V³)
+BFS,15x15,225,420,0.206,38.6,225 nodos visitados
+Bellman-Ford,15x15,225,420,0.295,16.1,"2 rondas, 1680 arcos revisados"
+Kruskal + UFDS,15x15,225,420,0.385,19.9,402 aristas revisadas
+Prim (heap),15x15,225,420,0.381,32.8,402 entradas del heap
+Edmonds-Karp,15x15,225,420,2.071,110.5,"17 caminos, flujo 34"
+Floyd-Warshall,15x15,225,420,251.623,1989.1,11390625 pasos (V³)
+BFS,20x20,400,760,0.381,75.8,400 nodos visitados
+Bellman-Ford,20x20,400,760,0.559,32.9,"2 rondas, 3040 arcos revisados"
+Kruskal + UFDS,20x20,400,760,0.774,41.1,741 aristas revisadas
+Prim (heap),20x20,400,760,0.782,87.1,741 entradas del heap
+Edmonds-Karp,20x20,400,760,4.773,218.4,"22 caminos, flujo 32"
+BFS,25x25,625,1200,0.605,95.1,625 nodos visitados
+Bellman-Ford,25x25,625,1200,1.183,38.1,"3 rondas, 7200 arcos revisados"
+Kruskal + UFDS,25x25,625,1200,1.178,49.7,1169 aristas revisadas
+Prim (heap),25x25,625,1200,1.303,132.0,1168 entradas del heap
+Edmonds-Karp,25x25,625,1200,8.781,303.1,"28 caminos, flujo 38"
+BFS,30x30,900,1740,0.897,163.1,900 nodos visitados
+Bellman-Ford,30x30,900,1740,2.067,69.9,"4 rondas, 13920 arcos revisados"
+Kruskal + UFDS,30x30,900,1740,1.755,85.8,1704 aristas revisadas
+Prim (heap),30x30,900,1740,2.029,236.8,1704 entradas del heap
+Edmonds-Karp,30x30,900,1740,16.813,431.2,"36 caminos, flujo 48"
+BFS,35x35,1225,2380,1.278,191.0,1225 nodos visitados
+Bellman-Ford,35x35,1225,2380,2.96,77.5,"4 rondas, 19040 arcos revisados"
+Kruskal + UFDS,35x35,1225,2380,2.406,126.3,2342 aristas revisadas
+Prim (heap),35x35,1225,2380,2.911,347.6,2341 entradas del heap
+Edmonds-Karp,35x35,1225,2380,25.982,551.9,"42 caminos, flujo 56"
+BFS,40x40,1600,3120,1.687,311.9,1600 nodos visitados
+Bellman-Ford,40x40,1600,3120,3.62,137.0,"4 rondas, 24960 arcos revisados"
+Kruskal + UFDS,40x40,1600,3120,3.199,245.5,3081 aristas revisadas
+Prim (heap),40x40,1600,3120,3.876,643.2,3081 entradas del heap
+Edmonds-Karp,40x40,1600,3120,39.223,776.5,"49 caminos, flujo 66"
+BFS,45x40,1800,3515,1.899,329.1,1800 nodos visitados
+Bellman-Ford,45x40,1800,3515,4.726,141.7,"5 rondas, 35150 arcos revisados"
+Kruskal + UFDS,45x40,1800,3515,3.534,282.5,3473 aristas revisadas
+Prim (heap),45x40,1800,3515,4.362,722.1,3473 entradas del heap
+Edmonds-Karp,45x40,1800,3515,48.489,853.8,"54 caminos, flujo 73"
