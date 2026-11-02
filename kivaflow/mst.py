@@ -83,3 +83,22 @@ def es_arbol_de_expansion(nodos, aristas_arbol):
         return False
     uf = UFDS(nodos)
     return all(uf.unir(u, v) for u, v, _ in aristas_arbol) and uf.grupos == 1
+
+
+def fuerza_bruta(nodos, aristas):
+    """MST probando todos los subconjuntos de V - 1 aristas (hoja 10, ejercicio 1).
+
+    Hay C(E, V-1) subconjuntos: crece de forma exponencial, por eso solo sirve en un
+    sector chico del almacén y como referencia para validar Kruskal y Prim.
+    """
+    from itertools import combinations
+    nodos = list(nodos)
+    mejor, probados = None, 0
+    for sub in combinations(aristas, len(nodos) - 1):
+        probados += 1
+        if es_arbol_de_expansion(nodos, sub):
+            costo = sum(w for *_, w in sub)
+            if mejor is None or costo < mejor.costo:
+                mejor = Resultado("Fuerza bruta", list(sub), costo)
+    mejor.revisadas = probados
+    return mejor
