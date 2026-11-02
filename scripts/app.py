@@ -12,6 +12,8 @@ En la ventana:
     2. «Ruta del pedido» calcula el recorrido con el algoritmo elegido.
        «Comparar BFS y B-F» corre los dos sobre el mismo pedido y los dibuja juntos.
     3. «Flujo máximo» y «Red de servicio (MST)» analizan el almacén completo.
+    4. Los botones amarillos «Carrera…» abren una animación en el tiempo real de dos
+       algoritmos (ver scripts/carrera.py).
 Cada ejecución se agrega a resultados/mediciones.csv.
 """
 import argparse
@@ -151,9 +153,15 @@ def ventana(prueba=False):
     opciones = CheckButtons(fig.add_axes([0.5, 0.555, 0.15, 0.04]), ["Terminar en Despacho"], [True])
     botones = {}
     for i, texto in enumerate(["Ruta del pedido", "Comparar BFS y B-F", "Flujo máximo",
-                               "Red de servicio (MST)", "Pedido al azar", "Limpiar pedido"]):
-        botones[texto] = Button(fig.add_axes([0.68 + (i % 2) * 0.155, 0.87 - (i // 2) * 0.075, 0.145, 0.06]), texto)
-    fig.text(0.68, 0.64, "Ruta: varios productos = un pedido real; el orden de visita\n"
+                               "Red de servicio (MST)", "Pedido al azar", "Limpiar pedido",
+                               "Carrera: BFS vs B-F", "Carrera: Kruskal vs Prim", "Carrera: flujo"]):
+        botones[texto] = Button(fig.add_axes([0.68 + (i % 2) * 0.155, 0.89 - (i // 2) * 0.058, 0.145, 0.05]), texto)
+        if texto.startswith("Carrera"):
+            botones[texto].color = botones[texto].hovercolor = "#fefcbf"
+            botones[texto].ax.set_facecolor("#fefcbf")
+    fig.text(0.68, 0.645, "Carreras: los dos algoritmos corren de verdad y se\n"
+             "reproducen en cámara lenta con el mismo reloj (desde el origen elegido).\n"
+             "Ruta: varios productos = un pedido real; el orden de visita\n"
              "es voraz (siempre al producto pendiente más cercano).\n"
              "Tiempo: mejor de 3 corridas · Memoria: pico con tracemalloc.\n"
              "Cada ejecución se guarda en resultados/mediciones.csv.", fontsize=8, va="top", color="#4a5568")
@@ -253,6 +261,20 @@ def ventana(prueba=False):
             estado["productos"].remove(cerca)
         refrescar()
 
+    def en_carrera(tipo):
+        import carrera
+        mostrar(pedido_txt() + f"Preparando la carrera ({tipo})… se abre en otra ventana.")
+        fig.canvas.draw()
+        fig2, estado["anim"] = carrera.carrera(plt, a.d, tipo, estado["origen"])
+        fig2.show()
+        mostrar(pedido_txt() + f"Carrera ({tipo}) abierta en otra ventana. Para la de rutas, cambia el\n"
+                "origen con un clic y vuelve a pulsar el botón: desde el centro, Bellman-Ford\n"
+                "necesita muchas más rondas que desde una esquina.")
+        fig.canvas.draw_idle()
+
+    botones["Carrera: BFS vs B-F"].on_clicked(lambda _: en_carrera("rutas"))
+    botones["Carrera: Kruskal vs Prim"].on_clicked(lambda _: en_carrera("mst"))
+    botones["Carrera: flujo"].on_clicked(lambda _: en_carrera("flujo"))
     botones["Ruta del pedido"].on_clicked(lambda _: en_ruta([algo.value_selected]))
     botones["Comparar BFS y B-F"].on_clicked(lambda _: en_ruta(["BFS", "Bellman-Ford"]))
     botones["Flujo máximo"].on_clicked(en_flujo)
