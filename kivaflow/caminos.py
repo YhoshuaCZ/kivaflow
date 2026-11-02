@@ -15,9 +15,12 @@ class BellmanFord:
     ciclo_negativo: bool
 
 
-def bellman_ford(nodos, arcos, origen):
+def bellman_ford(nodos, arcos, origen, al_evento=None):
     """arcos: [(u, v, w)] dirigidos. Hasta V - 1 rondas; para antes si una ronda no
-    mejora nada. Una ronda extra que todavía mejora indica un ciclo negativo."""
+    mejora nada. Una ronda extra que todavía mejora indica un ciclo negativo.
+
+    `al_evento(v)`, si se da, se llama cada vez que mejora la distancia de v
+    (lo usa la animación en el tiempo)."""
     dist = {n: INF for n in nodos}
     padre = {n: None for n in nodos}
     dist[origen] = 0.0
@@ -31,16 +34,19 @@ def bellman_ford(nodos, arcos, origen):
                 padre[v] = u
                 relajaciones += 1
                 cambio = True
+                if al_evento:
+                    al_evento(v)
         if not cambio:
             break
     negativo = any(dist[u] + w < dist[v] for u, v, w in arcos)
     return BellmanFord(dist, padre, rondas, relajaciones, negativo)
 
 
-def bfs(nodos, arcos, origen):
+def bfs(nodos, arcos, origen, al_evento=None):
     """Menor número de pasillos desde `origen` (todos los pasos valen 1). O(V + E).
 
     Devuelve (dist, padre). Es la línea base: no ve la congestión.
+    `al_evento(v)`, si se da, se llama cuando BFS descubre v.
     """
     ady = {n: [] for n in nodos}
     for u, v, *_ in arcos:
@@ -54,6 +60,8 @@ def bfs(nodos, arcos, origen):
                 dist[v] = dist[u] + 1
                 padre[v] = u
                 cola.append(v)
+                if al_evento:
+                    al_evento(v)
     return dist, padre
 
 

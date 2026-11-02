@@ -26,7 +26,7 @@ def lista_aristas(aristas_csv, peso="Distancia_Ajustada_m"):
     return [(a["Nodo_Origen"], a["Nodo_Destino"], float(a[peso])) for a in aristas_csv]
 
 
-def kruskal(nodos, aristas):
+def kruskal(nodos, aristas, al_evento=None):
     """Kruskal: ordena los pasillos de menor a mayor y agrega los que no forman ciclo.
 
     O(E log E) por el ordenamiento; cada `unir` cuesta casi O(1) amortizado.
@@ -40,6 +40,8 @@ def kruskal(nodos, aristas):
         if uf.unir(u, v):
             r.aristas.append((u, v, w))
             r.costo += w
+            if al_evento:
+                al_evento((u, v, w))
             if len(r.aristas) == objetivo:  # el árbol ya está completo
                 break
         else:
@@ -47,7 +49,7 @@ def kruskal(nodos, aristas):
     return r
 
 
-def prim(nodos, aristas, inicio=None):
+def prim(nodos, aristas, inicio=None, al_evento=None):
     """Prim: hace crecer un solo árbol desde `inicio`, agregando siempre el pasillo
     más barato que sale del árbol. Con heap binario: O(E log V).
     """
@@ -70,6 +72,8 @@ def prim(nodos, aristas, inicio=None):
         en_arbol.add(v)
         r.aristas.append((u, v, w))
         r.costo += w
+        if al_evento:
+            al_evento((u, v, w))
         for x, w2 in ady[v]:
             if x not in en_arbol:
                 heapq.heappush(heap, (w2, v, x))

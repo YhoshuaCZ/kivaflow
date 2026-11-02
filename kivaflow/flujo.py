@@ -85,12 +85,12 @@ def _bfs(res, s, t):
     return camino[::-1]
 
 
-def edmonds_karp(cap, s=FUENTE, t=SUMIDERO):
+def edmonds_karp(cap, s=FUENTE, t=SUMIDERO, al_evento=None):
     """Ford-Fulkerson con BFS. O(V · E²)."""
-    return ford_fulkerson(cap, s, t, buscar=_bfs)
+    return ford_fulkerson(cap, s, t, buscar=_bfs, al_evento=al_evento)
 
 
-def ford_fulkerson(cap, s=FUENTE, t=SUMIDERO, buscar=_dfs):
+def ford_fulkerson(cap, s=FUENTE, t=SUMIDERO, buscar=_dfs, al_evento=None):
     """Aumenta el flujo por caminos de la red residual hasta que no quede ninguno.
     `buscar` elige cómo se halla el camino: DFS (por defecto) o BFS (Edmonds-Karp)."""
     original = {u: dict(vs) for u, vs in cap.items()}
@@ -106,6 +106,8 @@ def ford_fulkerson(cap, s=FUENTE, t=SUMIDERO, buscar=_dfs):
             res[v][u] += cuello
         f.valor += cuello
         f.caminos.append((camino, cuello))
+        if al_evento:
+            al_evento((camino, cuello))
     # Corte mínimo: lo alcanzable desde s en la red residual final.
     alcanzado, pila = {s}, [s]
     while pila:
