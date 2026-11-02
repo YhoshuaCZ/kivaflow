@@ -55,3 +55,20 @@ def test_aplicativo_en_el_almacen():
     assert all(x.resultado["flujo máximo"] == "73 operarios/min" for x in flujo) and len(corte) == 45
     mst, arbol = a.mst()
     assert len(arbol) == 1799
+
+
+@pytest.mark.parametrize("tipo", ["rutas", "mst", "flujo"])
+def test_carrera_graba_eventos_en_orden(tipo):
+    import carrera
+    from demo import Datos
+    d = Datos()
+    _, corredores = carrera.preparar(tipo, d, "20-20")
+    for c in corredores:
+        assert c.eventos and c.tiempos == sorted(c.tiempos)  # el reloj solo avanza
+        assert c.tiempos[-1] <= c.total_ms
+    if tipo == "rutas":  # BFS descubre cada ubicación una vez (todas menos el origen)
+        assert len(corredores[0].eventos) == len(d.nodos) - 1
+    if tipo == "mst":  # los dos agregan V - 1 pasillos
+        assert all(len(c.eventos) == len(d.nodos) - 1 for c in corredores)
+    if tipo == "flujo":  # los dos llegan al flujo máximo
+        assert all(sum(cuello for _, (_, cuello) in c.eventos) == 73 for c in corredores)

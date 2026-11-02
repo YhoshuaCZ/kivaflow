@@ -35,8 +35,9 @@ python -m venv .venv
 pip install -r requirements.txt
 
 python scripts/app.py           # el aplicativo (ventana)
-python scripts/analisis.py      # cómo crecen tiempo y memoria con el tamaño del almacén
-python -m pytest                # 31 pruebas
+python scripts/carrera.py rutas --origen 20-20   # dos algoritmos trabajando en el tiempo (también: mst, flujo)
+python scripts/analisis.py      # cómo crecen tiempo y memoria con el tamaño del almacén (abre la gráfica)
+python -m pytest                # 34 pruebas
 ```
 
 ### El aplicativo (`scripts/app.py`)
@@ -46,6 +47,7 @@ python -m pytest                # 31 pruebas
 1. **Arma un pedido con clics en el mapa.** Elige el modo «Origen» (de dónde sale el operario) o «Agregar producto» y haz clic en una ubicación. «Pedido al azar» elige productos según su popularidad. Un pedido tiene varios productos porque así son los pedidos reales: el operario sale una vez y recoge todo. El orden de visita es **voraz** (siempre va al producto pendiente más cercano), porque el orden óptimo es el problema del viajante, que es NP-difícil.
 2. **«Ruta del pedido»** calcula el recorrido con el algoritmo elegido. **«Comparar BFS y B-F»** dibuja los dos sobre el mismo pedido. Con «Terminar en Despacho», el recorrido acaba en el muelle de Despacho más cercano.
 3. **«Flujo máximo»** (Edmonds-Karp y Ford-Fulkerson con DFS) y **«Red de servicio (MST)»** (Kruskal y Prim) analizan el almacén completo.
+4. Los botones amarillos **«Carrera…»** abren la carrera en el tiempo (ver abajo) desde el origen elegido.
 
 Cada ejecución muestra, por algoritmo:
 
@@ -58,6 +60,20 @@ Cada ejecución muestra, por algoritmo:
 | **Calidad del resultado** | Pasillos, metros, segundos del operario, pasillos congestionados, flujo, costo del árbol | Sobre el recorrido o el resultado |
 
 Todo se agrega a `resultados/mediciones.csv` (no se sube al repo). Sin ventana: `python scripts/app.py --consola --origen 02-00 --productos 40-14,10-20,30-30`.
+
+### Carrera en el tiempo (`scripts/carrera.py`)
+
+Dos algoritmos resuelven lo mismo y se ve, con **un reloj común**, qué hizo cada uno en cada instante. No es paso a paso: cada algoritmo corre de verdad y anota el instante exacto de cada avance; después se reproduce en cámara lenta (los milisegundos reales duran unos segundos en pantalla). Abajo, la curva muestra qué porcentaje de su trabajo llevaba cada uno en cada momento.
+
+| Carrera | Qué se ve |
+|---|---|
+| `rutas` (BFS vs. Bellman-Ford) | BFS descubre cada ubicación una sola vez, en ondas. Bellman-Ford mejora distancias ronda tras ronda; en naranja, las que tuvo que volver a mejorar. Desde una esquina (02-00) los dos terminan rápido; desde el centro (20-20), Bellman-Ford tarda varias veces más |
+| `mst` (Kruskal vs. Prim) | Kruskal arma pedazos sueltos en todo el almacén y los va uniendo (UFDS); Prim hace crecer un solo árbol desde un punto |
+| `flujo` (Edmonds-Karp vs. Ford-Fulkerson con DFS) | Cada trazo es un camino de aumento. Edmonds-Karp usa los más cortos (rectos); DFS se mete por caminos largos y tortuosos y necesita más |
+
+![Carrera BFS vs. Bellman-Ford desde el centro](resultados/carrera_rutas.gif)
+
+`--duracion 20` la hace más lenta; `--guardar` la guarda como GIF en `resultados/` (tarda unos minutos).
 
 ### Análisis de eficiencia (`scripts/analisis.py`)
 
