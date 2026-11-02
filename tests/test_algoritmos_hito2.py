@@ -4,8 +4,8 @@ import random
 import networkx as nx
 import pytest
 
-from kivaflow.caminos import bellman_ford, camino, camino_fw, floyd_warshall
-from kivaflow.flujo import FUENTE, SUMIDERO, ford_fulkerson
+from kivaflow.caminos import bellman_ford, bfs, camino, camino_fw, floyd_warshall
+from kivaflow.flujo import FUENTE, SUMIDERO, edmonds_karp, ford_fulkerson
 from kivaflow.mochila import mochila_01
 from kivaflow.mst import es_arbol_de_expansion, fuerza_bruta, kruskal, prim
 
@@ -48,9 +48,10 @@ def test_ford_fulkerson_caso_de_clase():
     # Red clásica de CLRS: flujo máximo 23.
     arcos = [("s", "a", 16), ("s", "c", 13), ("a", "b", 12), ("c", "a", 4), ("b", "c", 9),
              ("c", "d", 14), ("d", "b", 7), ("b", "t", 20), ("d", "t", 4)]
-    f = ford_fulkerson(_red(arcos), "s", "t")
-    assert f.valor == 23
-    assert sum(c for *_, c in f.corte) == 23  # flujo máximo = corte mínimo
+    for algoritmo in (ford_fulkerson, edmonds_karp):
+        f = algoritmo(_red(arcos), "s", "t")
+        assert f.valor == 23
+        assert sum(c for *_, c in f.corte) == 23  # flujo máximo = corte mínimo
 
 
 @pytest.mark.parametrize("semilla", [4, 5])
@@ -66,9 +67,31 @@ def test_ford_fulkerson_contra_networkx(semilla):
     g = nx.DiGraph()
     for u, v, c in arcos:
         g.add_edge(u, v, capacity=c)
-    f = ford_fulkerson(_red(arcos))
-    assert f.valor == nx.maximum_flow_value(g, FUENTE, SUMIDERO)
-    assert sum(c for *_, c in f.corte) == f.valor
+    esperado = nx.maximum_flow_value(g, FUENTE, SUMIDERO)
+    for algoritmo in (ford_fulkerson, edmonds_karp):
+        f = algoritmo(_red(arcos))
+        assert f.valor == esperado
+        assert sum(c for *_, c in f.corte) == f.valor
+
+
+def test_edmonds_karp_usa_caminos_mas_cortos_primero():
+    # BFS elige s-a-t (2 arcos) antes que s-b-c-t (3 arcos); los largos nunca decrecen.
+    arcos = [("s", "a", 1), ("a", "t", 1), ("s", "b", 1), ("b", "c", 1), ("c", "t", 1)]
+    f = edmonds_karp(_red(arcos), "s", "t")
+    largos = [len(c) for c, _ in f.caminos]
+    assert f.valor == 2 and largos == sorted(largos) and largos[0] == 3
+
+
+# ---- BFS (línea base de rutas) ----
+
+def test_bfs_cuenta_pasillos_igual_que_networkx():
+    nodos, aristas = _grilla(6, 7, 10)
+    arcos = [(u, v, w) for u, v, w in aristas] + [(v, u, w) for u, v, w in aristas]
+    dist, padre = bfs(nodos, arcos, (0, 0))
+    g = nx.Graph()
+    g.add_edges_from((u, v) for u, v, _ in aristas)
+    assert dist == nx.single_source_shortest_path_length(g, (0, 0))
+    assert len(camino(padre, (5, 6))) - 1 == dist[(5, 6)] == 11
 
 
 # ---- Bellman-Ford y Floyd-Warshall (hoja 13) ----
