@@ -13,14 +13,14 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 | Dataset (layout + tráfico simulado) | ✅ reproducible, con tests |
 | Pedidos reales de Instacart | 🧪 script listo; falta correrlo con los datos de Kaggle |
 | MST: Kruskal (con UFDS) y Prim | ✅ a mano, comparados con NetworkX · demo: `python scripts/demo_mst.py` |
-| BFS, Bellman-Ford, Edmonds-Karp | 🔜 |
+| MST por fuerza bruta, Ford-Fulkerson, Bellman-Ford, Floyd-Warshall, mochila 0/1 | ✅ a mano, con tests · demo: `python scripts/demo.py todo` |
 | GUI en Streamlit (con enlace público) | 🔜 |
 
 ## Ramas
 
 | Rama | Qué tiene |
 |---|---|
-| `pc3` | Avance paso a paso desde el TB1: dataset + MST (Kruskal y Prim) con demo en matplotlib. Va con el informe del hito 2 |
+| `pc3` | Avance paso a paso desde el TB1: dataset, MST (Kruskal y Prim) y los algoritmos de la unidad 2 (flujo, Bellman-Ford, Floyd-Warshall, mochila), con demo en matplotlib. Va con el informe del hito 2 |
 | `tb2` | Todo lo avanzado para el trabajo final: BFS, Bellman-Ford, Edmonds-Karp, simulación y la app web |
 | `main` | Igual que `tb2` por ahora; de aquí sale la app publicada |
 
@@ -35,6 +35,35 @@ python scripts/demo_mst.py --animar    # ventana con Kruskal y Prim creciendo la
 El MST usa `Distancia_Ajustada_m` (con `Distancia_m` todos los pasillos miden 1,2 m y cualquier árbol costaría igual). Resultado: 1799 pasillos y 2448,78 m ajustados con los dos algoritmos; solo 174 pasillos de congestión alta, de los 1168 del almacén.
 
 ![Cómo crece el árbol con Kruskal y con Prim](resultados/mst_etapas.png)
+
+## Demo de los algoritmos de la unidad 2 (PC3)
+
+El curso no publica un enunciado de «PC3». La demo sigue las hojas de ejercicios del profe de las semanas 9 a 12 y aplica cada algoritmo al mapa de 3 zonas. Todo está programado a mano con la librería estándar; matplotlib solo dibuja y NetworkX solo se usa en los tests para comparar.
+
+```bash
+python scripts/demo.py todo              # todas las demos: detalle en consola + PNG en resultados/
+python scripts/demo.py flujo --mostrar   # una sola, y además abre la ventana
+```
+
+| Subcomando | Hoja del profe | Algoritmo | Qué responde en el almacén | Resultado |
+|---|---|---|---|---|
+| `mst` | 10 | Kruskal (UFDS) y Prim (heap) | Red de servicio con la menor distancia ajustada | 1799 pasillos, 2448,78 m |
+| `fuerza-bruta` | 10, ej. 1 | MST probando todos los subconjuntos | Valida Kruskal en un sector de 3 × 4 | 12 376 subconjuntos, mismo costo 13,20 |
+| `flujo` | 11 | Ford-Fulkerson (DFS) y corte mínimo | Cuántos operarios/min pasan de Recepción a Despacho y qué pasillos lo limitan | 73 operarios/min; el corte son 45 pasillos dentro de Picking |
+| `ruta` | 13 | Bellman-Ford | Ruta que evita la congestión frente a la más corta | Los mismos 52 pasillos (62,4 m), pero 1 de congestión alta en vez de 48: 65 s frente a 89 s |
+| `floyd` | 13 | Floyd-Warshall | Distancias entre todas las ubicaciones de un sector de 10 × 10 de Picking | Matriz 100 × 100; coincide con Bellman-Ford |
+| `mochila` | 12 | Mochila 0/1 (DP) | Qué productos lleva un robot de 20 kg en el primer viaje | Urgencia 40 con 6 de 10 productos |
+
+Capacidades del flujo: pasillo de congestión Baja = 3, Media = 2, Alta = 1 operarios/min (`CAPACIDAD_OPERARIOS_MIN` en `config.py`).
+
+Fibonacci, Ackermann y cambio de monedas (hoja 12) son práctica de DP sin uso directo en el almacén. El clustering de la hoja 10 se probó y se descartó: con solo tres pesos posibles en la cuadrícula, cortar las k − 1 aristas más caras del MST deja nodos sueltos en vez de sectores.
+
+| | |
+|---|---|
+| ![Flujo máximo y corte mínimo](resultados/flujo_maximo.png) | ![Bellman-Ford](resultados/ruta_bellman_ford.png) |
+| ![Floyd-Warshall](resultados/floyd_warshall.png) | ![Mochila 0/1](resultados/mochila.png) |
+
+![Fuerza bruta frente a Kruskal](resultados/fuerza_bruta.png)
 
 ## El dataset
 
