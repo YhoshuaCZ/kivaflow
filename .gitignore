@@ -4,3 +4,6 @@ __pycache__/
 # Datos crudos de Instacart: no se publican (reglas de Kaggle)
 instacart/
 *.zip
+
+# Registro local de cada corrida del aplicativo (crece con el uso)
+resultados/mediciones.csv
