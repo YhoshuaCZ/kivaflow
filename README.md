@@ -4,7 +4,7 @@ Rutas de *picking* y cuellos de botella en un almacén inteligente tipo Amazon, 
 
 Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana de Ciencias Aplicadas, 2026-2.
 
-![Grafo del almacén por zonas y congestión](docs/grafo.png)
+![Grafo del almacén por zonas y congestión](docs/image/grafo.png)
 
 ## Estado
 
@@ -42,7 +42,7 @@ python -m pytest                # 34 pruebas
 
 ### El aplicativo (`scripts/app.py`)
 
-![Aplicativo: ruta de un pedido con BFS y Bellman-Ford](docs/app.png)
+![Aplicativo: ruta de un pedido con BFS y Bellman-Ford](docs/image/app.png)
 
 1. **Arma un pedido con clics en el mapa.** Elige el modo «Origen» (de dónde sale el operario) o «Agregar producto» y haz clic en una ubicación. «Pedido al azar» elige productos según su popularidad. Un pedido tiene varios productos porque así son los pedidos reales: el operario sale una vez y recoge todo. El orden de visita es **voraz** (siempre va al producto pendiente más cercano), porque el orden óptimo es el problema del viajante, que es NP-difícil.
 2. **«Ruta del pedido»** calcula el recorrido con el algoritmo elegido. **«Comparar BFS y B-F»** dibuja los dos sobre el mismo pedido. Con «Terminar en Despacho», el recorrido acaba en el muelle de Despacho más cercano.
@@ -174,7 +174,7 @@ python -m venv .venv
 pip install -r requirements.txt
 
 python scripts/generar_dataset.py      # data/*.csv con demanda sintética
-python scripts/dibujar_grafo.py        # docs/grafo.png
+python scripts/dibujar_grafo.py        # docs/image/grafo.png
 python -m pytest                       # comprueba tamaño, conectividad, pesos y reproducibilidad
 ```
 

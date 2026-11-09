@@ -1,6 +1,6 @@
 """Dibuja el grafo del almacén: nodos por zona y pasillos por nivel de congestión.
 
-Uso: python scripts/dibujar_grafo.py   -> docs/grafo.png
+Uso: python scripts/dibujar_grafo.py   -> docs/image/grafo.png
 """
 import sys
 from pathlib import Path
@@ -40,8 +40,8 @@ def main():
     ax.set_ylabel("y (m)")
     ax.set_aspect("equal")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.05), ncol=2, fontsize=9)
-    salida = RAIZ / "docs" / "grafo.png"
-    salida.parent.mkdir(exist_ok=True)
+    salida = RAIZ / "docs" / "image" / "grafo.png"
+    salida.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(salida, dpi=110, bbox_inches="tight")
     print(f"Escrito {salida}")
 
