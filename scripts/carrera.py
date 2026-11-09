@@ -207,6 +207,7 @@ def main():
     fig, anim = carrera(plt, d, args.tipo, args.origen, args.duracion)
     if args.guardar:
         salida = RAIZ / "resultados" / f"carrera_{args.tipo}.gif"
+        salida.parent.mkdir(exist_ok=True)
         anim.save(salida, writer="pillow", fps=FPS, dpi=60)
         print(f"Animación guardada en {salida.relative_to(RAIZ)}")
     else:
