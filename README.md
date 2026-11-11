@@ -14,7 +14,9 @@ Proyecto del curso **Complejidad Algorítmica (1ACC0184)**, Universidad Peruana 
 | Pedidos reales de Instacart | 🧪 script listo; falta correrlo con los datos de Kaggle |
 | MST: Kruskal (con UFDS) y Prim | ✅ a mano, comparados con NetworkX · demo: `python scripts/demo_mst.py` |
 | BFS, Bellman-Ford, Ford-Fulkerson y Edmonds-Karp, Floyd-Warshall, MST por fuerza bruta, mochila 0/1 | ✅ a mano, con tests · demo: `python scripts/demo.py todo` |
-| Aplicativo en matplotlib: pedido con clics, tiempo, memoria y operaciones · análisis de escalabilidad | ✅  ·  |
+| Orden de visita óptimo de un pedido (programación dinámica de Held-Karp) frente al voraz | ✅ a mano, comparado con la fuerza bruta en los tests |
+| Aplicativo en matplotlib: pedido con clics, tiempo, memoria y operaciones | ✅ `python scripts/app.py` |
+| Análisis de escalabilidad y experimento con 160 pedidos | ✅ `python scripts/analisis.py` · `python scripts/experimento.py` |
 | GUI web con enlace público | 🔜 hito 3 |
 
 ## Ramas
@@ -37,17 +39,32 @@ pip install -r requirements.txt
 python scripts/app.py           # el aplicativo (ventana)
 python scripts/carrera.py rutas --origen 20-20   # dos algoritmos trabajando en el tiempo (también: mst, flujo)
 python scripts/analisis.py      # cómo crecen tiempo y memoria con el tamaño del almacén (abre la gráfica)
-python -m pytest                # 34 pruebas
+python scripts/experimento.py   # 160 pedidos: cuánto ahorra Bellman-Ford y cuánto el orden óptimo (unos 4 min)
+python -m pytest                # 80 pruebas
 ```
+
+### Qué hace falta para ejecutarlo en otra computadora
+
+Python 3.10 o más reciente y las librerías de `requirements.txt` (`matplotlib` para las ventanas y figuras; `networkx` y `pytest` solo para las pruebas). No hay nada que configurar: cada script encuentra solo la carpeta del proyecto.
+
+| Carpeta | Qué tiene | ¿Hace falta para ejecutar? |
+|---|---|---|
+| `kivaflow/` | Los algoritmos, programados a mano, y la lectura del dataset | Sí |
+| `scripts/` | Los programas que se ejecutan: `app.py`, `carrera.py`, `demo.py`, `analisis.py`, `experimento.py` | Sí |
+| `data/` | El dataset: `nodos.csv` y `aristas.csv` (y `skus.csv`, que solo usan las pruebas) | Sí; se regenera idéntico con `python scripts/generar_dataset.py` |
+| `resultados/` | Figuras y tablas que generan los scripts | No; se crea sola. Está en el repo porque este README muestra sus imágenes |
+| `tests/` | Las pruebas (`python -m pytest`) | No |
+| `docs/image/` | Imágenes de este README | No |
 
 ### El aplicativo (`scripts/app.py`)
 
-![Aplicativo: ruta de un pedido con BFS y Bellman-Ford](docs/image/app.png)
+![Aplicativo: el mismo pedido con el orden de visita voraz y con el óptimo](docs/image/app.png)
 
-1. **Arma un pedido con clics en el mapa.** Elige el modo «Origen» (de dónde sale el operario) o «Agregar producto» y haz clic en una ubicación. «Pedido al azar» elige productos según su popularidad. Un pedido tiene varios productos porque así son los pedidos reales: el operario sale una vez y recoge todo. El orden de visita es **voraz** (siempre va al producto pendiente más cercano), porque el orden óptimo es el problema del viajante, que es NP-difícil.
+1. **Arma un pedido con clics en el mapa.** Elige el modo «Origen» (de dónde sale el operario) o «Agregar producto» y haz clic en una ubicación. «Pedido al azar» elige productos según su popularidad. Un pedido tiene varios productos porque así son los pedidos reales: el operario sale una vez y recoge todo. El orden de visita por defecto es **voraz** (siempre va al producto pendiente más cercano), porque el orden óptimo es el problema del viajante, que es NP-difícil.
 2. **«Ruta del pedido»** calcula el recorrido con el algoritmo elegido. **«Comparar BFS y B-F»** dibuja los dos sobre el mismo pedido. Con «Terminar en Despacho», el recorrido acaba en el muelle de Despacho más cercano.
-3. **«Flujo máximo»** (Edmonds-Karp y Ford-Fulkerson con DFS) y **«Red de servicio (MST)»** (Kruskal y Prim) analizan el almacén completo.
-4. Los botones amarillos **«Carrera…»** abren la carrera en el tiempo (ver abajo) desde el origen elegido.
+3. **«Orden: voraz vs óptimo»** recorre el mismo pedido con los dos órdenes de visita (ver abajo). **«Ver congestión»** pinta cada pasillo según su nivel, para ver qué esquiva Bellman-Ford.
+4. **«Flujo máximo»** (Edmonds-Karp y Ford-Fulkerson con DFS) y **«Red de servicio (MST)»** (Kruskal y Prim) analizan el almacén completo.
+5. Los botones amarillos **«Carrera…»** abren la carrera en el tiempo (ver abajo) desde el origen elegido.
 
 Cada ejecución muestra, por algoritmo:
 
@@ -60,6 +77,33 @@ Cada ejecución muestra, por algoritmo:
 | **Calidad del resultado** | Pasillos, metros, segundos del operario, pasillos congestionados, flujo, costo del árbol | Sobre el recorrido o el resultado |
 
 Todo se agrega a `resultados/mediciones.csv` (no se sube al repo). Sin ventana: `python scripts/app.py --consola --origen 02-00 --productos 40-14,10-20,30-30`.
+
+### Orden de visita óptimo (`kivaflow/orden.py`)
+
+La regla voraz es rápida, pero no siempre acierta: a veces conviene pasar primero por un producto más lejano para no tener que volver. Probar todos los órdenes cuesta n! (con 10 productos, 3 628 800). **Held-Karp** lo resuelve exacto con programación dinámica sobre subconjuntos:
+
+```
+dp[S][j] = menor costo de salir del origen, visitar los productos de S y terminar en j
+dp[S][j] = min sobre i en S − {j} de  dp[S − {j}][i] + d(i, j)
+```
+
+Son n · 2ⁿ⁻¹ estados y O(n² · 2ⁿ) en total: con 10 productos, 5120 estados. Sigue siendo exponencial, así que se limita a 12 productos. Las distancias d(i, j) salen de las mismas n + 1 búsquedas de Bellman-Ford que ya hace el voraz, por eso el orden óptimo casi no cuesta tiempo extra. Los tests lo comparan con la fuerza bruta (todas las permutaciones).
+
+### Experimento con 160 pedidos (`scripts/experimento.py`)
+
+El aplicativo compara un pedido a la vez; el experimento repite la comparación con 40 pedidos al azar de cada tamaño (misma semilla, mismos pedidos). Tiempo medio de caminata del operario:
+
+| Productos | BFS + voraz | Bellman-Ford + voraz | Bellman-Ford + óptimo | Ahorro por esquivar la congestión | Ahorro extra por ordenar mejor | Pedidos donde el voraz ya era óptimo |
+|---|---|---|---|---|---|---|
+| 2 | 128,6 s | 101,5 s | 99,3 s | 21,1 % | 2,1 % | 80 % |
+| 4 | 167,8 s | 135,7 s | 127,9 s | 19,1 % | 5,7 % | 40 % |
+| 6 | 208,5 s | 169,2 s | 155,8 s | 18,8 % | 8,0 % | 28 % |
+| 8 | 227,8 s | 187,1 s | 169,5 s | 17,9 % | 9,4 % | 20 % |
+
+- **Esquivar la congestión** (Bellman-Ford en vez de BFS) ahorra cerca de 19 % de caminata en todos los tamaños, a cambio de unas 10 veces más tiempo de cálculo.
+- **Ordenar mejor** importa más cuanto más grande es el pedido: con 2 productos el voraz casi siempre acierta; con 8 solo acierta en 1 de cada 5 pedidos y el óptimo ahorra 9,4 % adicional.
+
+![Tiempo medio de caminata por estrategia](resultados/experimento_pedidos.png)
 
 ### Carrera en el tiempo (`scripts/carrera.py`)
 
@@ -196,6 +240,7 @@ El código y la documentación de este repositorio se escribieron con asistencia
 
 ## Referencias
 
+- Held, M., & Karp, R. M. (1962). A dynamic programming approach to sequencing problems. *Journal of the Society for Industrial and Applied Mathematics, 10*(1), 196–210. https://doi.org/10.1137/0110015
 - Wurman, P. R., D'Andrea, R., & Mountz, M. (2008). Coordinating hundreds of cooperative, autonomous vehicles in warehouses. *AI Magazine, 29*(1), 9–20. https://doi.org/10.1609/aimag.v29i1.2082
 - Instacart. (2017). *Instacart Market Basket Analysis* [Conjunto de datos]. Kaggle. https://www.kaggle.com/c/instacart-market-basket-analysis
 
