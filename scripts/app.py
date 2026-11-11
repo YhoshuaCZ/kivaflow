@@ -11,12 +11,16 @@ En la ventana:
        «Pedido al azar» llena el pedido con productos según su popularidad.
     2. «Ruta del pedido» calcula el recorrido con el algoritmo elegido.
        «Comparar BFS y B-F» corre los dos sobre el mismo pedido y los dibuja juntos.
+       «Orden: voraz vs óptimo» compara el orden de visita voraz con el óptimo
+       (programación dinámica de Held-Karp) sobre el mismo pedido.
+       «Ver congestión» pinta cada pasillo según su nivel (Baja / Media / Alta).
     3. «Flujo máximo» y «Red de servicio (MST)» analizan el almacén completo.
     4. Los botones amarillos «Carrera…» abren una animación en el tiempo real de dos
        algoritmos (ver scripts/carrera.py).
 Cada ejecución se agrega a resultados/mediciones.csv.
 """
 import argparse
+import math
 import random
 import sys
 from collections import Counter
@@ -30,10 +34,13 @@ from kivaflow import config  # noqa: E402
 from kivaflow.flujo import edmonds_karp, ford_fulkerson, red  # noqa: E402
 from kivaflow.medicion import Medicion, guardar_csv, medir, tabla  # noqa: E402
 from kivaflow.mst import kruskal, prim  # noqa: E402
+from kivaflow.orden import MAX_PRODUCTOS, ruta_optima  # noqa: E402
 from kivaflow.pedido import Buscador, ruta_pedido  # noqa: E402
 
 CSV = RAIZ / "resultados" / "mediciones.csv"
 COLOR_ALGO = {"BFS": "#718096", "Bellman-Ford": "#2b6cb0"}
+COLOR_ORDEN = {"voraz": "#dd6b20", "óptimo": "#2f855a"}
+COMPLEJIDAD_ORDEN = {"voraz": "O(n²)", "óptimo": "O(n² · 2ⁿ)"}
 COMPLEJIDAD = {"BFS": "O(V + E)", "Bellman-Ford": "O(V · E)", "Edmonds-Karp": "O(V · E²)",
                "Ford-Fulkerson (DFS)": "O(E · f*)", "Kruskal + UFDS": "O(E log E)", "Prim (heap)": "O(E log V)"}
 
@@ -60,14 +67,29 @@ class Almacen:
                 "tiempo del operario": f"{ajustado / config.VELOCIDAD_M_S:.0f} s",
                 "pasillos Alta / Media / Baja": f"{niveles['Alta']} / {niveles['Media']} / {niveles['Baja']}"}
 
-    def ruta(self, algoritmo, origen, productos, a_despacho=True):
+    def ruta(self, algoritmo, origen, productos, a_despacho=True, orden="voraz", repeticiones=3):
+        """`orden`: «voraz» (al pendiente más cercano) u «óptimo» (Held-Karp, hasta MAX_PRODUCTOS)."""
+        armar = ruta_optima if orden == "óptimo" else ruta_pedido
+
         def correr():
             b = Buscador(self.d.nodos, self.arcos[algoritmo], algoritmo)
-            return b, ruta_pedido(b, origen, productos, self.muelles_despacho if a_despacho else ())
-        (b, (recorrido, orden)), ms, kb = medir(correr)
+            return b, armar(b, origen, productos, self.muelles_despacho if a_despacho else ())
+        (b, (recorrido, visita)), ms, kb = medir(correr, repeticiones=repeticiones)
         ops = dict(b.ops)  # el Buscador es nuevo en cada corrida: cuenta solo una
-        res = self.describir(recorrido) | {"orden de visita": " -> ".join([origen] + orden)}
-        return Medicion("ruta del pedido", algoritmo, COMPLEJIDAD[algoritmo], ms, kb, ops, res), recorrido
+        res = self.describir(recorrido) | {"orden de visita": " -> ".join([origen] + visita)}
+        nombre, comp = algoritmo, COMPLEJIDAD[algoritmo]
+        if orden == "óptimo":
+            nombre, comp = f"{algoritmo} · óptimo", COMPLEJIDAD_ORDEN["óptimo"]
+        return Medicion("ruta del pedido", nombre, comp, ms, kb, ops, res), recorrido
+
+    def comparar_orden(self, origen, productos, a_despacho=True):
+        """El mismo pedido con Bellman-Ford y los dos órdenes de visita: [(orden, Medicion, recorrido)]."""
+        salida = []
+        for orden in ("voraz", "óptimo"):
+            m, rec = self.ruta("Bellman-Ford", origen, productos, a_despacho, orden)
+            m.algoritmo, m.complejidad = f"Orden {orden}", COMPLEJIDAD_ORDEN[orden]
+            salida.append((orden, m, rec))
+        return salida
 
     def flujo(self):
         cap = red(self.d.filas, config.CAPACIDAD_OPERARIOS_MIN, self.d.zona("Rec"), self.d.zona("Emp"))
@@ -118,12 +140,14 @@ def consola(args):
     print(encabezado(a))
     print(f"Pedido: origen {args.origen}, productos {', '.join(productos)}, termina en un muelle de Despacho\n")
     rutas = [a.ruta(alg, args.origen, productos)[0] for alg in ("BFS", "Bellman-Ford")]
+    orden = [m for _, m, _ in a.comparar_orden(args.origen, productos)] if len(productos) <= MAX_PRODUCTOS else []
     flujo, _ = a.flujo()
     mst, _ = a.mst()
-    for nombre, grupo in (("RUTA DEL PEDIDO", rutas), ("FLUJO MÁXIMO (Recepción -> Despacho)", flujo),
-                          ("RED DE SERVICIO (MST)", mst)):
-        print(f"== {nombre} ==\n{tabla(grupo)}\n")
-    guardar_csv(rutas + flujo + mst, CSV, extra=f"origen={args.origen}; productos={'|'.join(productos)}")
+    for nombre, grupo in (("RUTA DEL PEDIDO", rutas), ("ORDEN DE VISITA (con Bellman-Ford)", orden),
+                          ("FLUJO MÁXIMO (Recepción -> Despacho)", flujo), ("RED DE SERVICIO (MST)", mst)):
+        if grupo:
+            print(f"== {nombre} ==\n{tabla(grupo)}\n")
+    guardar_csv(rutas + orden + flujo + mst, CSV, extra=f"origen={args.origen}; productos={'|'.join(productos)}")
     print(f"Mediciones agregadas a {CSV.relative_to(RAIZ)}")
 
 
@@ -132,7 +156,7 @@ def ventana(prueba=False):
     import matplotlib.pyplot as plt
     from matplotlib.widgets import Button, CheckButtons, RadioButtons
 
-    from kivaflow.mapa import fondo, lineas, recorrido
+    from kivaflow.mapa import COLOR_NIVEL, fondo, lineas, recorrido
 
     a = Almacen()
     estado = {"origen": "02-00", "productos": a.pedido_al_azar(4, semilla=7), "dibujo": None}
@@ -150,19 +174,21 @@ def ventana(prueba=False):
 
     modo = RadioButtons(panel(0.8, 0.13, "1. Clic en el mapa:"), ["Origen", "Agregar producto", "Quitar producto"])
     algo = RadioButtons(panel(0.62, 0.11, "2. Algoritmo de ruta:"), ["Bellman-Ford", "BFS"])
-    opciones = CheckButtons(fig.add_axes([0.5, 0.555, 0.15, 0.04]), ["Terminar en Despacho"], [True])
+    opciones = CheckButtons(fig.add_axes([0.5, 0.535, 0.15, 0.065]), ["Terminar en Despacho", "Ver congestión"],
+                            [True, False])
     botones = {}
     for i, texto in enumerate(["Ruta del pedido", "Comparar BFS y B-F", "Flujo máximo",
                                "Red de servicio (MST)", "Pedido al azar", "Limpiar pedido",
-                               "Carrera: BFS vs B-F", "Carrera: Kruskal vs Prim", "Carrera: flujo"]):
+                               "Orden: voraz vs óptimo", "Carrera: BFS vs B-F",
+                               "Carrera: Kruskal vs Prim", "Carrera: flujo"]):
         botones[texto] = Button(fig.add_axes([0.68 + (i % 2) * 0.155, 0.89 - (i // 2) * 0.058, 0.145, 0.05]), texto)
         if texto.startswith("Carrera"):
             botones[texto].color = botones[texto].hovercolor = "#fefcbf"
             botones[texto].ax.set_facecolor("#fefcbf")
     fig.text(0.68, 0.645, "Carreras: los dos algoritmos corren de verdad y se\n"
              "reproducen en cámara lenta con el mismo reloj (desde el origen elegido).\n"
-             "Ruta: varios productos = un pedido real; el orden de visita\n"
-             "es voraz (siempre al producto pendiente más cercano).\n"
+             "Ruta: varios productos = un pedido real; el orden de visita es voraz\n"
+             "(al pendiente más cercano) u óptimo (DP de Held-Karp, botón «Orden»).\n"
              "Tiempo: mejor de 3 corridas · Memoria: pico con tracemalloc.\n"
              "Cada ejecución se guarda en resultados/mediciones.csv.", fontsize=8, va="top", color="#4a5568")
 
@@ -174,6 +200,11 @@ def ventana(prueba=False):
     def dibujar_base(titulo):
         ax.clear()
         fondo(ax, a.d.nodos, a.d.pos, titulo, grilla=a.d.aristas())
+        if opciones.get_status()[1]:  # cada pasillo con el color de su congestión
+            for nivel in ("Media", "Alta"):
+                lineas(ax, a.d.pos, [p for p in a.d.aristas() if a.d.nivel[p[:2]] == nivel],
+                       color=COLOR_NIVEL[nivel], ancho=0.9, z=2)
+                ax.plot([], [], color=COLOR_NIVEL[nivel], linewidth=1.5, label=f"Congestión {nivel.lower()}")
         o = a.d.pos[estado["origen"]]
         ax.scatter([o[0]], [o[1]], s=140, c="#d69e2e", marker="o", edgecolors="black", zorder=8, label="Origen")
         if estado["productos"]:
@@ -211,6 +242,29 @@ def ventana(prueba=False):
                       etiqueta=f"{alg}: {m.resultado['tiempo del operario']}")
         ax.legend(loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=4, fontsize=8)
         mostrar(pedido_txt() + tabla(mediciones))
+        registrar(mediciones)
+        fig.canvas.draw_idle()
+
+    def en_orden(_):
+        n = len(estado["productos"])
+        if not 2 <= n <= MAX_PRODUCTOS:
+            return mostrar(pedido_txt() + f"El orden se compara con 2 a {MAX_PRODUCTOS} productos: el óptimo "
+                           "crece como n² · 2ⁿ.") or fig.canvas.draw_idle()
+        mostrar("Calculando el orden óptimo…")
+        fig.canvas.draw()
+        corridas = a.comparar_orden(estado["origen"], estado["productos"], opciones.get_status()[0])
+        dibujar_base("Orden de visita: voraz frente a óptimo (Held-Karp), con Bellman-Ford")
+        for i, (orden, m, rec) in enumerate(corridas):
+            recorrido(ax, a.d.pos, rec, COLOR_ORDEN[orden], ancho=3.6 - i * 1.8,
+                      etiqueta=f"{orden.capitalize()}: {m.resultado['tiempo del operario']}")
+        ax.legend(loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=4, fontsize=8)
+        (_, v, _), (_, o, _) = corridas
+        ahorro = float(v.resultado["metros ajustados"][:-2]) - float(o.resultado["metros ajustados"][:-2])
+        conclusion = (f"El óptimo ahorra {ahorro:.2f} m ajustados frente al voraz." if ahorro > 0.005 else
+                      "En este pedido el voraz ya encontró el orden óptimo.")
+        mediciones = [v, o]
+        mostrar(pedido_txt() + tabla(mediciones) + f"\n\n{conclusion}\nPor fuerza bruta serían {n}! = "
+                f"{math.factorial(n):,} órdenes.".replace(",", " "))
         registrar(mediciones)
         fig.canvas.draw_idle()
 
@@ -277,6 +331,8 @@ def ventana(prueba=False):
     botones["Carrera: flujo"].on_clicked(lambda _: en_carrera("flujo"))
     botones["Ruta del pedido"].on_clicked(lambda _: en_ruta([algo.value_selected]))
     botones["Comparar BFS y B-F"].on_clicked(lambda _: en_ruta(["BFS", "Bellman-Ford"]))
+    botones["Orden: voraz vs óptimo"].on_clicked(en_orden)
+    opciones.on_clicked(lambda _: refrescar())
     botones["Flujo máximo"].on_clicked(en_flujo)
     botones["Red de servicio (MST)"].on_clicked(en_mst)
     botones["Pedido al azar"].on_clicked(en_azar)
@@ -284,7 +340,7 @@ def ventana(prueba=False):
     fig.canvas.mpl_connect("button_press_event", en_clic)
     refrescar()
     if prueba:  # para los tests: devuelve la figura y las acciones sin abrir la ventana
-        return fig, botones, modo
+        return fig, botones, modo, opciones
     plt.show()
 
 
