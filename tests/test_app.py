@@ -72,3 +72,39 @@ def test_carrera_graba_eventos_en_orden(tipo):
         assert all(len(c.eventos) == len(d.nodos) - 1 for c in corredores)
     if tipo == "flujo":  # los dos llegan al flujo máximo
         assert all(sum(cuello for _, (_, cuello) in c.eventos) == 73 for c in corredores)
+
+
+def test_ventana_se_arma_y_cada_boton_responde():
+    """La ventana completa sin abrirla (backend Agg): se pulsa cada acción y se revisa la tabla."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    import app
+    fig, botones, modo, opciones = app.ventana(prueba=True)
+    tabla_res = fig.axes[2]  # cabecera, mapa, resultados
+    for nombre, esperado in (("Ruta del pedido", "Tiempo del operario"), ("Comparar BFS y B-F", "Relajaciones"),
+                             ("Orden: voraz vs óptimo", "Estados de la DP"), ("Flujo máximo", "Caminos de aumento"),
+                             ("Red de servicio (MST)", "Costo total")):
+        botones[nombre]._observers.process("clicked", None)
+        textos = " | ".join(t.get_text() for t in tabla_res.texts)
+        assert esperado in textos, nombre
+    opciones.set_active(1)  # «Ver congestión» vuelve a dibujar el mapa sin fallar
+    botones["Limpiar pedido"]._observers.process("clicked", None)
+    botones["Orden: voraz vs óptimo"]._observers.process("clicked", None)  # sin productos: avisa, no falla
+    assert "2 a 12 productos" in " ".join(t.get_text() for t in tabla_res.texts)
+    plt.close(fig)
+
+
+def test_sector_en_el_formato_del_cuaderno_del_profe(tmp_path):
+    """data/sector_picking.in se lee como en readAdjl (weighted=True, haslabels=True) y es el mismo grafo."""
+    import diagramas
+    from demo import Datos
+    nodos, aristas, la = diagramas.sector(Datos())
+    diagramas.guardar_la(nodos, la, tmp_path / "s.in")
+    with open(tmp_path / "s.in", encoding="utf-8") as f:
+        etiquetas = f.readline().strip().split()
+        leida = [[tuple(map(int, p.split("|"))) for p in linea.strip().split()] for linea in f]
+    assert etiquetas == nodos and len(leida) == 36
+    assert sum(len(v) for v in leida) == 2 * len(aristas) == 120  # cada pasillo aparece en sus dos extremos
+    assert {w for v in leida for _, w in v} <= {120, 150, 192}  # 1,2 · 1,5 · 1,92 m en cm

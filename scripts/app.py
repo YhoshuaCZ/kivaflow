@@ -38,8 +38,6 @@ from kivaflow.orden import MAX_PRODUCTOS, ruta_optima  # noqa: E402
 from kivaflow.pedido import Buscador, ruta_pedido  # noqa: E402
 
 CSV = RAIZ / "resultados" / "mediciones.csv"
-COLOR_ALGO = {"BFS": "#718096", "Bellman-Ford": "#2b6cb0"}
-COLOR_ORDEN = {"voraz": "#dd6b20", "óptimo": "#2f855a"}
 COMPLEJIDAD_ORDEN = {"voraz": "O(n²)", "óptimo": "O(n² · 2ⁿ)"}
 COMPLEJIDAD = {"BFS": "O(V + E)", "Bellman-Ford": "O(V · E)", "Edmonds-Karp": "O(V · E²)",
                "Ford-Fulkerson (DFS)": "O(E · f*)", "Kruskal + UFDS": "O(E log E)", "Prim (heap)": "O(E log V)"}
@@ -156,139 +154,180 @@ def ventana(prueba=False):
     import matplotlib.pyplot as plt
     from matplotlib.widgets import Button, CheckButtons, RadioButtons
 
+    from kivaflow import interfaz as ui
     from kivaflow.mapa import COLOR_NIVEL, fondo, lineas, recorrido
 
+    ui.aplicar_tema(plt)
     a = Almacen()
-    estado = {"origen": "02-00", "productos": a.pedido_al_azar(4, semilla=7), "dibujo": None}
+    estado = {"origen": "02-00", "productos": a.pedido_al_azar(4, semilla=7)}
 
     fig = plt.figure(figsize=(15, 9.2))
     fig.canvas.manager.set_window_title("KivaFlow · hito 2")
-    ax = fig.add_axes([0.01, 0.03, 0.47, 0.92])
-    ax_txt = fig.add_axes([0.5, 0.03, 0.49, 0.5])
-    ax_txt.axis("off")
+    ui.cabecera(fig, "KivaFlow", "Rutas de picking y cuellos de botella en un almacén tipo Amazon",
+                f"{a.V} ubicaciones · {a.E} pasillos · 3 zonas")
+    ax = ui.tarjeta(fig, [0.012, 0.055, 0.465, 0.85])
+    ax_res = ui.tarjeta(fig, [0.492, 0.03, 0.496, 0.5])
 
-    def panel(y, alto, titulo):
-        p = fig.add_axes([0.5, y, 0.15, alto])
-        p.set_title(titulo, fontsize=9, loc="left")
-        return p
+    estilo_radio = dict(label_props={"fontsize": [9], "color": [ui.TINTA]},
+                        radio_props={"s": [38], "edgecolor": [ui.SUAVE]}, activecolor=ui.ACENTO)
+    modo = RadioButtons(ui.tarjeta(fig, [0.492, 0.795, 0.155, 0.118], "1 · EL CLIC EN EL MAPA PONE"),
+                        ["Origen", "Agregar producto", "Quitar producto"], **estilo_radio)
+    algo = RadioButtons(ui.tarjeta(fig, [0.492, 0.672, 0.155, 0.088], "2 · ALGORITMO DE RUTA"),
+                        ["Bellman-Ford", "BFS"], **estilo_radio)
+    opciones = CheckButtons(ui.tarjeta(fig, [0.492, 0.558, 0.155, 0.08], "3 · OPCIONES"),
+                            ["Terminar en Despacho", "Ver congestión"], [True, False],
+                            label_props={"fontsize": [9], "color": [ui.TINTA]},
+                            frame_props={"s": [38], "edgecolor": [ui.SUAVE]}, check_props={"facecolor": [ui.ACENTO]})
 
-    modo = RadioButtons(panel(0.8, 0.13, "1. Clic en el mapa:"), ["Origen", "Agregar producto", "Quitar producto"])
-    algo = RadioButtons(panel(0.62, 0.11, "2. Algoritmo de ruta:"), ["Bellman-Ford", "BFS"])
-    opciones = CheckButtons(fig.add_axes([0.5, 0.535, 0.15, 0.065]), ["Terminar en Despacho", "Ver congestión"],
-                            [True, False])
+    fig.text(0.662, 0.922, "ACCIONES", fontsize=8.5, color=ui.SUAVE, fontweight="bold")
     botones = {}
-    for i, texto in enumerate(["Ruta del pedido", "Comparar BFS y B-F", "Flujo máximo",
-                               "Red de servicio (MST)", "Pedido al azar", "Limpiar pedido",
-                               "Orden: voraz vs óptimo", "Carrera: BFS vs B-F",
-                               "Carrera: Kruskal vs Prim", "Carrera: flujo"]):
-        botones[texto] = Button(fig.add_axes([0.68 + (i % 2) * 0.155, 0.89 - (i // 2) * 0.058, 0.145, 0.05]), texto)
-        if texto.startswith("Carrera"):
-            botones[texto].color = botones[texto].hovercolor = "#fefcbf"
-            botones[texto].ax.set_facecolor("#fefcbf")
-    fig.text(0.68, 0.645, "Carreras: los dos algoritmos corren de verdad y se\n"
-             "reproducen en cámara lenta con el mismo reloj (desde el origen elegido).\n"
-             "Ruta: varios productos = un pedido real; el orden de visita es voraz\n"
-             "(al pendiente más cercano) u óptimo (DP de Held-Karp, botón «Orden»).\n"
-             "Tiempo: mejor de 3 corridas · Memoria: pico con tracemalloc.\n"
-             "Cada ejecución se guarda en resultados/mediciones.csv.", fontsize=8, va="top", color="#4a5568")
+    for i, (texto, tipo) in enumerate([
+            ("Ruta del pedido", "principal"), ("Comparar BFS y B-F", "principal"),
+            ("Orden: voraz vs óptimo", "principal"), ("Pedido al azar", "normal"),
+            ("Flujo máximo", "normal"), ("Red de servicio (MST)", "normal"),
+            ("Limpiar pedido", "normal"), ("Carrera: BFS vs B-F", "carrera"),
+            ("Carrera: Kruskal vs Prim", "carrera"), ("Carrera: flujo", "carrera")]):
+        botones[texto] = Button(fig.add_axes([0.662 + (i % 2) * 0.166, 0.863 - (i // 2) * 0.058, 0.158, 0.047]), texto)
+        ui.estilo_boton(botones[texto], tipo)
+    fig.text(0.662, 0.612, "Carreras (amarillo): dos algoritmos corren de verdad y se reproducen en\n"
+             "cámara lenta con el mismo reloj, desde el origen elegido.\n"
+             "Tiempo: mejor de 3 corridas · Memoria: pico con tracemalloc ·\n"
+             "cada ejecución se guarda en resultados/mediciones.csv.", fontsize=7.6, va="top", color=ui.SUAVE,
+             linespacing=1.45)
 
-    def mostrar(texto):
-        ax_txt.clear()
-        ax_txt.axis("off")
-        ax_txt.text(0, 1, texto, family="monospace", fontsize=7.6, va="top")
+    def pedido_txt():
+        return [f"Origen {estado['origen']}  ·  {len(estado['productos'])} productos: "
+                f"{', '.join(estado['productos']) or '—'}"]
+
+    def resultados(mediciones=(), colores=(), conclusion="", pie=(), encabezado=None):
+        ui.tabla_comparativa(ax_res, encabezado or pedido_txt(), mediciones, colores, conclusion, pie)
+
+    def leyenda():
+        ax.legend(loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=5, fontsize=8, handlelength=1.6,
+                  columnspacing=1.2)
 
     def dibujar_base(titulo):
         ax.clear()
-        fondo(ax, a.d.nodos, a.d.pos, titulo, grilla=a.d.aristas())
+        fondo(ax, a.d.nodos, a.d.pos, None, grilla=a.d.aristas())
+        ax.set_ylim(-config.FILAS * config.CELDA_M, 2.6 * config.CELDA_M)
+        ax.set_title(titulo, fontsize=10.5, fontweight="bold", loc="left", pad=6)
+        for (zona, cols), tono in zip(config.ZONAS, ("#1e40af", "#9f1239", "#166534")):  # nombre de cada zona
+            ax.text((cols.start + cols.stop - 1) / 2 * config.CELDA_M, 1.25 * config.CELDA_M, zona.upper(),
+                    fontsize=7, color=tono, ha="center", va="center", fontweight="bold")
         if opciones.get_status()[1]:  # cada pasillo con el color de su congestión
             for nivel in ("Media", "Alta"):
                 lineas(ax, a.d.pos, [p for p in a.d.aristas() if a.d.nivel[p[:2]] == nivel],
                        color=COLOR_NIVEL[nivel], ancho=0.9, z=2)
                 ax.plot([], [], color=COLOR_NIVEL[nivel], linewidth=1.5, label=f"Congestión {nivel.lower()}")
         o = a.d.pos[estado["origen"]]
-        ax.scatter([o[0]], [o[1]], s=140, c="#d69e2e", marker="o", edgecolors="black", zorder=8, label="Origen")
+        ax.scatter([o[0]], [o[1]], s=150, c="#f59e0b", marker="o", edgecolors=ui.TINTA, linewidths=1.2, zorder=8,
+                   label="Origen")
         if estado["productos"]:
             xs, ys = zip(*(a.d.pos[p] for p in estado["productos"]))
-            ax.scatter(xs, ys, s=120, c="#e53e3e", marker="D", edgecolors="black", zorder=8, label="Productos")
+            ax.scatter(xs, ys, s=110, c="#ef4444", marker="D", edgecolors=ui.TINTA, linewidths=1.2, zorder=8,
+                       label="Productos")
             for p in estado["productos"]:
-                x, y = a.d.pos[p]
-                ax.annotate(f"{p} ({a.d.nodos[p]['SKU']})", (x, y), xytext=(4, 4), textcoords="offset points",
-                            fontsize=7, zorder=9)
+                ax.annotate(f"{p} · {a.d.nodos[p]['SKU']}", a.d.pos[p], xytext=(7, 6), textcoords="offset points",
+                            fontsize=7, zorder=9, color=ui.TINTA,
+                            bbox=dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor=ui.BORDE, alpha=0.9))
 
-    def pedido_txt():
-        return (f"{encabezado(a)}\nOrigen: {estado['origen']} · Productos ({len(estado['productos'])}): "
-                f"{', '.join(estado['productos']) or '—'}\n\n")
-
-    def refrescar(titulo="Haz clic en el mapa para armar el pedido", texto=None):
+    def refrescar(titulo="Arma el pedido con clics en el mapa", conclusion="Elige una acción a la derecha."):
         dibujar_base(titulo)
-        ax.legend(loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=4, fontsize=8)
-        mostrar(texto if texto is not None else pedido_txt() + "Elige una acción a la derecha.")
+        leyenda()
+        resultados(conclusion=conclusion)
         fig.canvas.draw_idle()
+
+    def aviso(texto):
+        resultados(conclusion=texto)
+        fig.canvas.draw()
 
     def registrar(mediciones):
         guardar_csv(mediciones, CSV, extra=f"origen={estado['origen']}; productos={'|'.join(estado['productos'])}")
         print(tabla(mediciones) + "\n")
 
+    def metros(m):
+        return float(m.resultado["metros ajustados"][:-2])
+
+    def segundos(m):
+        return round(metros(m) / config.VELOCIDAD_M_S)
+
+    def visita(m):
+        return m.resultado["orden de visita"].replace("->", "→")
+
     def en_ruta(algoritmos):
         if not estado["productos"]:
-            return mostrar(pedido_txt() + "Agrega al menos un producto.") or fig.canvas.draw_idle()
-        destino = opciones.get_status()[0]
+            return aviso("Agrega al menos un producto (modo «Agregar producto» y clic en el mapa).")
         mediciones = []
         dibujar_base(f"Ruta del pedido con {' y '.join(algoritmos)}")
         for i, alg in enumerate(algoritmos):
-            m, rec = a.ruta(alg, estado["origen"], estado["productos"], destino)
+            m, rec = a.ruta(alg, estado["origen"], estado["productos"], opciones.get_status()[0])
             mediciones.append(m)
-            recorrido(ax, a.d.pos, rec, COLOR_ALGO[alg], ancho=3.2 - i * 1.4,
+            recorrido(ax, a.d.pos, rec, ui.COLOR_ALGO[alg], ancho=3.6 - i * 1.6,
                       etiqueta=f"{alg}: {m.resultado['tiempo del operario']}")
-        ax.legend(loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=4, fontsize=8)
-        mostrar(pedido_txt() + tabla(mediciones))
+        leyenda()
+        conclusion = f"El operario tarda {mediciones[0].resultado['tiempo del operario']} con {algoritmos[0]}."
+        if len(mediciones) == 2:
+            b, f = mediciones
+            ahorro = segundos(b) - segundos(f)
+            conclusion = (f"Bellman-Ford ahorra {ahorro:.0f} s de caminata ({100 * ahorro / segundos(b):.0f} %) esquivando "
+                          f"la congestión,\npero tarda {f.ms / max(b.ms, 0.01):.0f} veces más en calcular la ruta."
+                          if ahorro >= 0.5 else "Las dos rutas cuestan lo mismo: el camino corto no estaba congestionado.")
+        resultados(mediciones, [ui.COLOR_ALGO[x] for x in algoritmos], conclusion,
+                   [(ui.COLOR_ALGO[x], f"Orden de visita (voraz): {visita(m)}") for x, m in zip(algoritmos, mediciones)][:1])
         registrar(mediciones)
         fig.canvas.draw_idle()
 
     def en_orden(_):
         n = len(estado["productos"])
         if not 2 <= n <= MAX_PRODUCTOS:
-            return mostrar(pedido_txt() + f"El orden se compara con 2 a {MAX_PRODUCTOS} productos: el óptimo "
-                           "crece como n² · 2ⁿ.") or fig.canvas.draw_idle()
-        mostrar("Calculando el orden óptimo…")
-        fig.canvas.draw()
+            return aviso(f"El orden se compara con 2 a {MAX_PRODUCTOS} productos: el óptimo crece como n² · 2ⁿ.")
+        aviso("Calculando el orden óptimo…")
         corridas = a.comparar_orden(estado["origen"], estado["productos"], opciones.get_status()[0])
         dibujar_base("Orden de visita: voraz frente a óptimo (Held-Karp), con Bellman-Ford")
         for i, (orden, m, rec) in enumerate(corridas):
-            recorrido(ax, a.d.pos, rec, COLOR_ORDEN[orden], ancho=3.6 - i * 1.8,
+            recorrido(ax, a.d.pos, rec, ui.COLOR_ALGO[orden], ancho=3.6 - i * 1.6,
                       etiqueta=f"{orden.capitalize()}: {m.resultado['tiempo del operario']}")
-        ax.legend(loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=4, fontsize=8)
+        leyenda()
         (_, v, _), (_, o, _) = corridas
-        ahorro = float(v.resultado["metros ajustados"][:-2]) - float(o.resultado["metros ajustados"][:-2])
-        conclusion = (f"El óptimo ahorra {ahorro:.2f} m ajustados frente al voraz." if ahorro > 0.005 else
-                      "En este pedido el voraz ya encontró el orden óptimo.")
-        mediciones = [v, o]
-        mostrar(pedido_txt() + tabla(mediciones) + f"\n\n{conclusion}\nPor fuerza bruta serían {n}! = "
-                f"{math.factorial(n):,} órdenes.".replace(",", " "))
-        registrar(mediciones)
+        ahorro = segundos(v) - segundos(o)
+        ordenes = f"{math.factorial(n):,}".replace(",", " ")
+        conclusion = (f"El orden óptimo ahorra {ahorro:.0f} s de caminata ({100 * ahorro / segundos(v):.0f} %) frente al voraz."
+                      if ahorro >= 0.5 else "En este pedido el voraz ya encontró el orden óptimo.")
+        conclusion += f"\nPor fuerza bruta habría que probar {n}! = {ordenes} órdenes."
+        resultados([v, o], [ui.COLOR_ALGO["voraz"], ui.COLOR_ALGO["óptimo"]], conclusion,
+                   [(ui.COLOR_ALGO["voraz"], f"Voraz: {visita(v)}"), (ui.COLOR_ALGO["óptimo"], f"Óptimo: {visita(o)}")])
+        registrar([v, o])
         fig.canvas.draw_idle()
 
     def en_flujo(_):
-        mostrar("Calculando el flujo máximo…")
-        fig.canvas.draw()
+        aviso("Calculando el flujo máximo…")
         mediciones, corte = a.flujo()
-        dibujar_base(f"Flujo máximo Recepción -> Despacho: corte mínimo de {len(corte)} pasillos")
-        lineas(ax, a.d.pos, corte, color="#e53e3e", ancho=3.5, z=6)
-        ax.plot([], [], color="#e53e3e", linewidth=3.5, label="Corte mínimo (cuello de botella)")
-        ax.legend(loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=4, fontsize=8)
-        mostrar(f"{encabezado(a)}\nCapacidad por pasillo: Baja 3, Media 2, Alta 1 operarios/min\n\n" + tabla(mediciones))
+        dibujar_base(f"Flujo máximo de Recepción a Despacho: corte mínimo de {len(corte)} pasillos")
+        lineas(ax, a.d.pos, corte, color="#dc2626", ancho=3.5, z=6)
+        ax.plot([], [], color="#dc2626", linewidth=3.5, label="Corte mínimo (cuello de botella)")
+        leyenda()
+        ek, ff = mediciones
+        resultados(mediciones, [ui.COLOR_ALGO[m.algoritmo] for m in mediciones],
+                   f"Pasan como máximo {ek.resultado['flujo máximo']}. Edmonds-Karp llega con "
+                   f"{ek.operaciones['caminos de aumento']} caminos de aumento;\nFord-Fulkerson con DFS necesita "
+                   f"{ff.operaciones['caminos de aumento']}, más largos.",
+                   encabezado=["Capacidad por pasillo según su congestión: Baja 3, Media 2, Alta 1 operarios/min"])
         registrar(mediciones)
         fig.canvas.draw_idle()
 
     def en_mst(_):
-        mostrar("Calculando la red de servicio…")
-        fig.canvas.draw()
+        aviso("Calculando la red de servicio…")
         mediciones, arbol = a.mst()
-        dibujar_base("Red de servicio: MST sobre la distancia ajustada")
-        lineas(ax, a.d.pos, arbol, color="#2f855a", ancho=1.4, z=5)
-        ax.plot([], [], color="#2f855a", linewidth=1.4, label="Pasillos de la red de servicio")
-        ax.legend(loc="upper center", bbox_to_anchor=(0.5, 0.0), ncol=4, fontsize=8)
-        mostrar(f"{encabezado(a)}\n\n" + tabla(mediciones))
+        dibujar_base("Red de servicio: árbol de expansión mínima sobre la distancia ajustada")
+        lineas(ax, a.d.pos, arbol, color="#059669", ancho=1.4, z=5)
+        ax.plot([], [], color="#059669", linewidth=1.4, label="Pasillos de la red de servicio")
+        leyenda()
+        k = mediciones[0]
+        resultados(mediciones, [ui.COLOR_ALGO[m.algoritmo] for m in mediciones],
+                   f"Kruskal y Prim llegan al mismo costo: {k.resultado['costo total']} con "
+                   f"{k.resultado['pasillos del árbol']} pasillos,\nsolo {k.resultado['pasillos de congestión Alta']} "
+                   "de congestión alta.",
+                   encabezado=["El árbol conecta las 1800 ubicaciones con la menor congestión acumulada"])
         registrar(mediciones)
         fig.canvas.draw_idle()
 
@@ -317,13 +356,11 @@ def ventana(prueba=False):
 
     def en_carrera(tipo):
         import carrera
-        mostrar(pedido_txt() + f"Preparando la carrera ({tipo})… se abre en otra ventana.")
-        fig.canvas.draw()
+        aviso(f"Preparando la carrera ({tipo})… se abre en otra ventana.")
         fig2, estado["anim"] = carrera.carrera(plt, a.d, tipo, estado["origen"])
         fig2.show()
-        mostrar(pedido_txt() + f"Carrera ({tipo}) abierta en otra ventana. Para la de rutas, cambia el\n"
-                "origen con un clic y vuelve a pulsar el botón: desde el centro, Bellman-Ford\n"
-                "necesita muchas más rondas que desde una esquina.")
+        resultados(conclusion=f"Carrera ({tipo}) abierta en otra ventana. En la de rutas, cambia el origen con un clic\n"
+                   "y repite: desde el centro, Bellman-Ford necesita muchas más rondas que desde una esquina.")
         fig.canvas.draw_idle()
 
     botones["Carrera: BFS vs B-F"].on_clicked(lambda _: en_carrera("rutas"))
