@@ -40,17 +40,18 @@ python scripts/app.py           # el aplicativo (ventana)
 python scripts/carrera.py rutas --origen 20-20   # dos algoritmos trabajando en el tiempo (también: mst, flujo)
 python scripts/analisis.py      # cómo crecen tiempo y memoria con el tamaño del almacén (abre la gráfica)
 python scripts/experimento.py   # 160 pedidos: cuánto ahorra Bellman-Ford y cuánto el orden óptimo (unos 4 min)
-python -m pytest                # 80 pruebas
+python scripts/diagramas.py     # diagramas con Graphviz, como en los cuadernos del curso (opcional)
+python -m pytest                # 82 pruebas
 ```
 
 ### Qué hace falta para ejecutarlo en otra computadora
 
-Python 3.10 o más reciente y las librerías de `requirements.txt` (`matplotlib` para las ventanas y figuras; `networkx` y `pytest` solo para las pruebas). No hay nada que configurar: cada script encuentra solo la carpeta del proyecto.
+Python 3.10 o más reciente y las librerías de `requirements.txt` (`matplotlib` para las ventanas y figuras; `networkx` y `pytest` solo para las pruebas). Solo `scripts/diagramas.py` necesita además Graphviz (`pip install graphviz` y el programa de https://graphviz.org/download/). No hay nada que configurar: cada script encuentra solo la carpeta del proyecto.
 
 | Carpeta | Qué tiene | ¿Hace falta para ejecutar? |
 |---|---|---|
 | `kivaflow/` | Los algoritmos, programados a mano, y la lectura del dataset | Sí |
-| `scripts/` | Los programas que se ejecutan: `app.py`, `carrera.py`, `demo.py`, `analisis.py`, `experimento.py` | Sí |
+| `scripts/` | Los programas que se ejecutan: `app.py`, `carrera.py`, `demo.py`, `analisis.py`, `experimento.py`, `diagramas.py` | Sí |
 | `data/` | El dataset: `nodos.csv` y `aristas.csv` (y `skus.csv`, que solo usan las pruebas) | Sí; se regenera idéntico con `python scripts/generar_dataset.py` |
 | `resultados/` | Figuras y tablas que generan los scripts | No; se crea sola. Está en el repo porque este README muestra sus imágenes |
 | `tests/` | Las pruebas (`python -m pytest`) | No |
@@ -58,7 +59,9 @@ Python 3.10 o más reciente y las librerías de `requirements.txt` (`matplotlib`
 
 ### El aplicativo (`scripts/app.py`)
 
-![Aplicativo: el mismo pedido con el orden de visita voraz y con el óptimo](docs/image/app.png)
+![Aplicativo: el mismo pedido con BFS y con Bellman-Ford, y la tabla que los compara](docs/image/app.png)
+
+La ventana sigue el estilo de los visualizadores de algoritmos más usados (VisuAlgo, Pathfinding Visualizer): cabecera oscura, el mapa a la izquierda, los controles numerados en el orden en que se usan, un color por algoritmo y los resultados en una tabla con una conclusión arriba.
 
 1. **Arma un pedido con clics en el mapa.** Elige el modo «Origen» (de dónde sale el operario) o «Agregar producto» y haz clic en una ubicación. «Pedido al azar» elige productos según su popularidad. Un pedido tiene varios productos porque así son los pedidos reales: el operario sale una vez y recoge todo. El orden de visita por defecto es **voraz** (siempre va al producto pendiente más cercano), porque el orden óptimo es el problema del viajante, que es NP-difícil.
 2. **«Ruta del pedido»** calcula el recorrido con el algoritmo elegido. **«Comparar BFS y B-F»** dibuja los dos sobre el mismo pedido. Con «Terminar en Despacho», el recorrido acaba en el muelle de Despacho más cercano.
@@ -66,7 +69,7 @@ Python 3.10 o más reciente y las librerías de `requirements.txt` (`matplotlib`
 4. **«Flujo máximo»** (Edmonds-Karp y Ford-Fulkerson con DFS) y **«Red de servicio (MST)»** (Kruskal y Prim) analizan el almacén completo.
 5. Los botones amarillos **«Carrera…»** abren la carrera en el tiempo (ver abajo) desde el origen elegido.
 
-Cada ejecución muestra, por algoritmo:
+Cada ejecución muestra una columna por algoritmo:
 
 | Medida | Qué es | Cómo se mide |
 |---|---|---|
@@ -133,6 +136,20 @@ Corre cada algoritmo en sectores del almacén de 100 a 1800 ubicaciones y ajusta
 | Floyd-Warshall | O(V³) | V³ | V^2,90 | Coincide; por eso solo se corre hasta 225 ubicaciones |
 
 ![Escalabilidad](resultados/escalabilidad.png)
+
+## Diseño del aplicativo (`scripts/diagramas.py`)
+
+Los diagramas se generan con **Graphviz**, la misma herramienta de los cuadernos del curso.
+
+![Capas del aplicativo](docs/image/arquitectura.png)
+
+Cada capa solo usa la de abajo: los algoritmos no saben nada de ventanas y la interfaz no calcula nada. Por eso el mismo código sirve en la ventana, en la consola (`--consola`) y en las pruebas.
+
+![Del clic a la tabla de resultados](docs/image/flujo_pedido.png)
+
+`diagramas.py` también deja un sector de 6 × 6 de Picking en [`data/sector_picking.in`](data/sector_picking.in), en el formato de lista de adyacencia ponderada (`vecino|peso`) que lee la función `readAdjl` del cuaderno de Kruskal del curso, y lo dibuja con el estilo de `adjlShow`, con el MST en naranja:
+
+![Sector de Picking con el MST de Kruskal](docs/image/sector_mst.png)
 
 ## Demo del MST (red de servicio)
 

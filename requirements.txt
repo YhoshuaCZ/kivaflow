@@ -1,3 +1,5 @@
 networkx>=3.3
 matplotlib>=3.8
 pytest>=8
+# Opcional, solo para scripts/diagramas.py (además hay que instalar Graphviz: https://graphviz.org/download/):
+# graphviz>=0.20
